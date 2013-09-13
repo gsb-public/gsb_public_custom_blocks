@@ -167,12 +167,7 @@ function gsb_public_custom_blocks_block_view($delta = '') {
 
     case 'gpcb_banner_title':
       $args = explode('/', trim(request_uri(), '/'));
-      if ($args[0] == 'programs') {
-        $title = _gsb_public_custom_blocks_get_program_title();
-      }
-      else {
-        $title = drupal_get_title();
-      }
+      $title = _gsb_public_custom_blocks_get_banner_title($args);
       $block['content']['title'] = array(
         '#type' => 'container',
         '#attributes' => array(
@@ -306,7 +301,9 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
   }
 }
 
-function _gsb_public_custom_blocks_get_program_title() {
+function _gsb_public_custom_blocks_get_banner_title($args) {
+
+  // try to get the menu name from the active trail
 
   $active_trail = menu_get_active_trail();
   $trail_length = count($active_trail);
@@ -317,14 +314,44 @@ function _gsb_public_custom_blocks_get_program_title() {
   }
 
   $title = $active_trail[$trail_length-1]['title'];
+
+  // check whether the page is associated with a menu
+  // if so, we can use the section id (a workbench taxonomy term id)
+  // to look up the program name.
+
   $pos = strpos($menu_name, 'section-');
   if ($pos !== false) {
+    
     $pos = strpos($menu_name, '-');
     $tid = substr($menu_name, $pos+1);
     $term = taxonomy_term_load($tid);
     if ($term) {
       $title = $term->name . ' Program';
     }
+
+  } else {
+
+    // if there is no menu, then we are forced to 
+    // hard-code things - based on the url path
+
+    // not pretty, but so far we haven't been
+    // able to find a better approach
+
+    $programs_page = false;
+    $stanford_gsb_experience_page = false;
+
+    $first_path_item = $args[0];
+
+    if ($first_path_item == 'programs') {
+      if ($args[1] == 'mba') {
+        $title = 'MBA Program';
+      } elseif ($args[1] == 'msx') {
+        $title = 'MSx Program';
+      }
+    } elseif ($first_path_item == 'stanford-gsb-experience') {
+      $title = 'Stanford GSB Experience';
+    } 
+
   }
 
   return $title;
