@@ -20,8 +20,8 @@ function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subt
         <a href="http://www.linkedin.com/company/stanford-graduate-school-of-business" target="_blank" class="circle social-block-linkedin"></a>
         <a href="https://www.facebook.com/StanfordGSB" target="_blank" class="circle social-block-facebook"></a>
       </div>
-      <h5><a href="http://twitter.com/@stanfordbiz">Stanford Business</a></h5>
-        <a href="http://twitter.com/@stanfordbiz">@Stanford Biz</a>
+      <h5><a href="http://twitter.com/@stanfordbiz" target="_blank">Stanford Business</a></h5>
+        <a href="http://twitter.com/@stanfordbiz" target="_blank" >@Stanford Biz</a>
       <div id="fpp-tweets-front"></div>
       </div>
       <script>gsb_tweetfeed.init({
