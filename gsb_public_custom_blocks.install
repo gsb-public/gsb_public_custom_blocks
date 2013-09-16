@@ -238,7 +238,7 @@ function gsb_public_custom_blocks_update_7005() {
       'status' => 1,
       'weight' => 1,
       'region' => 'banner',
-      'pages' => "events\nevents/calendar\nevents/list\nbusiness-insights\nprograms/*\nstanford-gsb-experience/*",
+      'pages' => "events\nevents/calendar\nevents/list\nbusiness-insights\nprograms/*\nstanford-gsb-experience\nstanford-gsb-experience/*",
       'visibility' => 1,
       'cache' => -1,
     ))
