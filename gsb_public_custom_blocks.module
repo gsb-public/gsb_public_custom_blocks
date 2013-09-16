@@ -326,7 +326,11 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
     $tid = substr($menu_name, $pos+1);
     $term = taxonomy_term_load($tid);
     if ($term) {
-      $title = $term->name . ' Program';
+      if ($term->name == 'Stanford GSB Experience') {
+        $title = $term->name;
+      } else {
+        $title = $term->name . ' Program';        
+      }
     }
 
   } else {
