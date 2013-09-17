@@ -71,7 +71,7 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
       array(
         'title' => 'Social Innovation',
         '#markup' => '<a href="/programs/mba/academic-experience/curriculum">MBA Program</a>
-<p>The Stanford MBA Program allows you to focus your educational efforts in areas such as environment, international development, healthcare, and education by participating in the Public Management certificate program.</p>
+<p>The Stanford MBA Program allows you to focus your educational efforts in areas such as environment, international development, healthcare, and education by participating in the Public Management and Social Innovation certificate program.</p>
 <a href="/programs/social-innovation-programs">Social Innovation Programs</a>
 <p>Our social innovation programs focus on developing leaders who can solve the world\'s most challenging problems in areas such as education, the environment, poverty, healthcare, and social justice.</p>'
       ),   
