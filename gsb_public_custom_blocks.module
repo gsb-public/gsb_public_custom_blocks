@@ -284,6 +284,7 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'media_toolkit:media_toolkit' => 'media_toolkit.png',
     'program_finder:program_finder' => 'program_finder.png',
     'program_links:program_links' => 'program_links.png',
+    'salesform_webform:salesform_webform' => 'salesform_webform.png',
     'block:gsb_public_custom_blocks-gpcb_about_campus' => 'learn.jpg',
     'cta_around_globe:cta_around_globe' => 'gsb-around-the-globe.png',
     'block:gsb_public_custom_blocks-gpcb_rethink' => 'rethink.jpg',
