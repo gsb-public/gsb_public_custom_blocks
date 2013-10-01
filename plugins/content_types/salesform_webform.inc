@@ -25,20 +25,15 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 <!--  <input type="hidden" name="debug" value=1>                              -->
 <!--  <input type="hidden" name="debugEmail" value="vamsit@uniseva.com">      -->
 <!--  ----------------------------------------------------------------------  -->
-<div>Stanford Global Innovation Programs
-<div>Sign up to receive updates on &nbsp;<strong>Stanford\'s Global Innovation Program</strong> offerings; fill in
-the following fields and click submit.</div>
-<b><label for="first_name">First Name<span>*</span></label></b>
-<label for="first_name">
-<input id="first_name" maxlength="40" name="first_name" size="20" type="text">
-</label>
-<b><label for="last_name">Last Name<span>*</span></label></b>
-<input id="last_name" maxlength="80" name="last_name" size="20" type="text">
-<b><label for="email">Email<span>*</span></label></b>
-<input id="email" maxlength="80" name="email" size="20" type="text">
-<b><label for="country">Country<span>*</span></label></b>
-<input id="country" style="display:none;" maxlength="80" name="country" size="20" type="text">
-<select name="emma_member_country" id="emma_member_country">
+<div><label for="first_name">First Name<span>*</span></label>
+<input id="first_name" maxlength="40" name="first_name" size="34" type="text"><br/><br/>
+<label for="last_name">Last Name<span>*</span></label>
+<input id="last_name" maxlength="80" name="last_name" size="34" type="text"><br/><br/>
+<label for="email">Email<span>*</span></label>
+<input id="email" maxlength="80" name="email" size="34" type="text"><br/><br/>
+<label for="country">Country<span>*</span></label>
+<input id="country" style="display:none;" maxlength="80" name="country" type="text">
+<select name="emma_member_country" id="emma_member_country" style="width:286px">
 <option value=""></option>
 <option value="United States">United States</option>
 <option value="Afghanistan">Afghanistan</option>
@@ -276,13 +271,13 @@ the following fields and click submit.</div>
 <option value="Yugoslavia">Yugoslavia</option>
 <option value="Zambia">Zambia</option>
 <option value="Zimbabwe">Zimbabwe</option>
-</select>
-<b><label for="gip_title">Title<span>*</span></label></b>
-<input id="title" maxlength="40" name="title" size="20" type="text">
-<b><label for="company">Organization<span>*</span></label></b>
-<input id="company" maxlength="40" name="company" size="20" type="text">
-<b><label for="affiliation">Affiliation</label></b>
-<select id="00N50000002lyAl" name="00N50000002lyAl" title="GIP Affiliation">
+</select><br/><br/>
+<label for="gip_title">Title<span>*</span></label>
+<input id="title" maxlength="40" name="title" size="34" type="text"><br/><br/>
+<label for="company">Organization<span>*</span></label>
+<input id="company" maxlength="40" name="company" size="34" type="text"><br/><br/>
+<label for="affiliation">Affiliation</label>
+<select id="00N50000002lyAl" name="00N50000002lyAl" title="GIP Affiliation" style="width:286px">
 <option value="Other">Other</option>
 <option value="Stanford GSB Student">Stanford GSB Student</option>
 <option value="Stanford GSB Alumni">Stanford GSB Alumni</option>
@@ -291,11 +286,10 @@ the following fields and click submit.</div>
 <option value="Stanford Alumni">Stanford Alumni</option>
 <option value="Stanford Faculty &amp; Staff">Stanford Faculty &amp; Staff</option>
 <option value="Stanford Exec Ed Past Participant">Stanford Exec Ed Past Participant</option>
-</select>
-<b><label for="phone">Phone</label></b>
-<input id="phone" maxlength="12" name="phone" size="20" type="text">
-<label for="program"><b>Please select the Global Innovation Program(s) you would like to learn more about</b>
-<br />
+</select><br/><br/>
+<label for="phone">Phone</label>
+<input id="phone" maxlength="12" name="phone" size="34" type="text"><br/><br/>
+<label for="program">Please select the program(s) you would like to learn more about
 (Ctr + Click for multiple selection) (Command key on a Mac)
 </label>
 <select id="00N50000002lyAm" multiple="multiple" name="00N50000002lyAm" title="Program">
@@ -310,12 +304,12 @@ the following fields and click submit.</div>
 <option value="Exec Program for Non-Profit Leaders">Executive Program for Non-Profit Leaders</option>
 <option value="Exec Program for Social Entrepreneurs">Executive Program for Social Entrepreneurs</option>
 <option value="Summer Institute for General Management">Summer Institute for General Management</option>
-</select>
-<b><label for="source">Source</label></b>
+</select><br/><br/>
+<label for="source">Source</label>
 <select id="00N50000002lyAn" name="00N50000002lyAn">
 <option value="Web - Inquiry">Web - Inquiry</option>
-</select>
-<b><label for="comments">Comments (Optional; Maximum 500 characters):</label></b>
+</select><br/><br/>
+<label for="comments">Comments (Optional; Maximum 500 characters):</label>
 <textarea id="00N50000001bgH4" name="00N50000001bgH4" rows="15" cols="62" type="text" wrap="soft"></textarea><br>
 <span>* required</span>
 <div>
