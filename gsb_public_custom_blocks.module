@@ -51,7 +51,7 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
 function gsb_public_custom_blocks_block_info() {
   return array(
     'gpcb_virtual_tour' => array(
-      'info' => t('Custom CTA: Virtual Tour'),
+      'info' => t('Custom CTA: Closer Look'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_maps_parking_info_more' => array(
