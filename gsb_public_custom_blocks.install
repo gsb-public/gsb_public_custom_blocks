@@ -247,3 +247,10 @@ function gsb_public_custom_blocks_update_7005() {
     ->condition('theme', 'gsb_theme', '=')
     ->execute();
 }
+
+/**
+ * Enable the gsb_custom_section_title module.
+ */
+function gsb_public_custom_blocks_update_7006() {
+  module_enable(array('gsb_custom_section_title'));
+}
