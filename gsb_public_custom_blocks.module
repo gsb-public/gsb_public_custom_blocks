@@ -306,11 +306,9 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
   // Get the alias for the current path.
   $current_path = drupal_get_path_alias(current_path());
   // Looping through our path map, see if the current path matches any.
-  foreach (_gsb_public_custom_blocks_get_path_map() as $map) {
-    $paths = implode("\n", $map['paths']);
-    // If it matches, use the specified title, optionally as a link.
-    if (drupal_match_path($current_path, $paths)) {
-      return !empty($map['link']) ? l($map['title'], $map['link']) : $map['title'];
+  foreach (gsb_custom_section_title_get_sections() as $map) {
+    if (drupal_match_path($current_path, $map['paths'])) {
+      return !empty($map['link']) ? l($map['title'], $map['link_path']) : $map['title'];
     }
   }
 
@@ -370,56 +368,4 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
   }
 
   return $title;
-}
-
-function _gsb_public_custom_blocks_get_path_map() {
-  $map[] = array(
-    'title' => t('MSx Program'),
-    'link' => 'programs/msx',
-    'paths' => array(
-      'programs/msx',
-      'programs/msx/*'
-    ),
-  );
-  $map[] = array(
-    'title' => t('MBA Program'),
-    'link' => 'programs/mba',
-    'paths' => array(
-      'programs/mba',
-      'programs/mba/*'
-    ),
-  );
-  $map[] = array(
-    'title' => t('Stanford Ignite'),
-    'link' => 'programs/stanford-ignite',
-    'paths' => array(
-      'programs/stanford-ignite',
-      'programs/stanford-ignite/*'
-    ),
-  );
-  $map[] = array(
-    'title' => t('Summer Institute for General Management'),
-    'link' => 'programs/sigm',
-    'paths' => array(
-      'programs/sigm',
-      'programs/sigm/*'
-    ),
-  );
-  $map[] = array(
-    'title' => t('Custom Programs'),
-    'link' => 'programs/custom',
-    'paths' => array(
-      'programs/custom',
-      'programs/custom/*'
-    ),
-  );
-  $map[] = array(
-    'title' => t('Stanford Innovation & Entrepreneurship Certificate'),
-    'link' => 'programs/stanford-online-innovation-entrepreneurship-certificate',
-    'paths' => array(
-      'programs/stanford-online-innovation-entrepreneurship-certificate',
-      'programs/stanford-online-innovation-entrepreneurship-certificate/*'
-    ),
-  );
-  return $map;
 }

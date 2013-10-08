@@ -2,25 +2,4 @@ name = GSB Public Custom Blocks
 description = Custom blocks used just for this site.
 core = 7.x
 package = GSB
-
-
-
-; Information added by drush on 2013-06-13
-version = "master-dev"
-project = "gsb_public_custom_blocks"
-datestamp = "1371136732"
-
-
-
-; Information added by drush on 2013-07-11
-version = "master-dev"
-project = "gsb_public_custom_blocks"
-datestamp = "1373580514"
-
-
-
-; Information added by drush on 2013-07-30
-version = "master-dev"
-project = "gsb_public_custom_blocks"
-datestamp = "1375218356"
-
+dependencies[] = gsb_custom_section_title
