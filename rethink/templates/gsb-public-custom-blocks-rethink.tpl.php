@@ -1,4 +1,4 @@
-<a href="http://eepurl.com/q-JMr" class="designed-box cta-rethink">
+<a href="/contact/rethink" class="designed-box cta-rethink">
   <p class="cta-title">
     <b>RE:</b>THINK
   </p>
