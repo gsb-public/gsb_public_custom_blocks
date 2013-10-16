@@ -26,7 +26,7 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
       ),
     array(
         'title' => 'Executive Education',
-        '#markup' => '<a href="/exed">Executive Education</a>
+        '#markup' => '<a href="/programs/executive-education">Executive Education</a>
 <p>These programs are designed to equip senior executives with the knowledge, relationships, and skills necessary to drive results at the highest levels of global management.</p>
 <p>An expert faculty, a diverse and accomplished group of global participants, and Stanford’s unique culture of innovation combine to help participants energize their careers and shape the future of business.</p>
 <p>A wide range of program offerings spans the full spectrum of business topics, including leadership development, global management, and specific functional areas.</p>'
@@ -54,25 +54,25 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
 <a href="/programs/stanford-online-innovation-entrepreneurship-certificate">Stanford Innovation and Entrepreneurship</a>
 <p>This online program empowers you to more effectively generate and implement new ideas and lead innovative teams and organizations. Self-paced courses are available online. Earn a certificate on your own schedule.</p>
 </div><div class="column-b">
-<a href="/programs/social-innovation-programs">Social Innovation Programs</a>
+<a href="/programs/social-innovation">Social Innovation Programs</a>
 <p>Our Executive Program in Social Entrepreneurship is a one-week residential program designed to help seasoned social entrepreneurs take enterprises and innovative models to the next level.</p>
-<a href="/exed/custom.html">Custom Programs</a>
+<a href="/programs/custom">Custom Programs</a>
 <p>We develop programs for an organization\'s unique business and management challenges. Designed around each firm\'s specific needs, our custom programs leverage Stanford faculty thought leadership.</p>
 </div></div>'
       ),
       array(
         'title' => 'Global',
-        '#markup' => '<a href="/programs/stanford-ignite">Stanford Ignite</a>
+        '#markup' => '<a href="/programs/custom">Stanford Ignite</a>
 <p>This unique certificate program helps innovators around the world without graduate-level business training to formulate, develop, and commercialize their business ideas.</p>
 <p>Stanford Ignite is offered as a nine-week, part-time program in Bangalore, Beijing, Paris, and on the Stanford campus. A four-week, full-time program is also available at Stanford.</p>
-<a href="/exed/custom.html">Custom Programs</a>
+<a href="/programs/custom">Custom Programs</a>
 <p>Stanford Graduate School of Business works closely with select global companies to develop custom strategic solutions for their business challenges.  Our partnerships are characterized by collaboration between world-renowned Stanford faculty and senior executives to ensure relevance and maximum impact.</p>'
       ),
       array(
         'title' => 'Social Innovation',
         '#markup' => '<a href="/programs/mba/academic-experience/curriculum">MBA Program</a>
 <p>The Stanford MBA Program allows you to focus your educational efforts in areas such as environment, international development, healthcare, and education by participating in the Public Management and Social Innovation certificate program.</p>
-<a href="/programs/social-innovation-programs">Social Innovation Programs</a>
+<a href="/programs/social-innovation">Social Innovation Programs</a>
 <p>Our social innovation programs focus on developing leaders who can solve the world\'s most challenging problems in areas such as education, the environment, poverty, healthcare, and social justice.</p>'
       ),   
 /*         
