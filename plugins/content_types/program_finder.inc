@@ -62,7 +62,7 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
       ),
       array(
         'title' => 'Global',
-        '#markup' => '<a href="/programs/custom">Stanford Ignite</a>
+        '#markup' => '<a href="/programs/stanford-ignite">Stanford Ignite</a>
 <p>This unique certificate program helps innovators around the world without graduate-level business training to formulate, develop, and commercialize their business ideas.</p>
 <p>Stanford Ignite is offered as a nine-week, part-time program in Bangalore, Beijing, Paris, and on the Stanford campus. A four-week, full-time program is also available at Stanford.</p>
 <a href="/programs/custom">Custom Programs</a>
