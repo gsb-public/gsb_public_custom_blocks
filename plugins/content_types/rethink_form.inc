@@ -11,9 +11,9 @@ $plugin = array(
  * Implements hook_PLUGIN_content_type_render().
  */
 function gsb_public_custom_blocks_rethink_form_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
-    return (object) array(
-    'content' => array(
-    '#markup' => '<form name="f1" action="http://stanford.us5.list-manage.com/subscribe/post" method="POST" onSubmit="javascript: return required();">
+
+$form = <<<HTML
+<form name="f1" action="http://stanford.us5.list-manage.com/subscribe/post" method="POST" onSubmit="javascript: return required();">
 
 <input type="hidden" name="u" value="ce785d9b9016cd35fb68e83b7">
 <input type="hidden" name="id" value="0b5214e34b">
@@ -65,17 +65,23 @@ function gsb_public_custom_blocks_rethink_form_content_type_render($subtype, $co
 
 <script type="text/javascript">
 function required() {
-	var req_email = document.f1.elements["MERGE0"].value;
+  var req_email = document.f1.elements["MERGE0"].value;
   var req_radio_alumni = document.f1.elements["MERGE3"].value;
-	if (req_email == "" || req_radio_alumni == "") {
-		alert("Please fill in all of the mandatory fields (denoted by *)");
-		return false;
-	} else {
-		document.myform.submit();
-	}
+  if (req_email == "" || req_radio_alumni == "") {
+    alert("Please fill in all of the mandatory fields (denoted by *)");
+    return false;
+  } else {
+    document.myform.submit();
+  }
 }
 </script>
-</form>',
+</form>
+HTML;
+
+  return (object) array(
+    'content' => array(
+      '#markup' => $form,
     ),
   );
+
 }
