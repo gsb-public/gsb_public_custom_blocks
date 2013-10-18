@@ -50,7 +50,7 @@ $form = <<<HTML
         <label class="radio" for="MERGE3-1">
         <input type="radio" data-dojo-type="dijit/form/RadioButton" name="MERGE3" id="MERGE3-1" value="No"  class="av-radio"> No</label>
         <label class="radio" for="MERGE3-2">
-        <input type="radio" data-dojo-type="dijit/form/RadioButton" name="MERGE3" id="MERGE3-2" value="No, but I\'dm currently a student at Stanford GSB"  class="av-radio"> No, but I\'m currently a student at Stanford GSB</label> 
+        <input type="radio" data-dojo-type="dijit/form/RadioButton" name="MERGE3" id="MERGE3-2" value="No, but I'm currently a student at Stanford GSB"  class="av-radio"> No, but I'm currently a student at Stanford GSB</label>
       </div>
     </div>
   </div>
