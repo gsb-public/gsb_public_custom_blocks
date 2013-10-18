@@ -17,6 +17,7 @@ $form = <<<HTML
 
 <input type="hidden" name="u" value="ce785d9b9016cd35fb68e83b7">
 <input type="hidden" name="id" value="0b5214e34b">
+<input type="hidden" name="SIGNUP" id="SIGNUP" value="rethink-landing-page" />
 
 <div id="mergeTable" class="mergeTable">
   
