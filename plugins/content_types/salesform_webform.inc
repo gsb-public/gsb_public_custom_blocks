@@ -15,7 +15,7 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
     'content' => array(
     '#markup' => '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onSubmit="javascript: return required();">
 <input type="hidden" name="oid" value="00D500000007AMA">
-<input type="hidden" name="retURL" value="http://www.gsb.stanford.edu/gipr/confirmation.html">
+<input type="hidden" name="retURL" value="http://www.gsb.stanford.edu/programs/thank-you-inquiry">
 <input type="hidden" name="lead_source" value="GIPR - Inquiry Form" id="lead_source">
 <input type="hidden" id="00N50000001b5fe" name="00N50000001b5fe" title="Commitment Name" value="GIPR Contact" />
 <input type="hidden" id="00N50000001bHCr" name="00N50000001bHCr" title="Commitment Role" value="GIPR - Inquiry" />
