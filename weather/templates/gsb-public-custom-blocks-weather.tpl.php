@@ -1,8 +1,6 @@
 <div class="weather-widget">
-  <h4>Currently in Stanford, CA</h4>
+  <h5 class="title">Currently in Stanford, CA</h5>
   <?php print $image; ?>
-  <strong><?php print $temp; ?></strong>
-  <p class="more">
-     <a href="http://weather.stanford.edu" target="_blank">STANFORD STATION »</a>
-  </p>
+  <div class="temperature"><?php print $temp; ?></div>
+  <a class="station" href="http://weather.stanford.edu" target="_blank">Stanford station</a>
 </div>
