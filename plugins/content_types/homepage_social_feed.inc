@@ -21,7 +21,7 @@ function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subt
         <a href="https://www.facebook.com/StanfordGSB" target="_blank" class="circle social-block-facebook"></a>
       </div>
       <h5><a href="http://twitter.com/@stanfordbiz" target="_blank">Stanford Business</a></h5>
-        <a href="http://twitter.com/@stanfordbiz" target="_blank" >@Stanford Biz</a>
+        <a href="http://twitter.com/@stanfordbiz" target="_blank" >@StanfordBiz</a>
       <div id="fpp-tweets-front"></div>
       </div>
       <script>gsb_tweetfeed.init({
