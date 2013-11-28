@@ -15,7 +15,7 @@ function gsb_public_custom_blocks_e_newsletters_list_content_type_render($subtyp
 $form = <<<HTML
 
 <h2>Newsletter Archive</h2>
-<script language="javascript" src="http://us5.campaign-archive1.com/generate-js/?u=ce785d9b9016cd35fb68e83b7&fid=3777&show=10" type="text/javascript"></script>
+<script language="javascript" src="http://us5.campaign-archive1.com/generate-js/?u=ce785d9b9016cd35fb68e83b7&fid=3777&show=5" type="text/javascript"></script>
 HTML;
 
   return (object) array(
