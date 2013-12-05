@@ -13,23 +13,26 @@ $plugin = array(
 function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
   return (object) array(
     'content' => array(
-      '#markup' => '<div class="twitter-feed designed-box feed-bg bg">
-      <div class="follow-us-circles">
-        <a href="https://twitter.com/stanfordbiz" target="_blank" class="circle social-block-twitter"></a>
-        <a href="http://www.youtube.com/stanfordbusiness" target="_blank" class="circle social-block-youtube"></a>
-        <a href="http://www.linkedin.com/company/stanford-graduate-school-of-business" target="_blank" class="circle social-block-linkedin"></a>
-        <a href="https://www.facebook.com/StanfordGSB" target="_blank" class="circle social-block-facebook"></a>
-      </div>
-      <h5><a href="http://twitter.com/@stanfordbiz" target="_blank">Stanford Business</a></h5>
-        <a href="http://twitter.com/@stanfordbiz" target="_blank" >@StanfordBiz</a>
-      <div id="fpp-tweets-front"></div>
-      </div>
-      <script>gsb_tweetfeed.init({
-      search: \'@stanfordbiz\',
-      numTweets: 2,
-      appendTo: \'#fpp-tweets-front\',
-      format: \'l, M j | a\'
-    });</script>',
+      '#markup' => '
+        <ul class="icon-wrapper">
+          <li><a href="https://twitter.com/stanfordbiz" target="_blank" class="circle social-block-twitter"></a></li>
+          <li><a href="http://www.youtube.com/stanfordbusiness" target="_blank" class="circle social-block-youtube"></a></li>
+          <li><a href="http://www.linkedin.com/company/stanford-graduate-school-of-business" target="_blank" class="circle social-block-linkedin"></a></li>
+          <li><a href="https://www.facebook.com/StanfordGSB" target="_blank" class="circle social-block-facebook"></a></li>
+        </ul>
+        <div class="twitter-feed">
+          <div class="twitter-handle">
+            <h5><a href="http://twitter.com/@stanfordbiz" target="_blank">Stanford Business</a></h5>
+            <a href="http://twitter.com/@stanfordbiz" target="_blank" >@StanfordBiz</a>
+          </div>
+          <div id="fpp-tweets-front"></div>
+        </div>
+        <script>gsb_tweetfeed.init({
+          search: \'@stanfordbiz\',
+          numTweets: 2,
+          appendTo: \'#fpp-tweets-front\',
+          format: \'l, M j | a\'
+        });</script>',
     ),
   );
 }
