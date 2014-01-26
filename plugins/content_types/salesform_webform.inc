@@ -294,15 +294,14 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 </label>
 <select id="00N50000002lyAm" multiple="multiple" name="00N50000002lyAm" title="Program">
 <option value="All Programs">All Programs</option>
-<option value="Stanford Ignite - On Campus part-time">Stanford Ignite - On Campus part-time</option>
-<option value="Stanford Ignite - On Campus full-time">Stanford Ignite - On Campus full-time</option>
+<option value="Executive Program for Nonprofit Leaders">Executive Program for Nonprofit Leaders</option>
+<option value="Executive Program for Social Entrepreneurs">Executive Program for Social Entrepreneurs</option>
 <option value="Stanford Ignite - Bangalore">Stanford Ignite - Bangalore</option>
-<option value="Stanford Ignite - Paris">Stanford Ignite - Paris</option>
 <option value="Stanford Ignite - Beijing">Stanford Ignite - Beijing</option>
-<option value="O/L Innovation & Entrepreneurship CERT">Stanford Online Innovation & Entrepreneurship Certificate</option>
-<option value="Program in Innovation & Entrepreneurship">Program in Innovation & Entrepreneurship</option>
-<option value="Exec Program for Non-Profit Leaders">Executive Program for Non-Profit Leaders</option>
-<option value="Exec Program for Social Entrepreneurs">Executive Program for Social Entrepreneurs</option>
+<option value="Stanford Ignite - Paris">Stanford Ignite - Paris</option>
+<option value="Stanford Ignite - On Campus full-time">Stanford Ignite - On Campus full-time</option>
+<option value="Stanford Ignite - On Campus part-time">Stanford Ignite - On Campus part-time</option>
+<option value="Stanford Online Innovation & Entrepreneurship Certificate">Stanford Online Innovation & Entrepreneurship Certificate</option>
 <option value="Summer Institute for General Management">Summer Institute for General Management</option>
 </select><br/><br/>
 <label for="source">Source</label>
