@@ -301,6 +301,7 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 <option value="Stanford Ignite - Paris">Stanford Ignite - Paris</option>
 <option value="Stanford Ignite - On Campus full-time">Stanford Ignite - On Campus full-time</option>
 <option value="Stanford Ignite - On Campus part-time">Stanford Ignite - On Campus part-time</option>
+<option value="Stanford Ignite - Santiago">Stanford Ignite - Santiago</option>
 <option value="Stanford Online Innovation & Entrepreneurship Certificate">Stanford Online Innovation & Entrepreneurship Certificate</option>
 <option value="Summer Institute for General Management">Summer Institute for General Management</option>
 </select><br/><br/>
