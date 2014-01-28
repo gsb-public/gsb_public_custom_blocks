@@ -15,19 +15,19 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
     'content' => array(
     '#markup' => '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
 <input name="orgid" value="00D500000007AMA" type="hidden">
-<input name="retURL" value="http://www.gsb.stanford.edu/library/thank-you-library" type="hidden">
+<input name="retURL" value="http://www.gsb.stanford.edu/library/contact/thank-you" type="hidden">
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: These fields are optional debugging elements.  Please uncomment   -->
 <!--  these lines if you wish to test in debug mode.                          -->
 <!--  <input type="hidden" name="debug" value=1>                              -->
 <!--  <input type="hidden" name="debugEmail" value="vamsit@uniseva.com">      -->
 <!--  ----------------------------------------------------------------------  -->
-<div><label for="fullname">Your Name<span>*</span>:</label>
-<input id="00N50000002L6KR" maxlength="50" name="00N50000002L6KR" size="20" type="text" keyev="true"><br/><br/>
-<label for="email">Email<span>*</span>:</label>
-<input id="email" maxlength="80" name="email" size="20" type="text"><br/><br/>
-<label for="affiliation">Affiliation:<span>*</span>:</label>
-<select id="Select1" name="00N50000002L6KS" title="Requestor affiliation">
+<div><label for="fullname">Your Name<span>*</span></label>
+<input id="00N50000002L6KR" maxlength="50" name="00N50000002L6KR" size="34" type="text" keyev="true"><br/><br/>
+<label for="email">Email<span>*</span></label>
+<input id="email" maxlength="80" name="email" size="34" type="text"><br/><br/>
+<label for="affiliation">Affiliation<span>*</span></label>
+<select id="Select1" name="00N50000002L6KS" title="Requestor affiliation" style="width:286px">
 <option value="">--None--</option>
 <option value="MBA1">MBA1</option>
 <option value="MBA2">MBA2</option>
@@ -42,17 +42,17 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 <option value="Stanford Staff">Stanford Staff</option>
 <option value="Other">Other</option>
 </select><br/><br/>
-<label for="requesttype">Type of Request<span>*</span>:</label>
-<select id="00N50000002L6KP" name="00N50000002L6KP" title="Request Type">
+<label for="requesttype">Type of Request<span>*</span></label>
+<select id="00N50000002L6KP" name="00N50000002L6KP" title="Request Type" style="width:286px">
 <option selected="selected" value="">--None--</option>
 <option value="Ask Us">Research Assistance</option>        
 <option value="Suggestions">Feedback & Suggestions</option>
 <option value="Resource Request">Suggest a Purchase</option>
 <option value="Ask Us">Other</option>
 </select><br/><br/>
-<label for="requesttype">Request<span>*</span>:</label>
+<label for="requesttype">Request<span>*</span></label>
 <textarea id="00N50000002L6KQ" name="00N50000002L6KQ" type="text" wrap="soft" rows="1"></textarea><br/><br/>
-<input id="randomfield" disabled="disabled" maxlength="8" name="randomfield" value="p4c6n" type="text">
+<input id="randomfield" disabled="disabled" maxlength="8" name="randomfield" value="p4c6n" type="text"></br>
 <br>
 <label for="textCaptcha">Type the above code below<br></label>
 <input id="txtCaptcha" maxlength="5" name="txtCaptcha" type="text" class="captcha"><br/><br/>
