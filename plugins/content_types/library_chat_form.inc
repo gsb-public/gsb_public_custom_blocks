@@ -17,7 +17,7 @@ function gsb_public_custom_blocks_library_chat_form_content_type_render($subtype
     '#markup' => '<div class="aConBox">
      <div jid="gsb-library@chat.libraryh3lp.com" class="libraryh3lp"><!--Type here to chat, M-F 9am-5pm FT. Press ENTER to send.--><iframe frameborder="0" style="width: 300px; height: 350px; border: 1px ;" src="https://libraryh3lp.com/chat/gsb-library@chat.libraryh3lp.com?skin=17350&amp;identity=Librarian"></iframe>
     </div>
-    <div class="helptext">Or text us at +1 (650) 204 8111</div>
+    <div class="helptext"><i>Or text us at</i><br />+1 (650) 204 8111</div>
     </div>
     <div class="libraryh3lp" style="display: none;">
     PUT YOUR OFFLINE OPTION HERE by inserting whatever HTML you want.
