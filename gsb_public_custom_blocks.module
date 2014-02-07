@@ -306,7 +306,7 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'block:gsb_public_custom_blocks-gpcb_virtual_tour' => 'take-closer-look.jpg',
     'block:gsb_public_custom_blocks-gpcb_visit_us' => 'visit-us.jpg',
     'block:gsb_public_custom_blocks-gpcb_weather_widget' => 'weather-widget.jpg',
-    'block:gsb_public_custom_blocks-gpcb_conducting_research' => 'library-conducting-research.jpg',
+    'block:gsb_public_custom_blocks-gpcb_conducting_research' => 'library-conducting-research.png',
   );
   foreach($icons_settings as $key => $value) {
     if (isset($icons[$key]['icon'])) {
