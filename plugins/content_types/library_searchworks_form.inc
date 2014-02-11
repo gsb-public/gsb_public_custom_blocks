@@ -38,7 +38,7 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
     document.getElementById(new_tab).className = "active";
 
 }
-   </script>',
+   </script></div>',
     ),
   );
 }
