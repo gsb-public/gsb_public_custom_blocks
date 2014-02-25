@@ -1,8 +1,5 @@
-<a href="/contact/rethink" class="designed-box cta-rethink">
-  <p class="cta-title">
-    <b>RE:</b>THINK
-  </p>
-  <p class="cta-description">
-    Get the latest business ideas and insights.<b> Sign up for our eNews</b><i></i>
-  </p>
-</a>
+<h1 class="rethink-logo">Re:Think</h1>
+<div class="rethink-wrapper">
+  <div class="rethink-description">Your source for business ideas and insights. Delivered to your inbox.</div>
+  <a href="/contact/rethink" class="rethink-link">Subscribe</a>
+</div>
