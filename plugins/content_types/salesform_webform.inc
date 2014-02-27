@@ -293,17 +293,7 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 (Ctr + Click for multiple selection) (Command key on a Mac)
 </label>
 <select id="00N50000002lyAm" multiple="multiple" name="00N50000002lyAm" title="Program">
-<option value="All Programs">All Programs</option>
-<option value="Executive Program for Nonprofit Leaders">Executive Program for Nonprofit Leaders</option>
-<option value="Executive Program for Social Entrepreneurs">Executive Program for Social Entrepreneurs</option>
-<option value="Stanford Ignite - Bangalore">Stanford Ignite - Bangalore</option>
-<option value="Stanford Ignite - Beijing">Stanford Ignite - Beijing</option>
-<option value="Stanford Ignite - Paris">Stanford Ignite - Paris</option>
-<option value="Stanford Ignite - On Campus full-time">Stanford Ignite - On Campus full-time</option>
-<option value="Stanford Ignite - On Campus part-time">Stanford Ignite - On Campus part-time</option>
-<option value="Stanford Ignite - Santiago">Stanford Ignite - Santiago</option>
-<option value="Stanford Online Innovation & Entrepreneurship Certificate">Stanford Online Innovation & Entrepreneurship Certificate</option>
-<option value="Summer Institute for General Management">Summer Institute for General Management</option>
+'._gsb_public_custom_blocs_get_gip_programs_taxonomy().'
 </select><br/><br/>
 <label for="source">Source</label>
 <select id="00N50000002lyAn" name="00N50000002lyAn">
@@ -381,4 +371,19 @@ return false;}}}}}
 </form>',
     ),
   );
+}
+
+/**
+ * Returns the gip programs taxonomy for gip form
+ */
+function _gsb_public_custom_blocs_get_gip_programs_taxonomy() {
+  $options = '';
+  $vocabulary = taxonomy_vocabulary_machine_name_load('gip_programs');
+  if ($terms = taxonomy_get_tree($vocabulary->vid)) {
+    foreach ($terms as $term) {
+      $options .= '<option value='.check_plain($term->name).'>'.check_plain($term->name).'</option>'; 
+    }
+  }
+
+  return $options;
 }
