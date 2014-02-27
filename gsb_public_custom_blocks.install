@@ -254,3 +254,38 @@ function gsb_public_custom_blocks_update_7005() {
 function gsb_public_custom_blocks_update_7006() {
   module_enable(array('gsb_custom_section_title'));
 }
+
+/**
+ * Create new taxonomy for GIP Programs.
+ */
+function gsb_public_custom_blocks_update_7007() {
+  $gip_programs_vocab = array(
+    'name' => 'GIP Programs',
+    'machine_name' => 'gip_programs',
+    'description' => t('GIP Programs taxonomy for salesforce form.'),
+  );
+  $vocabulary = (object) $gip_programs_vocab;
+  taxonomy_vocabulary_save($vocabulary);
+
+  $vocab = taxonomy_vocabulary_machine_name_load('gip_programs');
+
+  $terms = array('Executive Program for Nonprofit Leaders',
+    'Executive Program for Social Entrepreneurs',
+    'Stanford Ignite - Bangalore',
+    'Stanford Ignite - Beijing',
+    'Stanford Ignite - Paris',
+    'Stanford Ignite - On Campus full-time',
+    'Stanford Ignite - On Campus part-time',
+    'Stanford Ignite - Santiago',
+    'Stanford Innovation & Entrepreneurship Certificate',
+    'Summer Institute for General Management',
+  );
+
+  foreach ($terms as $term) {
+    $newterm = new stdClass();
+    $newterm->name = $term; // The name of the term
+    $newterm->vid = $vocab->vid; // The ID of the parent vocabulary
+    $newterm->parent = 0; // This tells taxonomy that this is a top-level term
+    taxonomy_term_save($newterm);
+  }
+}
