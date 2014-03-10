@@ -12,7 +12,7 @@ $plugin = array(
  */
 function gsb_public_custom_blocks_library_searchworks_form_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
     return (object) array(
-    'title' => 'Search Stanford\'s Libraries',
+    'title' => "Search Stanford’s Libraries",
     'content' => array(
     '#markup' =>
       '<div id="tabbed_box_1" class="tabbed_box">
