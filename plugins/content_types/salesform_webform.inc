@@ -381,7 +381,7 @@ function _gsb_public_custom_blocs_get_gip_programs_taxonomy() {
   $vocabulary = taxonomy_vocabulary_machine_name_load('gip_programs');
   if ($terms = taxonomy_get_tree($vocabulary->vid)) {
     foreach ($terms as $term) {
-      $options .= '<option value='.check_plain($term->name).'>'.check_plain($term->name).'</option>'; 
+      $options .= '<option value="'.check_plain($term->name).'">'.check_plain($term->name).'</option>'; 
     }
   }
 
