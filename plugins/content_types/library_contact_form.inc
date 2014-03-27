@@ -32,7 +32,7 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 <option value="MBA1">MBA1</option>
 <option value="MBA2">MBA2</option>
 <option value="GSB PhD Student">GSB PhD Student</option>
-<option value="GSB Sloan Student">GSB Sloan Student</option>
+<option value="GSB MSx Student">GSB MSx Student</option>
 <option value="GSB Student - Other">GSB Student - Other</option>
 <option value="GSB Faculty">GSB Faculty</option>
 <option value="GSB Staff">GSB Staff</option>
