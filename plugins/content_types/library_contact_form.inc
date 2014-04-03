@@ -29,8 +29,8 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 <label for="affiliation">Affiliation<span>*</span></label>
 <select id="Select1" name="00N50000002L6KS" title="Requestor affiliation" style="width:286px">
 <option value="">--None--</option>
-<option value="MBA1">MBA1</option>
-<option value="MBA2">MBA2</option>
+<option value="MBA 1">MBA 1</option>
+<option value="MBA 2">MBA 2</option>
 <option value="GSB PhD Student">GSB PhD Student</option>
 <option value="GSB MSx Student">GSB MSx Student</option>
 <option value="GSB Student - Other">GSB Student - Other</option>
@@ -40,7 +40,10 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 <option value="Stanford Faculty">Stanford Faculty</option>
 <option value="Stanford Student">Stanford Student</option>
 <option value="Stanford Staff">Stanford Staff</option>
-<option value="Other">Other</option>
+<option value="Stanford Alumni">Stanford Alumni</option>
+<option value="Visiting Scholar">Visiting Scholar</option>
+<option value="Visitor">Visitor</option>
+<option value="Unknown">Unknown</option>
 </select><br/><br/>
 <label for="requesttype">Type of Request<span>*</span></label>
 <select id="00N50000002L6KP" name="00N50000002L6KP" title="Request Type" style="width:286px">
