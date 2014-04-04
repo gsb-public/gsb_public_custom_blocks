@@ -13,6 +13,11 @@ $plugin = array(
 function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
   return (object) array(
     'content' => array(
+      '#attached' => array(
+        'library' => array(
+          array('gsb_feature_social_feed', 'gsb_tweetfeed'),
+        ),
+      ),
       '#markup' => '
         <ul class="icon-wrapper">
           <li><a href="https://twitter.com/stanfordbiz" target="_blank" class="circle social-block-twitter"></a></li>
