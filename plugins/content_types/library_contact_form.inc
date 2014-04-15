@@ -43,7 +43,6 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 <option value="Stanford Alumni">Stanford Alumni</option>
 <option value="Visiting Scholar">Visiting Scholar</option>
 <option value="Visitor">Visitor</option>
-<option value="Unknown">Unknown</option>
 </select><br/><br/>
 <label for="requesttype">Type of Request<span>*</span></label>
 <select id="00N50000002L6KP" name="00N50000002L6KP" title="Request Type" style="width:286px">
