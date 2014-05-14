@@ -32,7 +32,7 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
             </form>
           </div>
           <div id="content_2" class="searchworks-content">
-            <form target="_blank" method="get" name="SS_EJPSearchForm" action="http://tc8vw9nw8j.search.serialssolutions.com.gsbproxy.stanford.edu/?V=1.0&amp;N=100&amp;L=TC8VW9NW8J&amp;S=T_W_A&amp;C=">
+            <form target="_blank" method="get" name="SS_EJPSearchForm" action="http://tc8vw9nw8j.search.serialssolutions.com/?V=1.0&N=100&L=TC8VW9NW8J&S=T_W_A&C=">
               <input name="V" value="1.0" type="hidden" />
               <input name="N" value="100" type="hidden" />
               <input name="L" value="TC8VW9NW8J" type="hidden" />
