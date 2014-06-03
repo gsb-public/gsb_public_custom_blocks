@@ -27,8 +27,7 @@ function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subt
         </ul>
         <div class="twitter-feed">
           <div class="twitter-handle">
-            <h5><a href="http://twitter.com/@stanfordbiz" target="_blank">Stanford Business</a></h5>
-            <a href="http://twitter.com/@stanfordbiz" target="_blank" >@StanfordBiz</a>
+            <a href="http://twitter.com/@stanfordbiz" target="_blank"><strong>Stanford Business</strong><br />@StanfordBiz</a>
           </div>
           <div id="fpp-tweets-front"></div>
         </div>
