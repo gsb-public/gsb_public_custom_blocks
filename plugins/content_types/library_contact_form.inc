@@ -29,8 +29,8 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 <label for="affiliation">Affiliation<span>*</span></label>
 <select id="Select1" name="00N50000002L6KS" title="Requestor affiliation" style="width:286px">
 <option value="">--None--</option>
-<option value="MBA 1">MBA 1</option>
-<option value="MBA 2">MBA 2</option>
+<option value="MBA1">MBA 1</option>
+<option value="MBA2">MBA 2</option>
 <option value="GSB PhD Student">GSB PhD Student</option>
 <option value="GSB MSx Student">GSB MSx Student</option>
 <option value="GSB Student - Other">GSB Student - Other</option>
