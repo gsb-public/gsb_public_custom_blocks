@@ -425,8 +425,7 @@ function gsb_public_custom_blocks_insigts_signup_form($form, &$form_state) {
  * Submit handler to add user to insights mailing list on subscription form submission.
  */
 function gsb_public_custom_blocks_insights_signup_submit_callback($form, &$form_state) {
-  // Filter out blank fields so we don't erase values on the Mailchimp side.
-  $list_id = 'e2ff631e2a';
+  $list_id = variable_get('gsb_insights_mailchimp_list_id', '');
   $email = $form_state['values']['email'];
 
   if (mailchimp_is_subscribed($list_id, $email)) {
@@ -459,5 +458,8 @@ function gsb_public_custom_blocks_node_view($node, $view_mode, $langcode) {
     return;
   }
 
-  $node->content['insights_signup_form'] = drupal_get_form('gsb_public_custom_blocks_insigts_signup_form');
+  // Insights Signup form uses mailchimp module to connect to Mailchimp API.
+  if (module_exists('mailchimp')) {
+    $node->content['insights_signup_form'] = drupal_get_form('gsb_public_custom_blocks_insigts_signup_form');
+  }
 }
