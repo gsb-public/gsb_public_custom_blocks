@@ -382,3 +382,82 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
 
   return $title;
 }
+
+
+/**
+ * Returns a subscription form for Insights mailchimp list signup form.
+ */
+function gsb_public_custom_blocks_insigts_signup_form($form, &$form_state) {
+  $form['#attributes'] = array('class' => array('insights-signup-form-wrapper'));
+
+  $form['label'] = array(
+    '#markup' => '<span>Sign up for more insights & ideas.</span>',
+    '#prefix' => '<div id="insights-signup-form">',
+  );
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Email Address"),
+    '#title_display' => 'none',
+    '#attributes' => array(
+      'placeholder' => t('email address'),
+    ),
+    '#required' => TRUE,
+
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#weight' => 10,
+    '#value' => t('Subscribe'),
+    '#ajax' => array(
+      'callback' => 'gsb_public_custom_blocks_insights_signup_submit_callback',
+      'wrapper' => 'insights-signup-form',
+      'method' => 'replace',
+      'effect' => 'fade',
+    ),
+    '#suffix' => '</div>',
+  );
+
+  return $form;
+}
+
+/**
+ * Submit handler to add user to insights mailing list on subscription form submission.
+ */
+function gsb_public_custom_blocks_insights_signup_submit_callback($form, &$form_state) {
+  // Filter out blank fields so we don't erase values on the Mailchimp side.
+  $list_id = 'e2ff631e2a';
+  $email = $form_state['values']['email'];
+
+  if (mailchimp_is_subscribed($list_id, $email)) {
+    $message = t('Thank you! You have previously signed up. If you are not receiving Re:Think, !link.', array('!link' => l('update your settings', 'http://google.com')));
+  }
+  else {
+    $result = mailchimp_subscribe($list_id, $email, $mergevars = NULL, $double_id = TRUE, $send_welcome = TRUE);
+    if (empty($result)) {
+      $message = t('There was a problem with your newsletter signup.');
+    } else {
+      $message = t('Thank you! Please check your inbox to confirm your email address.');
+    }
+  }
+
+  $element = array(
+    '#markup' => $message,
+  );
+
+  return $element;
+}
+
+/**
+ * Implements hook_node_view().
+ *  - Add insights signup form extra field.
+ */
+function gsb_public_custom_blocks_node_view($node, $view_mode, $langcode) {
+  // If this field is not configured for this view mode, skip it.
+  $fields = field_extra_fields_get_display('node', $node->type, $view_mode);
+  if (empty($fields['gsb_feature_idea_story_ct_explore_more']['visible'])) {
+    return;
+  }
+
+  $node->content['insights_signup_form'] = drupal_get_form('gsb_public_custom_blocks_insigts_signup_form');
+}
