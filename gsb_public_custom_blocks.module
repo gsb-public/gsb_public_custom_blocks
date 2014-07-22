@@ -387,11 +387,11 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
 /**
  * Returns a subscription form for Insights mailchimp list signup form.
  */
-function gsb_public_custom_blocks_insigts_signup_form($form, &$form_state) {
+function gsb_public_custom_blocks_insights_signup_form($form, &$form_state) {
   $form['#attributes'] = array('class' => array('insights-signup-form-wrapper'));
 
   $form['label'] = array(
-    '#markup' => '<span>Sign up for more insights & ideas.</span>',
+    '#markup' => '<div class="signup-text">Sign up for more insights & ideas.</div>',
     '#prefix' => '<div id="insights-signup-form">',
   );
   $form['email'] = array(
@@ -408,7 +408,7 @@ function gsb_public_custom_blocks_insigts_signup_form($form, &$form_state) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#weight' => 10,
-    '#value' => t('Subscribe'),
+    '#value' => t('Go'),
     '#ajax' => array(
       'callback' => 'gsb_public_custom_blocks_insights_signup_submit_callback',
       'wrapper' => 'insights-signup-form',
@@ -429,14 +429,14 @@ function gsb_public_custom_blocks_insights_signup_submit_callback($form, &$form_
   $email = $form_state['values']['email'];
 
   if (mailchimp_is_subscribed($list_id, $email)) {
-    $message = t('Thank you! You have previously signed up. If you are not receiving Re:Think, !link.', array('!link' => l('update your settings', 'http://google.com')));
+    $message = '<div class="signup-text">' . t('Thank you! You have previously signed up. If you are not receiving Re:Think, !link.' .'</div>', array('!link' => l('update your settings', 'http://google.com')));
   }
   else {
     $result = mailchimp_subscribe($list_id, $email, $mergevars = NULL, $double_id = TRUE, $send_welcome = TRUE);
     if (empty($result)) {
-      $message = t('There was a problem with your newsletter signup.');
+      $message = '<div class="signup-text">' . t('There was a problem with your newsletter signup.') . '</div>';
     } else {
-      $message = t('Thank you! Please check your inbox to confirm your email address.');
+      $message = '<div class="signup-text">' . t('Thank you! Please check your inbox to confirm your email address.') . '</div>';
     }
   }
 
@@ -460,6 +460,6 @@ function gsb_public_custom_blocks_node_view($node, $view_mode, $langcode) {
 
   // Insights Signup form uses mailchimp module to connect to Mailchimp API.
   if (module_exists('mailchimp')) {
-    $node->content['insights_signup_form'] = drupal_get_form('gsb_public_custom_blocks_insigts_signup_form');
+    $node->content['insights_signup_form'] = drupal_get_form('gsb_public_custom_blocks_insights_signup_form');
   }
 }
