@@ -11,14 +11,13 @@ $plugin = array(
  * Implements hook_PLUGIN_content_type_render().
  */
 function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
-    return (object) array(
-    'content' => array(
-    '#markup' => '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onSubmit="javascript: return required();">
-<input type="hidden" name="oid" value="00D500000007AMA">
+
+	$form_markup = '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onSubmit="javascript: return required();">
+<input type="hidden" name="oid" value="@@orgid">
 <input type="hidden" name="retURL" value="http://www.gsb.stanford.edu/programs/thank-you-inquiry">
 <input type="hidden" name="lead_source" value="GIPR - Inquiry Form" id="lead_source">
-<input type="hidden" id="00N50000001b5fe" name="00N50000001b5fe" title="Commitment Name" value="GIPR Contact" />
-<input type="hidden" id="00N50000001bHCr" name="00N50000001bHCr" title="Commitment Role" value="GIPR - Inquiry" />
+<input type="hidden" id="@@commitmentname" name="@@commitmentname" title="Commitment Name" value="GIPR Contact" />
+<input type="hidden" id="@@commitmentrole" name="@@commitmentrole" title="Commitment Role" value="GIPR - Inquiry" />
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: These fields are optional debugging elements.  Please uncomment   -->
 <!--  these lines if you wish to test in debug mode.                          -->
@@ -277,7 +276,7 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 <label for="company">Organization<span>*</span></label>
 <input id="company" maxlength="40" name="company" size="34" type="text"><br/><br/>
 <label for="affiliation">Affiliation</label>
-<select id="00N50000002lyAl" name="00N50000002lyAl" title="GIP Affiliation" style="width:286px">
+<select id="@@gipaffilation" name="@@gipaffilation" title="GIP Affiliation" style="width:286px">
 <option value="Other">Other</option>
 <option value="Stanford GSB Student">Stanford GSB Student</option>
 <option value="Stanford GSB Alumni">Stanford GSB Alumni</option>
@@ -292,15 +291,15 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 <label for="program">Please select the program(s) you would like to learn more about
 (Ctr + Click for multiple selection) (Command key on a Mac)
 </label>
-<select id="00N50000002lyAm" multiple="multiple" name="00N50000002lyAm" title="Program">
+<select id="@@program" multiple="multiple" name="@@program" title="Program">
 '._gsb_public_custom_blocs_get_gip_programs_taxonomy().'
 </select><br/><br/>
 <label for="source">Source</label>
-<select id="00N50000002lyAn" name="00N50000002lyAn">
+<select id="@@select" name="@@select">
 <option value="Web - Inquiry">Web - Inquiry</option>
 </select><br/><br/>
 <label for="comments">Comments (Optional; Maximum 500 characters):</label>
-<textarea id="00N50000001bgH4" name="00N50000001bgH4" rows="15" cols="62" type="text" wrap="soft"></textarea><br>
+<textarea id="@@commenttext" name="@@commenttext" rows="15" cols="62" type="text" wrap="soft"></textarea><br>
 <span>* required</span>
 <div>
 <input id="randomfield" disabled="disabled" maxlength="8" name="randomfield" value="ot0dn" type="text">
@@ -326,10 +325,10 @@ document.f1.elements["last_name"].value = "";
 document.f1.elements["phone"].value = "";
 document.f1.elements["email"].value = "";
 document.f1.elements["emma_member_country"].value = "";
-document.f1.elements["00N50000001bgH4"].value = "";
+document.f1.elements["@@commenttext"].value = "";
 document.f1.elements["title"].value = "";
 document.f1.elements["company"].value = "";
-document.f1.elements["00N50000002lyAl"].value = "Other";
+document.f1.elements["@@gipaffilation"].value = "Other";
 document.f1.elements["company"].value = "";
 document.f1.elements["txtCaptcha"].value = "";
 return false;}
@@ -368,9 +367,24 @@ else {
 alert("Invalid Code");
 return false;}}}}}
 </script>
-</form>',
+</form>';
+
+	$salesform_webform_vars = variable_get('salesform_webform_vars','');
+
+	$form_markup = str_replace("@@orgid", $salesform_webform_vars['@@orgid'], $form_markup);
+	$form_markup = str_replace("@@commitmentname", $salesform_webform_vars['@@commitmentname'], $form_markup);
+	$form_markup = str_replace("@@commitmentrole", $salesform_webform_vars['@@commitmentrole'], $form_markup);
+	$form_markup = str_replace("@@program", $salesform_webform_vars['@@program'], $form_markup);
+	$form_markup = str_replace("@@gipaffilation", $salesform_webform_vars['@@gipaffilation'], $form_markup);
+	$form_markup = str_replace("@@select", $salesform_webform_vars['@@select'], $form_markup);
+	$form_markup = str_replace("@@commenttext", $salesform_webform_vars['@@commenttext'], $form_markup);
+
+  return (object) array(
+    'content' => array(
+			'#markup' => $form_markup,
     ),
   );
+
 }
 
 /**
