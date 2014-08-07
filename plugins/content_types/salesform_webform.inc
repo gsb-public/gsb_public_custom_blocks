@@ -371,13 +371,13 @@ return false;}}}}}
 
 	$salesform_webform_vars = variable_get('salesform_webform_vars','');
 
-	$form_markup = str_replace("@@orgid", $salesform_webform_vars['@@orgid'], $form_markup);
-	$form_markup = str_replace("@@commitmentname", $salesform_webform_vars['@@commitmentname'], $form_markup);
-	$form_markup = str_replace("@@commitmentrole", $salesform_webform_vars['@@commitmentrole'], $form_markup);
-	$form_markup = str_replace("@@program", $salesform_webform_vars['@@program'], $form_markup);
-	$form_markup = str_replace("@@gipaffilation", $salesform_webform_vars['@@gipaffilation'], $form_markup);
-	$form_markup = str_replace("@@select", $salesform_webform_vars['@@select'], $form_markup);
-	$form_markup = str_replace("@@commenttext", $salesform_webform_vars['@@commenttext'], $form_markup);
+  $form_markup = str_replace("@@orgid", $salesform_webform_vars['@@orgid'], $form_markup);
+  $form_markup = str_replace("@@commitmentname", $salesform_webform_vars['@@commitmentname'], $form_markup);
+  $form_markup = str_replace("@@commitmentrole", $salesform_webform_vars['@@commitmentrole'], $form_markup);
+  $form_markup = str_replace("@@program", $salesform_webform_vars['@@program'], $form_markup);
+  $form_markup = str_replace("@@gipaffilation", $salesform_webform_vars['@@gipaffilation'], $form_markup);
+  $form_markup = str_replace("@@select", $salesform_webform_vars['@@select'], $form_markup);
+  $form_markup = str_replace("@@commenttext", $salesform_webform_vars['@@commenttext'], $form_markup);
 
   return (object) array(
     'content' => array(
