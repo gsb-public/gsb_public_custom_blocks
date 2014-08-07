@@ -12,7 +12,7 @@ $plugin = array(
  */
 function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
 
-	$form_markup = '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onSubmit="javascript: return required();">
+  $form_markup = '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onSubmit="javascript: return required();">
 <input type="hidden" name="oid" value="@@orgid">
 <input type="hidden" name="retURL" value="http://www.gsb.stanford.edu/programs/thank-you-inquiry">
 <input type="hidden" name="lead_source" value="GIPR - Inquiry Form" id="lead_source">
