@@ -369,7 +369,7 @@ return false;}}}}}
 </script>
 </form>';
 
-	$salesform_webform_vars = variable_get('salesform_webform_vars','');
+  $salesform_webform_vars = variable_get('salesform_webform_vars','');
 
   $form_markup = str_replace("@@orgid", $salesform_webform_vars['@@orgid'], $form_markup);
   $form_markup = str_replace("@@commitmentname", $salesform_webform_vars['@@commitmentname'], $form_markup);
@@ -381,7 +381,7 @@ return false;}}}}}
 
   return (object) array(
     'content' => array(
-			'#markup' => $form_markup,
+      '#markup' => $form_markup,
     ),
   );
 
