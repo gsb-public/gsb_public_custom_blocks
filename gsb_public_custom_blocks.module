@@ -391,5 +391,8 @@ function gsb_public_custom_blocks_block_view_alter(&$data, $block) {
     if ($data['content']['title']['#children'] == 'Insights by Stanford Business') {
       $data['content']['title']['#children'] = '<strong>Insights</strong> by Stanford Business'; 
     }
+    if ($data['content']['title']['#children'] == 'Insight Topics Program') {
+      $data['content']['title']['#children'] = '<strong>Insight</strong> Topics Program'; 
+    }    
   }
 }  
