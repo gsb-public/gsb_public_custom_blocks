@@ -16,6 +16,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'insights/templates/gsb-public-custom-blocks-insights',
       'file' => 'insights/insights.theme.inc',
     ),
+    'gsb_public_custom_blocks_insights_search' => array(
+      'template' => 'insights_search/templates/gsb-public-custom-blocks-insights-search',
+      'file' => 'insights_search/insights_search.theme.inc',
+    ),
     'gsb_public_custom_blocks_map_link' => array(
       'variables' => array('text' => ''),
       'template' => 'map_link/templates/gsb-public-custom-blocks-map-link',
@@ -64,6 +68,10 @@ function gsb_public_custom_blocks_block_info() {
     ),
     'gpcb_insights' => array(
       'info' => t('Insights by Stanford'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
+    'gpcb_insights_search' => array(
+      'info' => t('Insights Search'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_maps_parking_info_more' => array(
@@ -144,6 +152,10 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_insights':
       $block['content'] = theme('gsb_public_custom_blocks_insights');
+      break;
+    case 'gpcb_insights_search':
+      $block['content'] = theme('gsb_public_custom_blocks_insights_search');
+      drupal_add_js(drupal_get_path('module', 'gsb_public_custom_blocks') . '/insights_search/js/insights_search.js');
       break;
     case 'gpcb_maps_parking_info_more':
       $block['content'] = theme('gsb_public_custom_blocks_map_link', array('text' => 'Get Directions, Parking Info, and More'));
@@ -316,6 +328,7 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'block:gsb_public_custom_blocks-gpcb_plan_your_visit' => 'plan-your-visit.jpg',
     'block:gsb_public_custom_blocks-gpcb_virtual_tour' => 'take-closer-look.jpg',
     'block:gsb_public_custom_blocks-gpcb_insights' => 'insights.jpg',
+    'block:gsb_public_custom_blocks-gpcb_insights_search' => 'insights-search.jpg',
     'block:gsb_public_custom_blocks-gpcb_visit_us' => 'visit-us.jpg',
     'block:gsb_public_custom_blocks-gpcb_weather_widget' => 'weather-widget.jpg',
     'block:gsb_public_custom_blocks-gpcb_conducting_research' => 'library-conducting-research.png',
