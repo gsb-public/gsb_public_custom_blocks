@@ -1,3 +1,1 @@
-<a href="/insights">
-  <h2><strong>Insights</strong> by Stanford</h2>
-</a>
+<h2><a href="/insights"><strong>Insights</strong><span> by Stanford Business</a></h2>
