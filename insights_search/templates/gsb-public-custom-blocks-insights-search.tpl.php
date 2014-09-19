@@ -3,6 +3,6 @@
   <form class="grey-search-box" action="/insights/search" method="get" id="insights-search-block-form" accept-charset="UTF-8">
     <label class="element-invisible" for="edit-insights-search-keys">Enter the terms you wish to search for. </label>
     <input placeholder="search Insights" type="text" id="edit-insights-search-keys" name="term" value="" size="15" maxlength="128" class="form-text">
-    <input type="submit" id="edit-submit-insights-search" name="op" value="Search" class="form-submit">
+    <input type="submit" id="edit-submit-insights-toolbar-search" name="op" value="Search" class="form-submit">
   </form>
 </div>
