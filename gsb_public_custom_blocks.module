@@ -166,7 +166,6 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_insights_search':
       $block['content'] = theme('gsb_public_custom_blocks_insights_search');
-      drupal_add_js(drupal_get_path('module', 'gsb_public_custom_blocks') . '/insights_search/js/insights_search.js');
       break;
     case 'gpcb_maps_parking_info_more':
       $block['content'] = theme('gsb_public_custom_blocks_map_link', array('text' => 'Get Directions, Parking Info, and More'));
