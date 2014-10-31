@@ -3,3 +3,10 @@ description = Custom blocks used just for this site.
 core = 7.x
 package = GSB
 dependencies[] = gsb_custom_section_title
+
+
+; Information added by drush on 2014-10-23
+version = "4.03"
+project = "gsb_public_custom_blocks"
+datestamp = "1414053944"
+

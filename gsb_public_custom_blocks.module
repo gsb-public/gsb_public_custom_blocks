@@ -45,10 +45,6 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'about_campus/templates/gsb-public-custom-blocks-about-campus',
       'file' => 'about_campus/about_campus.theme.inc',
     ),
-    'gsb_public_custom_blocks_around_globe' => array(
-      'template' => 'around_globe/templates/gsb-public-custom-blocks-around-globe',
-      'file' => 'around_globe/around_globe.theme.inc',
-    ),
     'gsb_public_custom_blocks_weather_widget' => array(
       'template' => 'weather/templates/gsb-public-custom-blocks-weather',
       'file' => 'weather/weather.theme.inc',
@@ -122,10 +118,6 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Custom CTA: Learn About Our Campus'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
-    'gpcb_around_globe' => array(
-      'info' => t('Custom CTA: GSB Around the Globe'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
     'gpcb_last_updated' => array(
       'info' => t('Last updated date'),
       'cache' => DRUPAL_CACHE_GLOBAL,
@@ -187,9 +179,6 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_about_campus':
       $block['content'] = theme('gsb_public_custom_blocks_about_campus');
-      break;
-    case 'gpcb_around_globe':
-      $block['content'] = theme('gsb_public_custom_blocks_around_globe');
       break;
     case 'gpcb_weather_widget':
       $block['content'] = theme('gsb_public_custom_blocks_weather_widget');
@@ -331,7 +320,6 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'program_links:program_links' => 'program_links.png',
     'salesform_webform:salesform_webform' => 'salesform_webform.png',
     'block:gsb_public_custom_blocks-gpcb_about_campus' => 'learn.jpg',
-    'cta_around_globe:cta_around_globe' => 'gsb-around-the-globe.png',
     'block:gsb_public_custom_blocks-gpcb_rethink' => 'rethink.jpg',
     'block:gsb_public_custom_blocks-gpcb_follow_us' => 'follow-us.jpg',
     'block:gsb_public_custom_blocks-gpcb_maps_parking_info_more' => 'get-directions.jpg',
