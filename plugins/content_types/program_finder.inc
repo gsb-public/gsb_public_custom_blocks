@@ -96,7 +96,7 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
         'title' => 'Online',
         '#markup' => '<a href="/exed/lead/lead.html">Stanford LEAD Certificate</a>
 <p>Learn. Engage. Accelerate. Disrupt. This unique and selective certificate program redefines the boundaries of learning to create a flexible and interactive online experience with the academic rigor, world-class faculty,and innovative frameworks for which Stanford GSB is renowned.</p><a href="/programs/stanford-online-innovation-entrepreneurship-certificate">Stanford Innovation and Entrepreneurship</a>
-<p>This online program empowers you to more effectively generate and implement new ideas and lead innovative teams and organizations.</p><p>Taught by Stanford faculty, these self-paced courses are engaging and full of strategies you can apply immediately. Earn a certificate on your own schedule.</p>'
+<p>This online program empowers you to more effectively generate and implement new ideas and lead innovative teams and organizations. Taught by Stanford faculty, these self-paced courses are engaging and full of strategies you can apply immediately. Earn a certificate on your own schedule.</p>'
       ),
       array(
         'title' => 'Undergraduate',
