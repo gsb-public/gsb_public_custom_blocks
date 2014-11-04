@@ -29,10 +29,6 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'map_link/templates/gsb-public-custom-blocks-map-link',
       'file' => 'map_link/map_link.theme.inc',
     ),
-    'gsb_public_custom_blocks_rethink' => array(
-      'template' => 'rethink/templates/gsb-public-custom-blocks-rethink',
-      'file' => 'rethink/rethink.theme.inc',
-    ),
     'gsb_public_custom_blocks_follow_us' => array(
       'template' => 'follow_us/templates/gsb-public-custom-blocks-follow-us',
       'file' => 'follow_us/follow_us.theme.inc',
@@ -40,10 +36,6 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
     'gsb_public_custom_blocks_enews_signup' => array(
       'template' => 'enews_signup/templates/gsb-public-custom-blocks-enews-signup',
       'file' => 'enews_signup/enews_signup.theme.inc',
-    ),
-    'gsb_public_custom_blocks_about_campus' => array(
-      'template' => 'about_campus/templates/gsb-public-custom-blocks-about-campus',
-      'file' => 'about_campus/about_campus.theme.inc',
     ),
     'gsb_public_custom_blocks_weather_widget' => array(
       'template' => 'weather/templates/gsb-public-custom-blocks-weather',
@@ -82,18 +74,6 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Custom CTA: Get Directions, Parking Info, and More'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
-    'gpcb_plan_your_visit' => array(
-      'info' => t('Custom CTA: Plan Your Visit'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
-    'gpcb_visit_us' => array(
-      'info' => t('Custom CTA: Visit Us'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
-    'gpcb_rethink' => array(
-      'info' => t('Custom CTA: Rethink'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
     'gpcb_follow_us' => array(
       'info' => t('Custom CTA: Follow Us'),
       'cache' => DRUPAL_CACHE_GLOBAL,
@@ -112,10 +92,6 @@ function gsb_public_custom_blocks_block_info() {
     ),
     'gpcb_breadcrumbs' => array(
       'info' => t('Breadcrumbs'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
-    'gpcb_about_campus' => array(
-      'info' => t('Custom CTA: Learn About Our Campus'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_last_updated' => array(
@@ -162,23 +138,11 @@ function gsb_public_custom_blocks_block_view($delta = '') {
     case 'gpcb_maps_parking_info_more':
       $block['content'] = theme('gsb_public_custom_blocks_map_link', array('text' => 'Get Directions, Parking Info, and More'));
       break;
-    case 'gpcb_plan_your_visit':
-      $block['content'] = theme('gsb_public_custom_blocks_map_link', array('text' => 'Plan Your Visit'));
-      break;
-    case 'gpcb_visit_us':
-      $block['content'] = theme('gsb_public_custom_blocks_map_link', array('text' => 'Visit Us'));
-      break;
-    case 'gpcb_rethink':
-      $block['content'] = theme('gsb_public_custom_blocks_rethink');
-      break;
     case 'gpcb_follow_us':
       $block['content'] = theme('gsb_public_custom_blocks_follow_us');
       break;
     case 'gpcb_enews_signup':
       $block['content'] = theme('gsb_public_custom_blocks_enews_signup');
-      break;
-    case 'gpcb_about_campus':
-      $block['content'] = theme('gsb_public_custom_blocks_about_campus');
       break;
     case 'gpcb_weather_widget':
       $block['content'] = theme('gsb_public_custom_blocks_weather_widget');
@@ -319,16 +283,12 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'program_finder:program_finder' => 'program_finder.png',
     'program_links:program_links' => 'program_links.png',
     'salesform_webform:salesform_webform' => 'salesform_webform.png',
-    'block:gsb_public_custom_blocks-gpcb_about_campus' => 'learn.jpg',
-    'block:gsb_public_custom_blocks-gpcb_rethink' => 'rethink.jpg',
     'block:gsb_public_custom_blocks-gpcb_follow_us' => 'follow-us.jpg',
     'block:gsb_public_custom_blocks-gpcb_maps_parking_info_more' => 'get-directions.jpg',
-    'block:gsb_public_custom_blocks-gpcb_plan_your_visit' => 'plan-your-visit.jpg',
     'block:gsb_public_custom_blocks-gpcb_virtual_tour' => 'take-closer-look.jpg',
     'block:gsb_public_custom_blocks-gpcb_insights' => 'insights.jpg',
     'block:gsb_public_custom_blocks-gpcb_mobile_insights' => 'mobile-insights.jpg',
     'block:gsb_public_custom_blocks-gpcb_insights_search' => 'insights-search.jpg',
-    'block:gsb_public_custom_blocks-gpcb_visit_us' => 'visit-us.jpg',
     'block:gsb_public_custom_blocks-gpcb_weather_widget' => 'weather-widget.jpg',
     'block:gsb_public_custom_blocks-gpcb_conducting_research' => 'library-conducting-research.png',
   );
