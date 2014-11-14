@@ -95,15 +95,15 @@ function gsb_public_custom_blocks_block_info() {
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_last_updated' => array(
-      'info' => t('Last updated date'),
+      'info' => t('MBA: Last Updated'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gsb_featured_event' => array(
-      'info' => t('GSB Featured Event'),
+      'info' => t('Events: Featured Event'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_weather_widget' => array(
-      'info' => t('GSB Weather Widget'),
+      'info' => t('TSE: Weather'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_conducting_research' => array(
