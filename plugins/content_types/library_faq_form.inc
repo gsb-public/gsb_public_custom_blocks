@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Library: How do I find?'),
-  'category' => t('Content panes'),
+  'title' => t('Library: Search | FAQ'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

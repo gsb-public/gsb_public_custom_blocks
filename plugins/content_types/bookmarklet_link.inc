@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Bookmarklet Link'),
-  'category' => t('Content panes'),
+  'title' => t('Library: Button | Bookmarklet Link'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

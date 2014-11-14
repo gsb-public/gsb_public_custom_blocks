@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Commencement: Social Feed'),
-  'category' => t('Content panes'),
+  'title' => t('Commencement: Chute Feed'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

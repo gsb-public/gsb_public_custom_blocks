@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Library: Chat With Us?'),
-  'category' => t('Content panes'),
+  'title' => t('Library: Chat'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

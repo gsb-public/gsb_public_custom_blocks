@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Library: Search Stanford\'s Libraries'),
-  'category' => t('Content panes'),
+  'title' => t('Library: Search | Stanford Databases'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

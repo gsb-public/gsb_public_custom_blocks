@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Library contact form'),
-  'category' => t('Content panes'),
+  'title' => t('Library: Form | Contact'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

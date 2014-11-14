@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('GSB Around the Globe Map'),
-  'category' => t('Other'),
+  'title' => t('TSE: Map | Around the World'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

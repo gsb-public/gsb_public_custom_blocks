@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('GIP contact form'),
-  'category' => t('Content panes'),
+  'title' => t('Programs: Form | GIP Contact'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );

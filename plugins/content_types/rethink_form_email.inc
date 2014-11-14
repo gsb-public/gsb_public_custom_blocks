@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('ReThink form: Email Only'),
-  'category' => t('Content panes'),
+  'title' => t('Insights: Form | Email Subscription'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
