@@ -2,7 +2,7 @@
 
 $plugin = array(
   'title' => t('A-Z Last Name filter'),
-  'category' => t('Other'),
+  'category' => t('Administrator Blocks'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
