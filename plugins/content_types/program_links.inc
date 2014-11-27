@@ -2,7 +2,7 @@
 
 $plugin = array(
   'title' => t('Program Links'),
-  'category' => t('Other'),
+  'category' => t('Administrator Blocks'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
