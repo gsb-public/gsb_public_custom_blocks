@@ -8,10 +8,6 @@
 function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
 
   return array(
-    'gsb_public_custom_blocks_virtual_tour' => array(
-      'template' => 'virtual_tour/templates/gsb-public-custom-blocks-virtual-tour',
-      'file' => 'virtual_tour/virtual_tour.theme.inc',
-    ),
     'gsb_public_custom_blocks_insights' => array(
       'template' => 'insights/templates/gsb-public-custom-blocks-insights',
       'file' => 'insights/insights.theme.inc',
@@ -54,10 +50,6 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
  */
 function gsb_public_custom_blocks_block_info() {
   return array(
-    'gpcb_virtual_tour' => array(
-      'info' => t('Custom CTA: Closer Look'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
     'gpcb_insights' => array(
       'info' => t('Insights by Stanford'),
       'cache' => DRUPAL_CACHE_GLOBAL,
@@ -68,10 +60,6 @@ function gsb_public_custom_blocks_block_info() {
     ),
     'gpcb_insights_search' => array(
       'info' => t('Insights Search'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
-    'gpcb_maps_parking_info_more' => array(
-      'info' => t('Custom CTA: Get Directions, Parking Info, and More'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
     'gpcb_follow_us' => array(
@@ -123,9 +111,6 @@ function gsb_public_custom_blocks_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
-    case 'gpcb_virtual_tour':
-      $block['content'] = theme('gsb_public_custom_blocks_virtual_tour');
-      break;
     case 'gpcb_insights':
       $block['content'] = theme('gsb_public_custom_blocks_insights');
       break;
@@ -134,9 +119,6 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_insights_search':
       $block['content'] = theme('gsb_public_custom_blocks_insights_search');
-      break;
-    case 'gpcb_maps_parking_info_more':
-      $block['content'] = theme('gsb_public_custom_blocks_map_link', array('text' => 'Get Directions, Parking Info, and More'));
       break;
     case 'gpcb_follow_us':
       $block['content'] = theme('gsb_public_custom_blocks_follow_us');
@@ -284,8 +266,6 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'program_links:program_links' => 'program_links.png',
     'salesform_webform:salesform_webform' => 'salesform_webform.png',
     'block:gsb_public_custom_blocks-gpcb_follow_us' => 'follow-us.jpg',
-    'block:gsb_public_custom_blocks-gpcb_maps_parking_info_more' => 'get-directions.jpg',
-    'block:gsb_public_custom_blocks-gpcb_virtual_tour' => 'take-closer-look.jpg',
     'block:gsb_public_custom_blocks-gpcb_insights' => 'insights.jpg',
     'block:gsb_public_custom_blocks-gpcb_mobile_insights' => 'mobile-insights.jpg',
     'block:gsb_public_custom_blocks-gpcb_insights_search' => 'insights-search.jpg',
@@ -366,3 +346,4 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
 
   return $title;
 }
+
