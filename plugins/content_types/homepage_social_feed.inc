@@ -2,7 +2,7 @@
 
 $plugin = array(
   'title' => t('Home Page Social Feed'),
-  'category' => t('Other'),
+  'category' => t('Administrator Blocks'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
