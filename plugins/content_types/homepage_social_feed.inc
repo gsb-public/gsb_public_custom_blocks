@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Home Page Social Feed'),
-  'category' => t('Administrator Blocks'),
+  'title' => t('Front: Social Feed'),
+  'category' => t('Custom Blocks'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
