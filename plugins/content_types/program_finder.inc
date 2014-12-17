@@ -26,10 +26,14 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
       ),
     array(
         'title' => 'Executive Education',
-        '#markup' => '<a href="/programs/executive-education">Executive Education</a>
-<p>These programs are designed to equip senior executives with the knowledge, relationships, and skills necessary to drive results at the highest levels of global management.</p>
-<p>An expert faculty, a diverse and accomplished group of global participants, and Stanford’s unique culture of innovation combine to help participants energize their careers and shape the future of business.</p>
-<p>A wide range of program offerings spans the full spectrum of business topics, including leadership development, global management, and specific functional areas.</p>'
+        '#markup' => '<div class="program-columns"><div class="column-a"><a href="/programs/executive-education">Executive Education</a>
+<p>Programs designed for senior executives to help them to drive results at the highest levels of global management. Expert faculty, accomplished participants, and Stanford’s unique culture of innovation combine to help participants shape the future of business. Offerings span the full spectrum of business topics.</p>
+<a href="programs/social-innovation/executive-program-social-entrepreneurship">Executive Program in Social Entrepreneurship</a>
+<p>A program designed to help social entrepreneurs take enterprises and innovative models to the next level.</p></div>
+<div class="column-b"><a href="/programs/social-innovation/executive-program-nonprofit-leaders">Executive Program for Nonprofit Leaders</a>
+<p>A program designed to further the professional development of current and future leaders in the nonprofit sector.</p>
+<a href="/programs/executive-program-education-leaders">Executive Program for Educational Leaders</a>
+<p>A program that supports the development of innovative, problem-solving management skills and leadership capacity for current superintendents and other central office leaders.</p></div></div>'
       ),
 /*    
       array(
@@ -73,7 +77,9 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
         '#markup' => '<a href="/programs/mba/academic-experience/curriculum">MBA Program</a>
 <p>The Stanford MBA Program allows you to focus your educational efforts in areas such as environment, international development, healthcare, and education by participating in the Public Management and Social Innovation certificate program.</p>
 <a href="/programs/social-innovation">Social Innovation Programs</a>
-<p>Our social innovation programs focus on developing leaders who can solve the world\'s most challenging problems in areas such as education, the environment, poverty, healthcare, and social justice.</p>'
+<p>Our social innovation programs focus on developing leaders who can solve the world\'s most challenging problems in areas such as education, the environment, poverty, healthcare, and social justice.</p>
+<a href="/programs/executive-program-education-leaders">Executive Program for Education Leaders</a>
+<p>A program that supports the development of innovative, problem-solving management skills and leadership capacity for current superintendents and other central office leaders.</p>'
       ),   
 /*         
       array(
@@ -88,9 +94,11 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
 */
       array(
         'title' => 'Multidisciplinary',
-        '#markup' => '<a href="/programs/mba/academic-experience/joint-dual-degrees">MBA Program</a>
-<p>Your goals and interests may span multiple academic disciplines or areas of expertise. That is why the Stanford MBA Program empowers you to combine studies. </p>
-<p>Nearly 20% of Stanford MBA students take advantage of a joint or dual degree to complement the MBA.  As a student, you can also take courses in any graduate school at Stanford University.</p>'
+        '#markup' => '<a href="/programs/mba/academic-experience/curriculum">MBA Program</a>
+<p>Your goals and interests may span multiple academic disciplines or areas of expertise. That is why the Stanford MBA Program empowers you to combine studies.
+</p><p>Nearly 20% of Stanford MBA students take advantage of a joint or dual degree to complement the MBA. As a student, you can also take courses in any graduate school at Stanford University.</p>
+<a href="/programs/executive-program-education-leaders">Executive Program for Education Leaders</a>
+<p>A program that supports the development of innovative, problem-solving management skills and leadership capacity for current superintendents and other central office leaders.</p>'
       ),
       array(
         'title' => 'Online',
