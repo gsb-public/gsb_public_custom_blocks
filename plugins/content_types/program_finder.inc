@@ -54,23 +54,23 @@ function gsb_public_custom_blocks_program_finder_content_type_render($subtype, $
       array(
         'title' => 'Entrepreneurship',
         '#markup' => '<div class="program-columns"><div class="column-a"><a href="/programs/stanford-ignite">Stanford Ignite</a>
-<p>This unique certificate program helps innovators formulate, develop, and commercialize their business ideas. Stanford Ignite is offered at Stanford, Bangalore, Beijing and Paris.</p>
+<p>This unique certificate program helps innovators formulate, develop, and commercialize their business ideas. Stanford Ignite is offered at Stanford and several global locations.</p>
 <a href="/programs/stanford-online-innovation-entrepreneurship-certificate">Stanford Innovation and Entrepreneurship</a>
 <p>This online program empowers you to more effectively generate and implement new ideas and lead innovative teams and organizations. Self-paced courses are available online. Earn a certificate on your own schedule.</p>
 </div><div class="column-b">
 <a href="/programs/social-innovation">Social Innovation Programs</a>
 <p>Our Executive Program in Social Entrepreneurship is a one-week residential program designed to help seasoned social entrepreneurs take enterprises and innovative models to the next level.</p>
-<a href="/programs/custom">Custom Programs</a>
-<p>We develop programs for an organization\'s unique business and management challenges. Designed around each firm\'s specific needs, our custom programs leverage Stanford faculty thought leadership.</p>
+<a href="/programs/stanford-gotomarket">Stanford go•to•market</a>
+<p>A certificate program ​​that teach​es​ high-potential innovators how to refine their business plan and develop a go-to-market strategy. Offered in Mexico City.</p>
 </div></div>'
       ),
       array(
         'title' => 'Global',
         '#markup' => '<a href="/programs/stanford-ignite">Stanford Ignite</a>
-<p>This unique certificate program helps innovators around the world without graduate-level business training to formulate, develop, and commercialize their business ideas.</p>
+<p>Stanford Ignite is offered as a nine-week, part-time program in Bangalore, Beijing, London, New York City, Santiago, São Paulo, and on the Stanford campus. A four-week, full-time program is also available at Stanford.</p>
 <p>Stanford Ignite is offered as a nine-week, part-time program in Bangalore, Beijing, Paris, and on the Stanford campus. A four-week, full-time program is also available at Stanford.</p>
-<a href="/programs/custom">Custom Programs</a>
-<p>Stanford Graduate School of Business works closely with select global companies to develop custom strategic solutions for their business challenges.  Our partnerships are characterized by collaboration between world-renowned Stanford faculty and senior executives to ensure relevance and maximum impact.</p>'
+<a href="/programs">Stanford go•to•market</a>
+<p>A certificate program ​​that teach​es​ high-potential innovators how to refine their business plan and develop a go-to-market strategy. Offered in Mexico City, the program is taught through a combination of in-person instruction and live sessions delivered by distance-learning technology.</p>'
       ),
       array(
         'title' => 'Social Innovation',
