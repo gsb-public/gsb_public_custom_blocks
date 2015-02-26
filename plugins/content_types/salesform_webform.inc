@@ -292,7 +292,7 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 (Ctr + Click for multiple selection) (Command key on a Mac)
 </label>
 <select id="@@program" multiple="multiple" name="@@program" title="Program">
-'._gsb_public_custom_blocs_get_gip_programs_taxonomy().'
+'._gsb_public_custom_blocks_get_gip_programs_taxonomy().'
 </select><br/><br/>
 <label for="source">Source</label>
 <select id="@@select" name="@@select">
@@ -392,7 +392,7 @@ return false;}}}}}
 /**
  * Returns the gip programs taxonomy for gip form
  */
-function _gsb_public_custom_blocs_get_gip_programs_taxonomy() {
+function _gsb_public_custom_blocks_get_gip_programs_taxonomy() {
   $options = '';
   $vocabulary = taxonomy_vocabulary_machine_name_load('gip_programs');
 
