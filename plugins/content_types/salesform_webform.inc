@@ -394,11 +394,15 @@ function _gsb_public_custom_blocs_get_gip_programs_taxonomy() {
   $options = '';
   $vocabulary = taxonomy_vocabulary_machine_name_load('gip_programs');
 
+  $node = menu_get_object();
+
   if ($terms = taxonomy_get_tree($vocabulary->vid)) {
     foreach ($terms as $term) {
       $taxonomy_term = taxonomy_term_load($term->tid);
-      $gip_program_value = $taxonomy_term->field_gip_program_value['und'][0]['value'];
-      $options .= '<option value="'.check_plain($gip_program_value).'">'.check_plain($term->name).'</option>';
+      if (isset($taxonomy_term->field_gip_program_value[$node->language])) {
+        $gip_program_value = $taxonomy_term->field_gip_program_value[$node->language][0]['value'];
+        $options .= '<option value="'.check_plain($gip_program_value).'">'.check_plain($term->name).'</option>';
+      }
     }
   }
 
