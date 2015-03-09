@@ -329,3 +329,21 @@ function gsb_public_custom_blocks_update_7008() {
     taxonomy_term_save($taxonomy_term);
   }
 }
+
+/**
+ * Delete older (no longer in use) taxonomy terms for GIP Programs.
+ */
+function gsb_public_custom_blocks_update_7009() {
+  $term_names = array(
+    'Stanford Ignite - Paris',
+    'Stanford Innovation & Entrepreneurship Certificate'
+  );
+  foreach($term_names as $name) {
+    $terms = taxonomy_get_term_by_name($name);
+    foreach($terms as $key => $value) {
+      if ($value->vocabulary_machine_name == 'gip_programs') {
+        taxonomy_term_delete($value->tid);
+      }
+    }
+  }
+}
