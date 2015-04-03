@@ -1,7 +1,7 @@
 <?php
 
 $plugin = array(
-  'title' => t('CGRI Form'),
+  'title' => t('CGRI: Form | Contact'),
   'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
