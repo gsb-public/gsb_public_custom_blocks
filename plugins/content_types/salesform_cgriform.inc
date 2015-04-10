@@ -23,7 +23,7 @@ $form_markup = <<<HTML
 <!--  ----------------------------------------------------------------------  -->
 <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 <input type=hidden name="oid" value="00D500000007AMA">
-<input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/programs/cgri">
+<input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
 <!--  these lines if you wish to test in debug mode.                          -->
