@@ -32,10 +32,10 @@ $form_markup = <<<HTML
 <!--  ----------------------------------------------------------------------  -->
 <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
-Organization Relationship:<input  id="00N50000002InQg" maxlength="100" name="00N50000002InQg" size="20" type="text" /><br>
+<label for="00N50000002InQ">Organization Relationship</label><input  id="00N50000002InQg" maxlength="100" name="00N50000002InQg" size="20" type="text" /><br>
 <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-<label for="street">Address</label><textarea name="street"></textarea><br>
-Journalist/Media:<input  id="00N500000032wY2" name="00N500000032wY2" type="checkbox" value="1" /><br>
+<label for="street">Address</label><textarea name="street"></textarea><br><br>
+<input  id="00N500000032wY2" name="00N500000032wY2" type="checkbox" value="1" />Journalist/Media<br><br>
 <label for="lead_source">Lead Source</label>
 <select  id="lead_source" name="lead_source"><option value="">--None--</option><option value="ACT Interest Form">ACT Interest Form</option>
 <option value="Board Fellows Interest Form">Board Fellows Interest Form</option>
@@ -51,7 +51,7 @@ Journalist/Media:<input  id="00N500000032wY2" name="00N500000032wY2" type="check
 <option value="SEED">SEED</option>
 <option value="VCII">VCII</option>
 <option value="Other">Other</option>
-</select><br>
+</select><br><br>
 <input type="submit" name="submit">
 </form>
 HTML;
