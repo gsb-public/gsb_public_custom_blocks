@@ -26,11 +26,6 @@ $form_markup = <<<HTML
 <input type=hidden name="oid" value="00D500000007AMA">
 <input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
 <!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-  <input type="hidden" name="debug" value=1>                             
-<input type="hidden" name="debugEmail" value="marlen@stanford.edu"> 
-<!--  ----------------------------------------------------------------------  -->
 <div class="form-item">
 <label for="first_name">First Name<span class="form-required" title="This field is required.">*</span></label><br />
 <input id="first_name" maxlength="40" name="first_name" size="20" type="text" /></div>
@@ -45,7 +40,7 @@ $form_markup = <<<HTML
 <input id="company" maxlength="40" name="company" size="20" type="text" /></div>
 <div class="form-item">
 <label for="street">Address</label><br />
-<textarea name="street"></textarea></div>
+<input id="00N50000001aBOz" maxlength="150" name="00N50000001aBOz" size="20" type="text"/></div>
 <div class="form-item">
 <label for="city">City</label><br />
 <input id="city" maxlength="40" name="city" size="20" type="text" /></div>
