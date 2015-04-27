@@ -28,31 +28,31 @@ $form_markup = <<<HTML
 <input type="hidden" id="owner" name="owner" value=“mgutman” />
 <!--  ----------------------------------------------------------------------  -->
 <div class="form-item">
-<label for="first_name">First Name<span class="form-required" title="This field is required.">*</span></label><br />
+<label for="first_name">First Name<span class="form-required" title="This field is required.">*</span></label>
 <input id="first_name" maxlength="40" name="first_name" size="20" type="text" /></div>
 <div class="form-item">
-<label for="last_name">Last Name<span class="form-required" title="This field is required.">*</span></label><br />
+<label for="last_name">Last Name<span class="form-required" title="This field is required.">*</span></label>
 <input id="last_name" maxlength="80" name="last_name" size="20" type="text" /></div>
 <div class="form-item">
-<label for="email">Email<span class="form-required" title="This field is required.">*</span></label><br />
+<label for="email">Email<span class="form-required" title="This field is required.">*</span></label>
 <input id="email" maxlength="80" name="email" size="20" type="text" /></div>
 <div class="form-item">
-<label for="company">Company</label><br />
+<label for="company">Company</label>
 <input id="company" maxlength="40" name="company" size="20" type="text" /></div>
 <div class="form-item">
-<label for="street">Address</label><br />
+<label for="street">Address</label>
 <input id="00N50000001aBOz" maxlength="150" name="00N50000001aBOz" size="20" type="text"/></div>
 <div class="form-item">
-<label for="city">City</label><br />
+<label for="city">City</label>
 <input id="00N50000001aC6f" maxlength="80" name="00N50000001aC6f" size="20" type="text" /></div>
 <div class="form-item">
-<label for="state">State/Province</label><br />
+<label for="state">State/Province</label>
 <input  id="00N50000001aC6g" maxlength="80" name="00N50000001aC6g" size="20" type="text" /></div>
 <div class="form-item">
 <label for="zip">ZIP Code</label>
 <input  id="00N50000001aC6k" maxlength="40" name="00N50000001aC6k" size="20" type="text" /></div>
 <div class="form-item">
-<label for="country">Country</label><br />
+<label for="country">Country</label>
 <input  id="00N50000001aC79" maxlength="80" name="00N50000001aC79" size="20" type="text" /></div>
 <div class="form-item">
 <p><input id="00N500000032wY2" name="00N500000032wY2" type="checkbox" value="1" />&nbsp;I am a journalist or in media relations.</p>
