@@ -66,7 +66,7 @@ function required() {
 var reqfName = document.f1.elements["first_name"].value;
 var reqlName = document.f1.elements["last_name"].value;
 var reqEmail = document.f1.elements["email"].value;
-if (reqfName == "" || reqlName == "" || reqEmail == "" || reqCountry == "" || title == "" || company == "") {
+if (reqfName == "" || reqlName == "" || reqEmail == "") {
 alert("Please fill in all of the mandatory fields (denoted by *)");
 return false;}}
 </script>
