@@ -22,7 +22,7 @@ $form_markup = <<<HTML
 <!-- ---------------------------------------------------------------------- -->
 <!-- Add the following FORM element to your page.-->
 <!-- ---------------------------------------------------------------------- -->
-<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"  onSubmit="javascript: return required();">
 <input type=hidden name="oid" value="00D500000007AMA">
 <input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
 <!--  ----------------------------------------------------------------------  -->
@@ -61,6 +61,15 @@ $form_markup = <<<HTML
 <input type="hidden" id="status" name="status" value="Open - Not Contacted" />​</div>
 <div class="form-item"><input type="submit" name="submit"></div>
 </form>
+<script type="text/javascript">
+function required() {
+var reqfName = document.f1.elements["first_name"].value;
+var reqlName = document.f1.elements["last_name"].value;
+var reqEmail = document.f1.elements["email"].value;
+if (reqfName == "" || reqlName == "" || reqEmail == "" || reqCountry == "" || title == "" || company == "") {
+alert("Please fill in all of the mandatory fields (denoted by *)");
+return false;}}
+</script>
 HTML;
 
   return (object) array(
