@@ -43,16 +43,16 @@ $form_markup = <<<HTML
 <input id="00N50000001aBOz" maxlength="150" name="00N50000001aBOz" size="20" type="text"/></div>
 <div class="form-item">
 <label for="city">City</label><br />
-<input id="city" maxlength="40" name="city" size="20" type="text" /></div>
+<input id="00N50000001aC6f" maxlength="80" name="00N50000001aC6f" size="20" type="text" /></div>
 <div class="form-item">
 <label for="state">State/Province</label><br />
-<input id="state" maxlength="20" name="state" size="20" type="text" /></div>
+<input  id="00N50000001aC6g" maxlength="80" name="00N50000001aC6g" size="20" type="text" /></div>
 <div class="form-item">
 <label for="zip">ZIP Code</label>
-<input id="zip" maxlength="20" name="zip" size="20" type="text" /></div>
+<input  id="00N50000001aC6k" maxlength="40" name="00N50000001aC6k" size="20" type="text" /></div>
 <div class="form-item">
 <label for="country">Country</label><br />
-<input id="country" maxlength="40" name="country" size="20" type="text" /></div>
+<input  id="00N50000001aC79" maxlength="80" name="00N50000001aC79" size="20" type="text" /></div>
 <div class="form-item">
 <p><input id="00N500000032wY2" name="00N500000032wY2" type="checkbox" value="1" />&nbsp;I am a journalist or in media relations.</p>
 <input type="hidden" id="cgri_email_list__c" name="cgri_email_list__c" value=“True” />
