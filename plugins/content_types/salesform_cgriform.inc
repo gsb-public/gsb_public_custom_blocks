@@ -25,6 +25,7 @@ $form_markup = <<<HTML
 <form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"  onSubmit="javascript: return required();">
 <input type=hidden name="oid" value="00D500000007AMA">
 <input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
+<input type="hidden" id="owner" name="owner" value=“mgutman” />
 <!--  ----------------------------------------------------------------------  -->
 <div class="form-item">
 <label for="first_name">First Name<span class="form-required" title="This field is required.">*</span></label><br />
