@@ -57,7 +57,6 @@ $form_markup = <<<HTML
 <div class="form-item">
 <p><input id="00N500000032wY2" name="00N500000032wY2" type="checkbox" value="1" />&nbsp;I am a journalist or in media relations.</p>
 <input type="hidden" id="cgri_email_list__c" name="cgri_email_list__c" value=“True” />
-<input type="hidden" id="owner" name="owner" value=“mgutman” />
 <input type="hidden" id="00N500000032wXn" name="00N500000032wXn" type="checkbox" value="1" />
 <input type="hidden" id="lead_source" name="lead_source" value="CGRI" />
 <input type="hidden" id="status" name="status" value="Open - Not Contacted" />​</div>
