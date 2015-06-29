@@ -168,17 +168,6 @@ function gsb_public_custom_blocks_block_view($delta = '') {
         $block['content'] = '<b>Last Updated</b> ' . $last_updated_date;
       }
       break;
-    case 'gsb_featured_event':
-      $content = '';
-      if ($nid = variable_get('feature_flag_event', 0)) {
-        $node = node_load($nid);
-        if ($node) {
-          $content = node_view($node, 'featured');
-        }
-      }
-      $block['content'] = $content;
-      break;
-
     case 'gpcb_conducting_research':
       $block['content'] = theme('gsb_public_custom_blocks_conducting_research');
       break;
