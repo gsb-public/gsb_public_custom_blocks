@@ -50,21 +50,21 @@ function gsb_featured_event_date_formatter() {
         if ($time2 != $time) {
           $time .= ' - ' . $time2;
         }
-        $output = '<div class="event-calendar-featured "><div class="day">' . $day . '</div><div class="date"><strong>' . $month_day . '</strong></div><div class="time">' . $time . '</div></div>';
+        $output = '<div class="event-calendar-featured-date"><div class="day">' . $day . '</div><div class="date"><strong>' . $month_day . '</strong></div><div class="time">' . $time . '</div></div>';
       }
       else {
         $month_day2 = date_format_date($date2, 'custom', 'M d');
-        $output = '<div class="event-calendar-featured"><div class="date"><strong>' . $month_day . '</strong></div><span class="to">to</span><div class="date"><strong>' . $month_day2 . '</strong></div></div>';
+        $output = '<div class="event-calendar-featured-date"><div class="date"><strong>' . $month_day . '</strong></div><span class="to">to</span><div class="date"><strong>' . $month_day2 . '</strong></div></div>';
       }
     }
     else {
-      $output = '<div class="event-calendar-featured"><div class="day">' . $day . '</div><div class="date"><strong>' . $month_day . '</strong></div><div class="time">' . $time . '</div></div>';
+      $output = '<div class="event-calendar-featured-date"><div class="day">' . $day . '</div><div class="date"><strong>' . $month_day . '</strong></div><div class="time">' . $time . '</div></div>';
     }
 
   $location = $node->field_address[LANGUAGE_NONE][0];
-  $output .= '<div class="event-calendar-featured-title">'.$node->title.'</div>';
+  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title">'.$node->title.'</div>';
   $output .= '<div class="event-calendar-featured-locality">'.$location['locality'].', '.$location['administrative_area'].'</div>';
-  $output .= '<div class="event-calendar-featured-summary">'.$node->field_editorial_summary[LANGUAGE_NONE][0]['value'].'</div>';
+  $output .= '<div class="event-calendar-featured-summary">'.$node->field_editorial_summary[LANGUAGE_NONE][0]['value'].'</div></div>';
   $output .= '<div class="event-calendar-featured-image">'.render($content['field_image_single_public']).'</div>';
   return $output;
 }
