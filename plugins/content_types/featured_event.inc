@@ -18,6 +18,7 @@ function gsb_featured_event_date_formatter() {
     if ($node) {
       $content = node_view($node, 'featured');
     }
+
   }
 
   $params = array('entity_type' => 'node', 'bundle' => 'event');
