@@ -63,7 +63,7 @@ function gsb_featured_event_date_formatter() {
     }
 
   $location = $node->field_address[LANGUAGE_NONE][0];
-  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title">'.$node->title.'</div>';
+  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title"><a href="/'.$node->path[source].'">'.$node->title.'</a></div>';
   $output .= '<div class="event-calendar-featured-locality">'.$location['locality'].', '.$location['administrative_area'].'</div>';
   $output .= '<div class="event-calendar-featured-summary">'.$node->field_editorial_summary[LANGUAGE_NONE][0]['value'].'</div></div>';
   $output .= '<div class="event-calendar-featured-image">'.render($content['field_image_single_public']).'</div>';
