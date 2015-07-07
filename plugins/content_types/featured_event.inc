@@ -15,10 +15,13 @@ function gsb_featured_event_date_formatter() {
   $content = '';
   if ($nid = variable_get('feature_flag_event', 0)) {
     $node = node_load($nid);
+
     if ($node) {
       $content = node_view($node, 'featured');
     }
 
+    $ids = array($node->field_event_location[und][0][value]);
+    $entity = entity_load('field_collection_item', $ids);
   }
 
   $params = array('entity_type' => 'node', 'bundle' => 'event');
@@ -62,9 +65,16 @@ function gsb_featured_event_date_formatter() {
       $output = '<div class="event-calendar-featured-date"><div class="day">' . $day . '</div><div class="date"><strong>' . $month_day . '</strong></div><div class="time">' . $time . '</div></div>';
     }
 
-  $location = $node->field_address[LANGUAGE_NONE][0];
+  $location = '';
+  $address = $entity[$ids[0]]->field_address[und][0];
+  if ($address['locality'] !=null) {
+    $location = $address['locality'].', '.$address['administrative_area'];
+  } else {
+    $location = $address['country'];
+  }
+
   $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title"><a href="/'.$node->path[source].'">'.$node->title.'</a></div>';
-  $output .= '<div class="event-calendar-featured-locality">'.$location['locality'].', '.$location['administrative_area'].'</div>';
+  $output .= '<div class="event-calendar-featured-locality">'.$location.'</div>';
   $output .= '<div class="event-calendar-featured-summary">'.$node->field_editorial_summary[LANGUAGE_NONE][0]['value'].'</div></div>';
   $output .= '<div class="event-calendar-featured-image">'.render($content['field_image_single_public']).'</div>';
   return $output;
