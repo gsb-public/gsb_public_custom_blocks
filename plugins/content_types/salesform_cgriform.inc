@@ -92,11 +92,11 @@ $form_markup = <<<HTML
     </select>
   </div>
   <div class="form-item">
-    <label for="first_name">First Name</label><span class="form-required" title="This field is required.">*</span>
+    <label for="first_name">First Name<span class="form-required" title="This field is required.">*</span></label>
     <input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
   </div>
   <div class="form-item">
-    <label for="last_name">Last Name</label><span class="form-required" title="This field is required.">*</span>
+    <label for="last_name">Last Name<span class="form-required" title="This field is required.">*</span></label>
     <input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
   </div>
   <div class="form-item">
@@ -112,7 +112,7 @@ $form_markup = <<<HTML
     <input id="company" maxlength="40" name="company" size="20" type="text" />
   </div>
   <div class="form-item">
-    <label for="cgri_affiliation">Affiliation</label><span class="form-required" title="This field is required.">*</span>
+    <label for="cgri_affiliation">Affiliation<span class="form-required" title="This field is required.">*</span></label>
     <select id="00N500000033Evx" name="00N500000033Evx" title="CGRI Affiliation">
       <option value="">--None--</option>
       <option value="Academia">Academia</option>
@@ -143,7 +143,7 @@ $form_markup = <<<HTML
     <input id="00N50000001aC79" maxlength="40" name="00N50000001aC79" size="20" type="text" />
   </div>
   <div class="form-actions form-wrapper" id="edit-actions">
-    <input type="submit" name="submit">
+    <input type="submit" name="submit" class="form-submit">
   </div>
 </form>
 <script type="text/javascript">
