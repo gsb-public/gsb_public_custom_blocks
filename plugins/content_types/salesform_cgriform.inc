@@ -128,19 +128,19 @@ $form_markup = <<<HTML
   </div>
   <div class="form-item">
     <label for="city">City</label>
-    <input id="city" maxlength="40" name="city" size="20" type="text" />
+    <input id="00N50000001aC6f" maxlength="40" name="00N50000001aC6f" size="20" type="text" />
   </div>
   <div class="form-item">
     <label for="state">State/Province</label>
-    <input id="state" maxlength="20" name="state" size="20" type="text" />
+    <input id="00N50000001aC6g" maxlength="20" name="00N50000001aC6g" size="20" type="text" />
   </div>
   <div class="form-item">
     <label for="zip">ZIP Code</label>
-    <input id="zip" maxlength="20" name="zip" size="20" type="text" />
+    <input id="00N50000001aC6k" maxlength="20" name="00N50000001aC6k" size="20" type="text" />
   </div>
   <div class="form-item">
     <label for="country">Country</label>
-    <input id="country" maxlength="40" name="country" size="20" type="text" />
+    <input id="00N50000001aC79" maxlength="40" name="00N50000001aC79" size="20" type="text" />
   </div>
   <div class="form-actions form-wrapper" id="edit-actions">
     <input type="submit" name="submit">
