@@ -100,7 +100,7 @@ $form_markup = <<<HTML
     <input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
   </div>
   <div class="form-item">
-    <label for="email">Email</label><span class="form-required" title="This field is required.">*</span>
+    <label for="email">Email<span class="form-required" title="This field is required.">*</span></label>
     <input id="email" maxlength="80" name="email" size="20" type="text" />
   </div>
   <div class="form-item">
