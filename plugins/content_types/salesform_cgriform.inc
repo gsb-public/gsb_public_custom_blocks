@@ -15,9 +15,9 @@ function gsb_public_custom_blocks_salesform_cgriform_content_type_render($subtyp
 $form_markup = <<<HTML
 
 <!-- ---------------------------------------------------------------------  -->
-<!-- Add the following META element to your page HEAD           -->   
-<!-- If necessary, please modify the charset parameter to specify the   -->  
-<!-- character set of your HTML page.                   -->  
+<!-- Add the following META element to your page HEAD           -->
+<!-- If necessary, please modify the charset parameter to specify the   -->
+<!-- character set of your HTML page.                   -->
 <!-- -------------------------------------------------------------------  -->
 <!-- Add the following FORM element to your page.-->
 <!-- ---------------------------------------------------------------------  -->
@@ -121,3 +121,4 @@ HTML;
     ),
   );
 }
+
