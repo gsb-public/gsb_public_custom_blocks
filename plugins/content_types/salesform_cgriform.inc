@@ -19,7 +19,6 @@ $form_markup = <<<HTML
 <!-- If necessary, please modify the charset parameter to specify the   -->  
 <!-- character set of your HTML page.                   -->  
 <!-- -------------------------------------------------------------------  -->
-
 <!-- Add the following FORM element to your page.-->
 <!-- ---------------------------------------------------------------------  -->
 
@@ -44,51 +43,11 @@ $form_markup = <<<HTML
     <label for="salutation">Salutation</label>
     <select id="salutation" name="salutation">
       <option value="">--None--</option>
-      <option value="Admiral">Admiral</option>
-      <option value="Ambassador">Ambassador</option>
-      <option value="Baron">Baron</option>
-      <option value="Brigadier General">Brigadier General</option>
-      <option value="Brother">Brother</option>
-      <option value="Captain">Captain</option>
-      <option value="Captain (Ret.)">Captain (Ret.)</option>
-      <option value="Colonel">Colonel</option>
-      <option value="Colonel (Ret.)">Colonel (Ret.)</option>
-      <option value="Commander">Commander</option>
-      <option value="Commander (Ret.)">Commander (Ret.)</option>
-      <option value="Count">Count</option>
-      <option value="Dean">Dean</option>
       <option value="Dr.">Dr.</option>
-      <option value="Father">Father</option>
-      <option value="General">General</option>
-      <option value="Ingeniero">Ingeniero</option>
-      <option value="Judge">Judge</option>
-      <option value="Justice">Justice</option>
-      <option value="Lieutenant">Lieutenant</option>
-      <option value="Lieutenant Colonel">Lieutenant Colonel</option>
-      <option value="Lieutenant Commander">Lieutenant Commander</option>
-      <option value="Lieutenant General">Lieutenant General</option>
-      <option value="Lord">Lord</option>
-      <option value="Major">Major</option>
-      <option value="Major General">Major General</option>
-      <option value="Miss">Miss</option>
-      <option value="Mr/s.">Mr/s.</option>
       <option value="Mr.">Mr.</option>
       <option value="Mrs.">Mrs.</option>
       <option value="Ms.">Ms.</option>
-      <option value="Pastor">Pastor</option>
-      <option value="President">President</option>
       <option value="Professor">Professor</option>
-      <option value="Professor Emeritus">Professor Emeritus</option>
-      <option value="Rear Admiral">Rear Admiral</option>
-      <option value="Sir">Sir</option>
-      <option value="The Honorable">The Honorable</option>
-      <option value="The Reverend">The Reverend</option>
-      <option value="Marquis">Marquis</option>
-      <option value="Ing.">Ing.</option>
-      <option value="Senator">Senator</option>
-      <option value="Minister of Employment">Minister of Employment</option>
-      <option value="His Excellency">His Excellency</option>
-      <option value="T.H.">T.H.</option>
     </select>
   </div>
   <div class="form-item">
@@ -104,14 +63,6 @@ $form_markup = <<<HTML
     <input id="email" maxlength="80" name="email" size="20" type="text" />
   </div>
   <div class="form-item">
-    <label for="title">Title</label>
-    <input id="title" maxlength="40" name="title" size="20" type="text" />
-  </div>
-  <div class="form-item">
-    <label for="company">Company/Organization</label>
-    <input id="company" maxlength="40" name="company" size="20" type="text" />
-  </div>
-  <div class="form-item">
     <label for="cgri_affiliation">Affiliation<span class="form-required" title="This field is required.">*</span></label>
     <select id="00N500000033Evx" name="00N500000033Evx" title="CGRI Affiliation">
       <option value="">--None--</option>
@@ -121,6 +72,14 @@ $form_markup = <<<HTML
       <option value="Media">Media</option>
       <option value="Other">Other</option>
     </select>
+  </div>
+  <div class="form-item">
+    <label for="title">Title</label>
+    <input id="title" maxlength="40" name="title" size="20" type="text" />
+  </div>
+  <div class="form-item">
+    <label for="company">Company/Organization</label>
+    <input id="company" maxlength="40" name="company" size="20" type="text" />
   </div>
   <div class="form-item">
     <label for="street">Street Address</label>
