@@ -23,7 +23,6 @@ $form_markup = <<<HTML
 <!-- ---------------------------------------------------------------------  -->
 
   <form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"  onSubmit="javascript: return required();">
-  <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00D500000007AMA">
     <input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
     <input type="hidden" id="00N500000032wXn" name="00N500000032wXn" type="checkbox" value="1" />
@@ -83,7 +82,7 @@ $form_markup = <<<HTML
   </div>
   <div class="form-item">
     <label for="street">Street Address</label>
-    <input id="00N50000001aBOz" maxlength="150" name="00N50000001aBOz" size="20" type="text" /></div>
+    <input id="00N50000001aBOz" maxlength="150" name="00N50000001aBOz" size="20" type="text" />
   </div>
   <div class="form-item">
     <label for="city">City</label>
