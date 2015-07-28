@@ -69,6 +69,7 @@ function gsb_featured_event_date_formatter() {
 
     $location = '';
     $address = $entity[$ids[0]]->field_address[$language][0];
+    $countries = _addressfield_country_options_list();
     if ($address['locality'] != NULL) {
       $location = $address['locality'];
     }
@@ -76,7 +77,8 @@ function gsb_featured_event_date_formatter() {
       $location = ($address['administrative_area'] != NULL) ? $location . ', ' . $address['administrative_area'] : $location;
     }else {
 
-      $location = ($address['country'] != NULL) ? $location . ', ' . $address['country'] : $location;
+
+      $location = ($address['country'] != NULL) ? $location . ', ' . $countries[$address['country']] : $location;
     }
  
   $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title"><a href="/' . drupal_get_path_alias($node->path['source']) . '">' . $node->title . '</a></div>';
