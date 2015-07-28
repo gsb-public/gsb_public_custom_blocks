@@ -15,10 +15,11 @@ function gsb_featured_event_date_formatter() {
   $content = '';
   if ($nid = variable_get('feature_flag_event', 0)) {
     $node = node_load($nid);
+    $language = $node->language;
 
     if ($node) {
       $content = node_view($node, 'featured');
-      $ids = array($node->field_event_location[und][0][value]);
+      $ids = array($node->field_event_location[$language][0]['value']);
       $entity = entity_load('field_collection_item', $ids);
     }
 
@@ -36,7 +37,7 @@ function gsb_featured_event_date_formatter() {
       }
     }
 
-    $item = $node->field_event_date[LANGUAGE_NONE][0];
+    $item = $node->field_event_date[$language][0];
     $db_format = date_type_format($form_info['type']);
     $date = new DateObject($item['value'], $item['timezone_db'], $db_format);
     $timezone = isset($item['timezone']) ? $item['timezone'] : '';
@@ -67,8 +68,7 @@ function gsb_featured_event_date_formatter() {
     }
 
     $location = '';
-    //$address = $entity[$ids[0]]->field_address[und][0];
-    $address = $node->field_address['und'][0];
+    $address = $entity[$ids[0]]->field_address[$language][0];
     if ($address['locality'] != NULL) {
       $location = $address['locality'];
     }
@@ -79,10 +79,10 @@ function gsb_featured_event_date_formatter() {
       $location = ($address['country'] != NULL) ? $location . ', ' . $address['country'] : $location;
     }
  
-  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title"><a href="/'.$node->path[source].'">'.$node->title.'</a></div>';
-  $output .= '<div class="event-calendar-featured-locality">'.$location.'</div>';
-  $output .= '<div class="event-calendar-featured-summary">'.$node->field_editorial_summary[LANGUAGE_NONE][0]['value'].'</div></div>';
-  $output .= '<div class="event-calendar-featured-image">'.render($content['field_image_single_public']).'</div>';
+  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title"><a href="/' . drupal_get_path_alias($node->path['source']) . '">' . $node->title . '</a></div>';
+  $output .= '<div class="event-calendar-featured-locality">' . $location.'</div>';
+  $output .= '<div class="event-calendar-featured-summary">' . $node->field_editorial_summary[$language][0]['value'] . '</div></div>';
+  $output .= '<div class="event-calendar-featured-image">' . render($content['field_image_single_public']) . '</div>';
   }
   return $output;
 }
