@@ -272,7 +272,7 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
   // Get the alias for the current path.
   $current_path = drupal_get_path_alias(current_path());
   // Looping through our path map, see if the current path matches any.
-  foreach (gsb_custom_section_title_get_sections() as $map) {
+  foreach (gsb_custom_section_title_get_sections_separate_paths() as $map) {
     if (drupal_match_path($current_path, $map['paths'])) {
       return !empty($map['link']) ? l($map['title'], $map['link_path']) : $map['title'];
     }
