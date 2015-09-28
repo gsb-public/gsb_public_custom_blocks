@@ -221,7 +221,7 @@ function _gsb_public_custom_blocks_generate_tabs($tabs) {
   $content['#groups']['group_tabs'] = new stdClass();
   $content['#groups']['group_tabs']->group_name = 'group';
   $content['#groups']['group_tabs']->format_type = 'tabs';
-  $content['#pre_render'][] = 'field_group_build_pre_render';
+  $content['#pre_render'][] = 'field_group_form_pre_render';
   $content['#entity_type'] = 'block';
   $content['#bundle'] = 'tabs';
   $content['#groups']['group_tabs']->weight = 0;
