@@ -73,10 +73,10 @@ $form_markup = <<<HTML
     </select>
   </div>
   <div class="form-item">
-    <input id="00N38000003f042" name="00N38000003f042" type="checkbox" value="1" />&nbsp;I am a Stanford alumnus/ae.
+    <input id="00N38000003f042" name="00N38000003f042" type="checkbox" value="1" />&nbsp;I am a Stanford alumnus/a.
   </div>
   <div class="form-item">
-    <label for="sunetid">SUNetID (if applicable)</label>
+    <label for="sunetid">Stanford Username (<a href="https://alumni-gsb.stanford.edu/get/page/forgot-username?pg=no=&nu=https%3A**alumni.stanford.edu" target="_blank">forgot username</a>)</label>
     <input id="00N38000003f047" maxlength="100" name="00N38000003f047" size="20" type="text" />
   </div>
   <div class="form-item">
