@@ -41,6 +41,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'conducting_research/templates/gsb-public-custom-blocks-conducting-research',
       'file' => 'conducting_research/conducting_research.theme.inc',
     ),
+    'gsb_public_custom_blocks_exec_ed' => array(
+      'template' => 'exec_ed/templates/gsb-public-custom-blocks-exec_ed',
+      'file' => 'exec_ed/exec_ed.theme.inc',
+    ),
   );
 }
 
@@ -98,6 +102,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Custom CTA: Conducting Research'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_exec_ed' => array(
+      'info' => t('Exec Ed title'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
   );
 }
 
@@ -119,6 +127,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_insights_search':
       $block['content'] = theme('gsb_public_custom_blocks_insights_search');
+      break;
+    case 'gpcb_exec_ed':
+      $block['content'] = theme('gsb_public_custom_blocks_exec_ed');
       break;
     case 'gpcb_follow_us':
       $block['content'] = theme('gsb_public_custom_blocks_follow_us');
@@ -296,7 +307,7 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
 
   $pos = strpos($menu_name, 'section-');
   if ($pos !== false) {
-    
+
     $pos = strpos($menu_name, '-');
     $tid = substr($menu_name, $pos+1);
     $term = taxonomy_term_load($tid);
@@ -306,7 +317,7 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
 
   } else {
 
-    // if there is no menu, then we are forced to 
+    // if there is no menu, then we are forced to
     // hard-code things - based on the url path
 
     // not pretty, but so far we haven't been
@@ -325,7 +336,7 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
       }
     } elseif ($first_path_item == 'stanford-gsb-experience') {
       $title = 'Stanford GSB Experience';
-    } 
+    }
 
   }
 
