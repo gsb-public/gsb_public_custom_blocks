@@ -49,6 +49,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'exec_ed/templates/gsb-public-custom-blocks-stay_informed',
       'file' => 'exec_ed/exec_ed.theme.inc',
     ),
+    'gsb_public_custom_blocks_need_more_information' => array(
+      'template' => 'application_finder/templates/gsb-public-custom-blocks-need_more_information',
+      'file' => 'application_finder/application_finder.theme.inc',
+    ),
   );
 }
 
@@ -354,3 +358,59 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
   return $title;
 }
 
+/**
+ * 'Edit form' callback for the content type.
+*/
+function gsb_public_custom_blocks_need_more_information_edit_form($form, &$form_state) {
+  $conf = $form_state['conf'];
+  $form['override_title']['#access'] = FALSE;
+  $form['override_title_text']['#access'] = FALSE;
+  $form['override_title_heading']['#access'] = FALSE;
+  for ($count = 1; $count <= 4; $count++) {
+    $title = 'cta_title_' . $count;
+    $url = 'cta_url_' . $count;
+    $form[$title] = array(
+      '#title' => t('CTA Title '. $count),
+      '#type' => 'textfield',
+      '#default_value' => !empty($conf[$title]) ? $conf[$title] : '',
+    );
+    $form[$url] = array(
+      '#title' => t('CTA URL ' . $count),
+      '#type' => 'textfield',
+      '#default_value' => !empty($conf[$url]) ? $conf[$url] : '',
+    );
+  }
+  $form['#validate'][] = 'gsb_public_custom_blocks_need_more_information_edit_form_validate';
+   return $form;
+}
+
+function gsb_public_custom_blocks_need_more_information_edit_form_validate($form, $form_state) {
+  for ($num = 1; $num <= 4; $num++) {
+    if ($form_state['values']['cta_title_' . $num] != '' && $form_state['values']['cta_url_' . $num] == '') {
+      form_set_error('cta_url_' . $num, t('CTA Url ' . $num . ' is required.'));
+    }
+    if ($form_state['values']['cta_title_' . $num] == '' && $form_state['values']['cta_url_' . $num] != '') {
+      form_set_error('cta_title_' . $num, t('CTA title ' . $num . ' is required.'));
+    }
+  }
+}
+/**
+ * The submit form stores the data in $conf.
+ */
+function gsb_public_custom_blocks_need_more_information_edit_form_submit($form, $form_state) {
+  $tc = 0;
+  $tu = 0;
+  foreach (array_keys($form_state['values']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+      if (substr($key,0,9) == 'cta_title'){
+        $form_state['conf']['cta'][$tc]['title'] = $form_state['values'][$key];
+        $tc++;
+      }
+      if (substr($key,0,7) == 'cta_url'){
+        $form_state['conf']['cta'][$tu]['url'] = $form_state['values'][$key];
+        $tu++;
+      }
+    }
+  }
+}
