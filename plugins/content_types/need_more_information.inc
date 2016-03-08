@@ -12,7 +12,7 @@ $plugin = array(
  * Implements hook_PLUGIN_content_type_render().
  */
 function gsb_public_custom_blocks_need_more_information_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
-dpm($conf);
+function gsb_public_custom_blocks_need_more_information_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
   $ctas = array('cta' => $conf['cta']);
   $output = theme('gsb_public_custom_blocks_need_more_information', $ctas);
 
