@@ -53,6 +53,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'application_finder/templates/gsb-public-custom-blocks-need_more_information',
       'file' => 'application_finder/application_finder.theme.inc',
     ),
+    'gsb_public_custom_blocks_seed' => array(
+      'template' => 'seed/templates/gsb-public-custom-blocks-seed',
+      'file' => 'seed/seed.theme.inc',
+    ),
   );
 }
 
@@ -118,6 +122,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Custom CTA: Executive Education Home - Subscribe'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_seed' => array(
+      'info' => t('Seed title'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
   );
 }
 
@@ -142,6 +150,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_exec_ed':
       $block['content'] = theme('gsb_public_custom_blocks_exec_ed');
+      break;
+    case 'gpcb_seed':
+      $block['content'] = theme('gsb_public_custom_blocks_seed');
       break;
     case 'gpcb_stay_informed':
       $block['content'] = theme('gsb_public_custom_blocks_stay_informed');
