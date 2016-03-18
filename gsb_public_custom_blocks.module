@@ -57,6 +57,11 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'seed/templates/gsb-public-custom-blocks-seed',
       'file' => 'seed/seed.theme.inc',
     ),
+    'gsb_public_custom_blocks_seed_stay_informed' => array(
+      'template' => 'seed/templates/gsb-public-custom-blocks-seed_stay_informed',
+      'file' => 'seed/seed.theme.inc',
+    ),
+
   );
 }
 
@@ -126,6 +131,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Seed title'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_seed_stay_informed' => array(
+      'info' => t('Custom CTA: Seed Home - Subscribe'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
   );
 }
 
@@ -153,6 +162,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_seed':
       $block['content'] = theme('gsb_public_custom_blocks_seed');
+      break;
+    case 'gpcb_seed_stay_informed':
+      $block['content'] = theme('gsb_public_custom_blocks_seed_stay_informed');
       break;
     case 'gpcb_stay_informed':
       $block['content'] = theme('gsb_public_custom_blocks_stay_informed');
