@@ -478,7 +478,7 @@ function _menu_block_54_block_visibility($block) {
     $path = $parsed_url['path'];
     if (strpos($path, 'exec-ed/') === 0) {
       $path_array = explode("/", $path);
-      if (count($path_array) >= 3) {
+      if (count($path_array) >= 3 && $path_array[1] != 'programs') {
         return TRUE;
       }
     }
