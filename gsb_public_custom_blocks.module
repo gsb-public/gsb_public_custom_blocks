@@ -437,3 +437,51 @@ function gsb_public_custom_blocks_need_more_information_edit_form_submit($form, 
     }
   }
 }
+
+/**
+ * Block visibility callback for the 'Menu Block: Seed Section' block.
+ *
+ * @param object $block
+ *   The block object.
+ *
+ * @return bool
+ *   TRUE if the block should be displayed on the current page.
+ */
+function _menu_block_53_block_visibility($block) {
+  $alias = drupal_get_path_alias($_GET['q']);
+  $parsed_url = drupal_parse_url($alias);
+  if (!empty($parsed_url['path'])) {
+    $path = $parsed_url['path'];
+    if (strpos($path, 'seed/') === 0) {
+      $path_array = explode("/", $path);
+      if (count($path_array) >= 3) {
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Block visibility callback for the 'Menu Block: Executive Education Section' block
+ *
+ * @param object $block
+ *   The block object.
+ *
+ * @return bool
+ *   TRUE if the block should be displayed on the current page.
+ */
+function _menu_block_54_block_visibility($block) {
+  $alias = drupal_get_path_alias($_GET['q']);
+  $parsed_url = drupal_parse_url($alias);
+  if (!empty($parsed_url['path'])) {
+    $path = $parsed_url['path'];
+    if (strpos($path, 'exec-ed/') === 0) {
+      $path_array = explode("/", $path);
+      if (count($path_array) >= 3) {
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
+}
