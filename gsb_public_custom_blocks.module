@@ -533,8 +533,8 @@ function mini_program_finder_form($form, &$form_state) {
   );
 
   $form['#submit'][] = 'mini_program_finder_submit';
-  drupal_add_js(libraries_get_path('multiple-select-1.1.0') . '/jquery.multiple.select.js');
-  drupal_add_css(libraries_get_path('multiple-select-1.1.0') . '/multiple-select.css');
+  drupal_add_js(libraries_get_path('multiple-select') . '/jquery.multiple.select.js');
+  drupal_add_css(libraries_get_path('multiple-select') . '/multiple-select.css');
   drupal_add_js(drupal_get_path('module', 'gsb_public_custom_blocks') . '/js/mini_program_finder.js');
   drupal_add_js(libraries_get_path('moment') . '/moment.js');
   drupal_add_js(libraries_get_path('jquery-date-range-picker') . '/jquery.daterangepicker.js');
