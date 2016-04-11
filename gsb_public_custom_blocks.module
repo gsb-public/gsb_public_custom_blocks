@@ -49,6 +49,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'exec_ed/templates/gsb-public-custom-blocks-stay_informed',
       'file' => 'exec_ed/exec_ed.theme.inc',
     ),
+    'gsb_public_custom_blocks_mini_program_finder' => array(
+      'template' => 'exec_ed/templates/gsb-public-custom-blocks-mini_program_finder',
+      'file' => 'exec_ed/exec_ed.theme.inc',
+    ),
     'gsb_public_custom_blocks_need_more_information' => array(
       'template' => 'application_finder/templates/gsb-public-custom-blocks-need_more_information',
       'file' => 'application_finder/application_finder.theme.inc',
@@ -484,4 +488,132 @@ function _menu_block_54_block_visibility($block) {
     }
   }
   return FALSE;
+}
+
+/**
+ * 'Edit form' callback for the mini program finder .
+ */
+function gsb_public_custom_blocks_mini_program_finder_edit_form($form, &$form_state) {
+  $conf = $form_state['conf'];
+  $form['override_title']['#access'] = FALSE;
+  $form['override_title_text']['#access'] = FALSE;
+  $form['override_title_heading']['#access'] = FALSE;
+    $form['finder_image'] = array(
+      '#title' => t('Upload Finder image'),
+      '#type' => 'managed_file',
+      '#required' => TRUE,
+      '#default_value' => (isset($conf['finder_image']->fid) ? $conf['finder_image']->fid : ''),
+      '#upload_validators' => array(
+        'file_validate_extensions' => array('gif png jpg jpeg'),
+      ),
+      '#upload_location' => 'public://minifinderimages/',
+    );
+  return $form;
+}
+
+/**
+ * The submit form stores the data in $conf.
+ */
+function gsb_public_custom_blocks_mini_program_finder_edit_form_submit($form, $form_state) {
+  $values = &$form_state['values'];
+  $file = file_load($values['finder_image']);
+  if ($file) {
+    file_save($file);
+    file_usage_add($file, 'image', 'default_image', $file->fid);
+    $form_state['conf']['finder_image'] = $file;
+  }
+}
+
+//mini program finder form
+function gsb_public_custom_blocks_forms($form_id, $args) {
+  $forms['mini_program_finder'] = array(
+    'callback' => 'mini_program_finder_form',
+    'callback arguments' => $args,
+  );
+  return $forms;
+}
+
+/**
+ * @param $form
+ * @param $form_state
+ * @return mixed
+ */
+function mini_program_finder_form($form, &$form_state) {
+  $form['filters'] = array(
+    '#type' => 'container',
+  );
+  $form['filters']['program_topic'] = array(
+    '#type' => 'select',
+    '#title' => t('Topics'),
+    '#options' => $form_state['topic_filters'],
+    '#attributes' => array(
+      'class' => array('isotopify-multiple','isotopify-filter-checkboxes'),
+    ),
+    '#multiple' => true,
+    '#default_value' => !empty($form_state['values']['program_topics']) ? $form_state['values']['program_topics'] : '',
+  );
+  $form['filters']['date_range'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array('isotopify-filter-daterange'),
+      'data-title' => t('Select Date Range'),
+    ),
+    'date_range_from' => array(
+      '#type' => 'textfield',
+      '#title' => t('Start Date'),
+      '#default_value' => !empty($form_state['values']['date_range_from']) ? $form_state['values']['date_range_from'] : '',
+      '#attributes' => array(
+        'class' => array('date-range-field'),
+      ),
+    ),
+    'date_range_to' => array(
+      '#type' => 'textfield',
+      '#title' => t('End Date'),
+      '#default_value' => !empty($form_state['values']['date_range_to']) ? $form_state['values']['date_range_to'] : '',
+      '#attributes' => array(
+        'class' => array('date-range-field'),
+      ),
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Go',
+  );
+
+  $form['#submit'][] = 'mini_program_finder_submit';
+  drupal_add_js(libraries_get_path('multiple-select-1.1.0') . '/jquery.multiple.select.js');
+  drupal_add_css(libraries_get_path('multiple-select-1.1.0') . '/multiple-select.css');
+  drupal_add_js(drupal_get_path('module', 'gsb_public_custom_blocks') . '/js/mini_program_finder.js');
+  drupal_add_js(libraries_get_path('moment') . '/moment.js');
+  drupal_add_js(libraries_get_path('jquery-date-range-picker') . '/jquery.daterangepicker.js');
+  drupal_add_css(libraries_get_path('jquery-date-range-picker') . '/daterangepicker.css');
+  return $form;
+}
+
+function mini_finder_render($topic_options) {
+  $form_state = array('method' => 'get', 'topic_filters' => $topic_options, 'redirect' => '/exec-ed/programs');
+  $form = drupal_build_form('mini_program_finder', $form_state);
+  unset($form['form_build_id']);
+  $parameters['filters'] = drupal_render($form);
+  $output = $parameters['filters'];
+
+  return $output;
+}
+
+function mini_program_finder_submit($form, $form_state) {
+  $values = implode(',', $form_state['values']['program_topic']);
+  $start_date = $form_state['values']['date_range_from'];
+  $end_date = $form_state['values']['date_range_to'];
+  $query = array();
+
+  if (!empty($values)) {
+    $query['program-topic'] = $values;
+  }
+  if(!empty($start_date) && !empty($end_date)) {
+    $query['start_date'] = $start_date;
+    $query['end_date'] = $end_date;
+  }
+
+  $options = array('absolute' => TRUE, 'query' => $query);
+  drupal_goto('/exec-ed/programs', $options);
 }
