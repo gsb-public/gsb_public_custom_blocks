@@ -48,7 +48,7 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 	<option selected="selected" value="">--None--</option>
 	<option value="Ask Us">Research Assistance</option>
 	<option value="Suggestions">Feedback & Suggestions</option>
-	<option value="Resource Request">Suggest a Purchase</option>
+	<option value="Suggest a Purchase">Suggest a Purchase</option>
 	<option value="Ask Us">Other</option>
 	</select><br/><br/>
 	<label for="requesttype">Request<span>*</span></label>
