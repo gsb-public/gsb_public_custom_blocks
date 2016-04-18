@@ -610,10 +610,10 @@ function mini_program_finder_submit($form, $form_state) {
     $query['program-topic'] = $values;
   }
   if(!empty($start_date) && !empty($end_date)) {
-    $query['start_date'] = $start_date;
-    $query['end_date'] = $end_date;
+    $query['date-range-from'] = $start_date;
+    $query['date-range-to'] = $end_date;
   }
-
+  
   $options = array('absolute' => TRUE, 'query' => $query);
   drupal_goto('/exec-ed/programs', $options);
 }
