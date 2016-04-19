@@ -70,6 +70,48 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
 }
 
 /**
+ * Implement hook_menu().
+ */
+function gsb_public_custom_blocks_menu() {
+  $items = array();
+
+  $items['vmock-signup'] = array(
+    'page callback' => 'gsb_public_custom_blocks_vmock_signup',
+    'access callback' => 'user_is_logged_in',
+  );
+
+  return $items;
+}
+
+function gsb_public_custom_blocks_vmock_signup() {
+
+  if (empty($_GET['email']) || !valid_email_address($_GET['email'])) {
+    drupal_set_message(t('Enter a valid email address'), 'error');
+    drupal_goto($_SERVER['HTTP_REFERER']);
+  }
+
+  include_once('../library/VmockUrlGenerator/VmockUrlGenerator.php');
+
+  $activationKey = variable_get('vmock_activation_key', '');
+  if ($activationKey = variable_get('vmock_activation_key', '')) {
+    /* create an object */
+    $urlGenerator = new VmockUrlGenerator($activationKey);
+
+    /* add params (as applicable) */
+    $urlGenerator->addParam('email', $_GET['email']);
+
+    /* get encoded url & embed the above generated url in your webpage (the portal) */
+    $url = $urlGenerator->getUrl();
+
+    drupal_goto($url);
+  }
+  else {
+    drupal_set_message(t('Invalid Activation Key'), 'error');
+    drupal_goto($_SERVER['HTTP_REFERER']);
+  }
+}
+
+/**
  * Implementation of hook_block_info()
  *
  */
@@ -387,7 +429,7 @@ function _gsb_public_custom_blocks_get_banner_title($args) {
 
 /**
  * 'Edit form' callback for the content type.
-*/
+ */
 function gsb_public_custom_blocks_need_more_information_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
   $form['override_title']['#access'] = FALSE;
@@ -408,7 +450,7 @@ function gsb_public_custom_blocks_need_more_information_edit_form($form, &$form_
     );
   }
   $form['#validate'][] = 'gsb_public_custom_blocks_need_more_information_edit_form_validate';
-   return $form;
+  return $form;
 }
 
 function gsb_public_custom_blocks_need_more_information_edit_form_validate($form, $form_state) {
@@ -498,16 +540,16 @@ function gsb_public_custom_blocks_mini_program_finder_edit_form($form, &$form_st
   $form['override_title']['#access'] = FALSE;
   $form['override_title_text']['#access'] = FALSE;
   $form['override_title_heading']['#access'] = FALSE;
-    $form['finder_image'] = array(
-      '#title' => t('Upload Finder image'),
-      '#type' => 'managed_file',
-      '#required' => TRUE,
-      '#default_value' => (isset($conf['finder_image']->fid) ? $conf['finder_image']->fid : ''),
-      '#upload_validators' => array(
-        'file_validate_extensions' => array('gif png jpg jpeg'),
-      ),
-      '#upload_location' => 'public://minifinderimages/',
-    );
+  $form['finder_image'] = array(
+    '#title' => t('Upload Finder image'),
+    '#type' => 'managed_file',
+    '#required' => TRUE,
+    '#default_value' => (isset($conf['finder_image']->fid) ? $conf['finder_image']->fid : ''),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+    '#upload_location' => 'public://minifinderimages/',
+  );
   return $form;
 }
 
