@@ -65,7 +65,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'seed/templates/gsb-public-custom-blocks-seed_stay_informed',
       'file' => 'seed/seed.theme.inc',
     ),
-
+    'gsb_public_custom_blocks_degree_programs' => array(
+      'template' => 'degree_programs/templates/gsb-public-custom-blocks-degree_programs',
+      'file' => 'degree_programs/degree_programs.theme.inc',
+    ),
   );
 }
 
@@ -613,7 +616,7 @@ function mini_program_finder_submit($form, $form_state) {
     $query['date-range-from'] = $start_date;
     $query['date-range-to'] = $end_date;
   }
-  
+
   $options = array('absolute' => TRUE, 'query' => $query);
   drupal_goto('/exec-ed/programs', $options);
 }
