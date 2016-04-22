@@ -1,7 +1,8 @@
 <h4 ><?php print t('Need More Information?'); ?></h4>
 <div >
   <?php if (!empty($cta)): ?>
-    <?php foreach ($cta as $it => $itd): ?>
+    <?php foreach ($cta as $it => $itd):
+      if (!empty($itd['title'])): ?>
       <div class="cta-list" >
         <?php
         $parsed = parse_url($itd['url']);
@@ -12,6 +13,7 @@
         endif;
         ?>
       </div>
-    <?php endforeach; ?>
+    <?php endif;
+    endforeach; ?>
   <?php endif; ?>
 </div>
