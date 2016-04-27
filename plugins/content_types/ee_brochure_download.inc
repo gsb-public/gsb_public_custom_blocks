@@ -31,7 +31,8 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
     $select->condition('pdf.entity_id', $program_ids , 'IN');
     $query = $select->execute();
     $records = $query->fetchAll();
-    $output = "<p> Download brochures for selected program(s) here</p> ";
+    //$output = "<p> Download brochures for selected program(s) here</p> ";
+    $output = "";
     foreach ($records as $record) {
       $items[] = l(t($record->title), file_create_url($record->uri), array('attributes'=>array('target'=>'blank')));
     }
