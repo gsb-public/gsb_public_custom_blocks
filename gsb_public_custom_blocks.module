@@ -69,6 +69,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'degree_programs/templates/gsb-public-custom-blocks-degree_programs',
       'file' => 'degree_programs/degree_programs.theme.inc',
     ),
+    'gsb_public_custom_blocks_hero_region' => array(
+      'template' => 'hero_region/templates/gsb-public-custom-blocks-hero_region',
+      'file' => 'hero_region/hero_region.theme.inc',
+    ),
   );
 }
 
@@ -184,6 +188,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Custom CTA: Seed Home - Subscribe'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_hero_region' => array(
+      'info' => t('Hero Region'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
   );
 }
 
@@ -226,6 +234,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_weather_widget':
       $block['content'] = theme('gsb_public_custom_blocks_weather_widget');
+      break;
+    case 'gpcb_hero_region':
+      $block['content'] = theme('gsb_public_custom_blocks_hero_region');
       break;
     case 'gpcb_banner_tagline':
       $block['content']['tagline'] = array(
