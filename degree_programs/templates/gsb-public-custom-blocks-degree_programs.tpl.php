@@ -1,3 +1,4 @@
+<div class="header">Full-Time Degree Programs</div>
 <div class="degree-programs-wrapper">
   <?php
   if (!empty($degree_programs)): ?>
