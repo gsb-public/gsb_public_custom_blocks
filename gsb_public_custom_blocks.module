@@ -1,5 +1,7 @@
 <?php
 
+include_once 'plugins/content_types/need_more_information.inc';
+
 /**
  * Implements hook_theme().
  *
@@ -192,6 +194,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Hero Region'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_need_more_information' => array(
+      'info' => t('Need More Information'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
   );
 }
 
@@ -280,6 +286,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
     case 'gpcb_conducting_research':
       $block['content'] = theme('gsb_public_custom_blocks_conducting_research');
       break;
+    case 'gpcb_need_more_information':
+      $block['content'] = gsb_public_custom_blocks_need_more_information_content_type();
+      break;
   }
 
   return $block;
@@ -299,8 +308,48 @@ function gsb_public_custom_blocks_block_configure($delta = '') {
         '#default_value' => variable_get('gpcb_banner_tagline_value', ''),
       );
       break;
+    case 'gpcb_need_more_information':
+      for ($count = 1; $count <= 4; $count++) {
+        $title = 'gpcb_need_more_information_cta_title_' . $count;
+        $url = 'gpcb_need_more_information_cta_url_' . $count;
+        $form[$title] = array(
+          '#title' => t('CTA Title '. $count),
+          '#type' => 'textfield',
+          '#default_value' => variable_get($title, ''),
+          '#required' => true,
+          '#element_validate' => array('gsb_public_custom_blocks_need_more_information_validate_title'),
+        );
+        $form[$url] = array(
+          '#title' => t('CTA URL ' . $count),
+          '#type' => 'textfield',
+          '#default_value' => variable_get($url, ''),
+          '#required' => true,
+          '#element_validate' => array('gsb_public_custom_blocks_need_more_information_validate_url'),
+        );
+      }
+      break;
   }
   return $form;
+}
+
+/**
+ * Validates the cta title for need_more_information
+ */
+function gsb_public_custom_blocks_need_more_information_validate_title($element, &$element_state) {
+  $element_name = $element['#name'];
+  if (empty($element['#value'])) {
+    form_set_error($element_name, t($element['#title'] . ' is required.'));
+  }
+}
+
+/**
+ * Validates the cta url for need_more_information
+ */
+function gsb_public_custom_blocks_need_more_information_validate_url($element, &$element_state) {
+  $element_name = $element['#name'];
+  if (empty($element['#value'])) {
+    form_set_error($element_name, t($element['#title'] . ' is required.'));
+  }
 }
 
 /**
@@ -310,6 +359,14 @@ function gsb_public_custom_blocks_block_save($delta = '', $edit = array()) {
   switch ($delta) {
     case 'gpcb_banner_tagline':
       variable_set('gpcb_banner_tagline_value', $edit['gpcb_banner_tagline_value']);
+      break;
+    case 'gpcb_need_more_information':
+      for ($count = 1; $count <= 4; $count++) {
+        $title = 'gpcb_need_more_information_cta_title_' . $count;
+        $url = 'gpcb_need_more_information_cta_url_' . $count;
+        variable_set($title, $edit[$title]);
+        variable_set($url, $edit[$url]);
+      }
       break;
   }
 }
@@ -624,4 +681,19 @@ function mini_program_finder_submit($form, $form_state) {
 
   $options = array('absolute' => TRUE, 'query' => $query);
   drupal_goto('/exec-ed/programs', $options);
+}
+
+function gsb_public_custom_blocks_need_more_information_content_type() {
+  $cta_values = array();
+  for ($count = 1; $count <= 4; $count++) {
+    $title = 'gpcb_need_more_information_cta_title_' . $count;
+    $url = 'gpcb_need_more_information_cta_url_' . $count;
+    $cta_values[] = array(
+      'title' => variable_get($title, ''),
+      'url' => variable_get($url, '')
+    );
+  }
+  $cta = array('cta' => $cta_values);
+  $output = theme('gsb_public_custom_blocks_need_more_information', $cta);
+  return $output;
 }

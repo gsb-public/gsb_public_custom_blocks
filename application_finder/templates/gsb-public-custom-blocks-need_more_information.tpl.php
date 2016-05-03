@@ -6,7 +6,7 @@
       <div class="cta-list" >
         <?php
         $parsed = parse_url($itd['url']);
-        if ($parsed['scheme'] == 'http' || $parsed['scheme'] == 'https' ):
+        if (!empty($parsed['scheme']) && ($parsed['scheme'] == 'http' || $parsed['scheme'] == 'https')):
           print l(t($itd['title']), $itd['url'] , array('external' => TRUE ));
         else:
           print l(t($itd['title']), $itd['url']);
