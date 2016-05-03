@@ -1,7 +1,5 @@
 <?php
 
-include_once 'plugins/content_types/need_more_information.inc';
-
 /**
  * Implements hook_theme().
  *
