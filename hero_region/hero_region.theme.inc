@@ -5,6 +5,9 @@
  */
 function gsb_public_custom_blocks_preprocess_gsb_public_custom_blocks_hero_region(&$variables) {
   $node = menu_get_object('node');
+  if ($node == null) {
+    return;
+  }
   $language = $node->language;
   if (!empty($node->field_hero_region_options[$language][0]['value']) && $node->field_hero_region_options[$language][0]['value'] == 'image') {
     $image = theme('image', array(
