@@ -518,6 +518,7 @@ function gsb_public_custom_blocks_need_more_information_edit_form($form, &$form_
       '#default_value' => !empty($conf[$url]) ? $conf[$url] : '',
     );
   }
+
   $form['#validate'][] = 'gsb_public_custom_blocks_need_more_information_edit_form_validate';
   return $form;
 }

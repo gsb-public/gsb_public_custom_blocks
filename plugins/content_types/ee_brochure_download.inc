@@ -38,7 +38,9 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
 
     foreach ($records as $record) {
       $file_num .= $record->fid;
-      $uploaded_files[$record->filename] = $record->uri;
+      $file_parts = explode('//' , $record->uri);
+      //$uploaded_files[$record->filename] = $record->uri;
+      $uploaded_files[$file_parts[1]] = $record->uri;
       $items[] = l(t($record->title), file_create_url($record->uri), array('attributes' => array('target' => 'blank')));
     }
 
