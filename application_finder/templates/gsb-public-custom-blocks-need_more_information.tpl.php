@@ -1,9 +1,9 @@
 <h4 ><?php print t('Need More Information?'); ?></h4>
-<div >
+<div class="cta-list-wrapper">
   <?php if (!empty($cta)): ?>
     <?php foreach ($cta as $it => $itd):
       if (!empty($itd['title'])): ?>
-      <div class="cta-list" >
+      <div class="cta-item" >
         <?php
         $parsed = parse_url($itd['url']);
         if (!empty($parsed['scheme']) && ($parsed['scheme'] == 'http' || $parsed['scheme'] == 'https')):
