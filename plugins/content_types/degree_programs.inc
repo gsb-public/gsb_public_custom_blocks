@@ -7,6 +7,24 @@ $plugin = array(
   'render callback' => 'gsb_public_custom_blocks_degree_programs_content_type_render',
 );
 
+
+function sortBy($field, &$array, $direction = 'asc')
+{
+  usort($array, create_function('$a, $b', '
+		$a = $a["' . $field . '"];
+		$b = $b["' . $field . '"];
+
+		if ($a == $b)
+		{
+			return 0;
+		}
+
+		return ($a ' . ($direction == 'desc' ? '>' : '<') .' $b) ? -1 : 1;
+	'));
+
+  return true;
+}
+
 /**
  * Implements hook_PLUGIN_content_type_render().
  */
@@ -37,9 +55,12 @@ function gsb_public_custom_blocks_degree_programs_content_type_render($subtype, 
     $nid = $result->nid;
     $degree_programs[$nid]['title'] = $result->title;
     $degree_programs[$nid]['program_teaser'] = $result->program_teaser;
+    $title_fragments = explode(' ', $result->title);
+    $degree_programs[$nid]['order'] = ($title_fragments[0] == 'Stanford') ? $title_fragments[1] : $title_fragments[0];
 
   }
 
+  sortBy('order',   $degree_programs);
   $output = theme('gsb_public_custom_blocks_degree_programs', array('degree_programs' => $degree_programs));
 
   return (object) array(
@@ -48,3 +69,4 @@ function gsb_public_custom_blocks_degree_programs_content_type_render($subtype, 
     ),
   );
 }
+
