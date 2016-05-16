@@ -8,7 +8,7 @@ $plugin = array(
 );
 
 
-function sortBy($field, &$array, $direction = 'asc')
+function sortBy_title($field, &$array, $direction = 'asc')
 {
   usort($array, create_function('$a, $b', '
 		$a = $a["' . $field . '"];
@@ -60,7 +60,7 @@ function gsb_public_custom_blocks_degree_programs_content_type_render($subtype, 
 
   }
 
-  sortBy('order',   $degree_programs);
+  sortBy_title('order',   $degree_programs);
   $output = theme('gsb_public_custom_blocks_degree_programs', array('degree_programs' => $degree_programs));
 
   return (object) array(
