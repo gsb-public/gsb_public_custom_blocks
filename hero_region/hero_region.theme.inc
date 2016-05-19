@@ -9,6 +9,8 @@ function gsb_public_custom_blocks_preprocess_gsb_public_custom_blocks_hero_regio
     return;
   }
   $language = $node->language;
+  // render image
+  $variables['hero_region']['image'] = array();
   if (!empty($node->field_hero_region_options[$language][0]['value']) && $node->field_hero_region_options[$language][0]['value'] == 'image') {
     $image = theme('image', array(
       'path' => $node->field_image_single_public[$language][0]['uri'],
@@ -16,6 +18,20 @@ function gsb_public_custom_blocks_preprocess_gsb_public_custom_blocks_hero_regio
       'height' => $node->field_image_single_public[$language][0]['height'],
       'alt' => $node->field_image_single_public[$language][0]['alt']
     ));
-    $variables['hero_region'] = $image;
+    $variables['hero_region']['image'] = $image;
+  }
+  // render slideshow
+  $variables['hero_region']['slideshow'] = array();
+  if (!empty($node->field_hero_region_options[$language][0]['value']) && $node->field_hero_region_options[$language][0]['value'] == 'slideshow') {
+    // Assemble the slides
+    $slides = array();
+    foreach($node->field_slideshow_slides[$language] as $index => $data) {
+      if (is_integer($index)) {
+        if ($slide_info = field_collection_field_get_entity($data)) {
+          $slides[] = theme('slideshow_slide', array('slide_info' => $slide_info));
+        }
+      }
+    }
+    $variables['hero_region']['slideshow'] = implode('',$slides);
   }
 }
