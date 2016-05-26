@@ -46,13 +46,12 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
                 <input type="text" name="param_pattern_value" size="24" placeholder="Search by title, or keyword" value="" id="param_pattern_value">
               </div>
               <input class="submit" value="Search" type="submit" />
-              <input name="param_issn_value" value="0891-1770" id="param_issn_value" type="hidden">
+              <input name="param_issn_value" value="" id="param_issn_value" type="hidden">
               <input name="param_perform_value" value="locate" id="param_perform_value" type="hidden">
             </form>
           </div>
         </div>
         <script>
-          //0891-1770
           function doSubmit() {
             setISSNValue();
           }
