@@ -32,24 +32,41 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
             </form>
           </div>
           <div id="content_2" class="searchworks-content">
-            <form target="_blank" method="get" name="SS_EJPSearchForm" action="http://tc8vw9nw8j.search.serialssolutions.com/?V=1.0&N=100&L=TC8VW9NW8J&S=T_W_A&C=">
+            <form target="_blank" method="get" name="SS_EJPSearchForm" action="http://sul-sfx.stanford.edu/sfxlcl41/az" onsubmit="doSubmit();">
               <input name="V" value="1.0" type="hidden" />
               <input name="N" value="100" type="hidden" />
               <input name="L" value="TC8VW9NW8J" type="hidden" />
-              <select name="S" class="searchworks-select">
-                <option value="AC_T_B">Title begins with</option>
-                <option value="AC_T_M">Title equals</option>
-                <option selected="selected" value="T_W_A">Title contains all words</option>
-                <option value="I_M">ISSN equals</option>
+              <select name="param_textSearchType_value" id="param_textSearchType_value" class="searchworks-select">
+                <option value="startsWith">Title begins with</option>
+                <option value="exactMatch">Title equals</option>
+                <option selected="selected" value="contains">Title contains all words</option>
+                <option value="issn">ISSN equals</option>
               </select>
               <div id="edit-search-wrapper" class="searchworks-ejournal">
-                <input id="SS_CFocusTag" name="C" size="24" type="text" placeholder="Search by title, or keyword" />
+                <input type="text" name="param_pattern_value" size="24" placeholder="Search by title, or keyword" value="" id="param_pattern_value">
               </div>
               <input class="submit" value="Search" type="submit" />
+              <input name="param_issn_value" value="0891-1770" id="param_issn_value" type="hidden">
+              <input name="param_perform_value" value="locate" id="param_perform_value" type="hidden">
             </form>
           </div>
         </div>
         <script>
+          //0891-1770
+          function doSubmit() {
+            setISSNValue();
+          }
+          function setISSNValue() {
+            var selectedValue = document.getElementById("param_textSearchType_value").value;
+            if (selectedValue == "issn") {
+              var searchValue = document.getElementById("param_pattern_value").value;
+              document.getElementById("param_issn_value").value = searchValue;
+              document.getElementById("param_pattern_value").value = "";
+            }
+            else {
+              document.getElementById("param_issn_value").value = "";
+            }
+          }
           function tabSwitch(new_tab, new_content) {
             document.getElementById("content_1").style.display = "none";
             document.getElementById("content_2").style.display = "none";
