@@ -649,8 +649,8 @@ function mini_program_finder_form($form, &$form_state) {
   drupal_add_css(libraries_get_path('multiple-select') . '/multiple-select.css');
   drupal_add_js(drupal_get_path('module', 'gsb_public_custom_blocks') . '/js/mini_program_finder.js');
   drupal_add_js(libraries_get_path('moment') . '/moment.js');
-  drupal_add_js(libraries_get_path('jquery-date-range-picker') . '/jquery.daterangepicker.js');
-  drupal_add_css(libraries_get_path('jquery-date-range-picker') . '/daterangepicker.css');
+  drupal_add_js(libraries_get_path('jquery-date-range-picker') . '/src/jquery.daterangepicker.js');
+  drupal_add_css(libraries_get_path('jquery-date-range-picker') . '/src/daterangepicker.css');
   return $form;
 }
 
