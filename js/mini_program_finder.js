@@ -82,6 +82,8 @@
               startDate: minDate,
               endDate: maxDate,
               hoveringTooltip: false,
+              singleMonth: false,
+              stickyMonths: true,
               setValue: function (s) {
               }
             }).bind('datepicker-apply', function (event, obj) {
