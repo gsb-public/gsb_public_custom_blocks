@@ -20,6 +20,10 @@ function gsb_public_custom_blocks_preprocess_gsb_public_custom_blocks_hero_regio
     ));
     $variables['hero_region']['image'] = $image;
   }
+  // Don't add slideshow, if device/agent is mobile
+  if (_gsb_public_custom_blocks_isMobile()) {
+    return;
+  }
   // render slideshow
   $variables['hero_region']['slideshow'] = array();
   if (!empty($node->field_hero_region_options[$language][0]['value']) && $node->field_hero_region_options[$language][0]['value'] == 'slideshow') {
@@ -34,4 +38,8 @@ function gsb_public_custom_blocks_preprocess_gsb_public_custom_blocks_hero_regio
     }
     $variables['hero_region']['slideshow'] = implode('',$slides);
   }
+}
+
+function _gsb_public_custom_blocks_isMobile() {
+  return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 }
