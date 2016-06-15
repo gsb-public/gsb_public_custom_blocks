@@ -26,12 +26,12 @@ function gsb_public_custom_blocks_mini_program_finder_content_type_render($subty
   $select->leftJoin('field_data_field_instance_date', 'dt', 'n.nid = dt.entity_id AND dt.deleted = 0');
   $select->addField('dt', 'field_instance_date_value', 'start_date');
   $select->addField('dt', 'field_instance_date_value2', 'end_date');
+
   //Topics
   $select->leftJoin('field_data_field_program_topics', 'pt', 'n2.nid = pt.entity_id AND pt.deleted = 0');
   $select->leftJoin('taxonomy_term_data', 'ttd_pt', 'pt.field_program_topics_tid = ttd_pt.tid');
   $select->addField('ttd_pt', 'tid', 'program_topics_tid');
   $select->addField('ttd_pt', 'name', 'program_topics');
-  $select->condition('ttd_pc.name', 'Exec Ed Program');
   $select->leftJoin('field_data_field_display_on_finder', 'df', 'n.nid = df.entity_id AND df.deleted = 0');
   $select->condition('df.field_display_on_finder_value', 1);
   $select->orderBy('program_topics','ASC');
