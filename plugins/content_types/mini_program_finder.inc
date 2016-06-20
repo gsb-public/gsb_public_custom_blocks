@@ -22,6 +22,7 @@ function gsb_public_custom_blocks_mini_program_finder_content_type_render($subty
   //Program Category
   $select->leftJoin('field_data_field_program_category', 'pc', 'n2.nid = pc.entity_id AND pc.deleted = 0');
   $select->leftJoin('taxonomy_term_data', 'ttd_pc', 'pc.field_program_category_tid = ttd_pc.tid');
+
   //Dates
   $select->leftJoin('field_data_field_instance_date', 'dt', 'n.nid = dt.entity_id AND dt.deleted = 0');
   $select->addField('dt', 'field_instance_date_value', 'start_date');
@@ -34,6 +35,9 @@ function gsb_public_custom_blocks_mini_program_finder_content_type_render($subty
   $select->addField('ttd_pt', 'name', 'program_topics');
   $select->leftJoin('field_data_field_display_on_finder', 'df', 'n.nid = df.entity_id AND df.deleted = 0');
   $select->condition('df.field_display_on_finder_value', 1);
+  $today = new DateTime();
+  $today = $today->format('Y-m-d\T00:00:00');
+  $select->condition('dt.field_instance_date_value', $today, '>=');
   $select->orderBy('program_topics','ASC');
   $select->distinct();
   $query = $select->execute();
@@ -55,7 +59,7 @@ function gsb_public_custom_blocks_mini_program_finder_content_type_render($subty
 
   $minifinder_setting = array(
      'minifinder' => array(
-       "start_date" => date('Y-m-d', strtotime(min($start_date))),
+       "start_date" => $today,
        "end_date" => date('Y-m-d', strtotime(max($end_date))),
      ),
   );
