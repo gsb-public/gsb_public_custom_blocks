@@ -77,7 +77,8 @@ function gsb_featured_event_date_formatter() {
 
     if ($address['country'] == 'US') {
       $location = ($address['administrative_area'] != NULL) ? $location . ', ' . $address['administrative_area'] : $location;
-    }else {
+    }
+    else {
       module_load_include('inc', 'addressfield', 'addressfield.administrative_areas');
       $administrative_areas = addressfield_get_administrative_areas($address['country']);
       $admin_area = $administrative_areas[$address['administrative_area']];
@@ -85,8 +86,14 @@ function gsb_featured_event_date_formatter() {
       $location = (($admin_area != NULL) AND ($location != '')) ? $location . ', ' . $admin_area : $admin_area;
       $location = ($address['country'] != NULL) ? $location . ', ' . $countries[$address['country']] : $location;
     }
- 
-  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title"><a href="/' . drupal_get_path_alias($node->path['source']) . '">' . $node->title . '</a></div>';
+
+    if ($node->field_event_detail['und'][0]['value'] == 1) {
+      $link = l(t($node->title), $node->field_link_single['und'][0]['url'], array('attributes' => array('target' => 'blank')));
+    } else {
+      $link = l(t($node->title), drupal_get_path_alias($node->path['source']), array('html' => TRUE));
+    }
+
+  $output .= '<div class="event-calendar-featured-wrapper"</div><div class="event-calendar-featured-title">' . $link . '</div>';
   $output .= '<div class="event-calendar-featured-locality">' . $location.'</div>';
   $output .= '<div class="event-calendar-featured-summary">' . $node->field_editorial_summary[$language][0]['value'] . '</div></div>';
   $output .= '<div class="event-calendar-featured-image">' . render($content['field_image_single_public']) . '</div>';
