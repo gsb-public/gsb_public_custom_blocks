@@ -52,8 +52,8 @@
               });
 
               var $dropdown = $select.next().find('.ms-drop');
-              $dropdown.append($applyButton);
-              $dropdown.append($clearAllButton);
+              // $dropdown.append($applyButton);
+              //$dropdown.append($clearAllButton);
             });
           }
           /**
@@ -86,7 +86,7 @@
               stickyMonths: true,
               setValue: function (s) {
               }
-            }).bind('datepicker-apply', function (event, obj) {
+            }).bind('datepicker-change', function (event, obj) {
               if (obj.value == '1969-12-31 to 1969-12-31' || obj.date1 == 'Invalid Date' || obj.date2 == 'Invalid Date') {
                 $("#edit-date-range-to").val('');
                 $("#edit-date-range-from").val('');
@@ -117,10 +117,12 @@
 
             // Move the close button.
             $('.date-picker-wrapper .drp_top-bar').not(':last').remove();
-            var $topBar = $('.date-picker-wrapper .drp_top-bar').detach();
-            $topBar.find('.apply-btn').val(Drupal.t('Done'));
-            $topBar.find('.default-top').hide();
-            $('.date-picker-wrapper').append($topBar);
+            $('.date-picker-wrapper .drp_top-bar').hide();
+            //$('.date-picker-wrapper .drp_top-bar').remove();
+            // var $topBar = $('.date-picker-wrapper .drp_top-bar').detach();
+            // $topBar.find('.apply-btn').val(Drupal.t('Done'));
+            //$topBar.find('.default-top').hide();
+            // $('.date-picker-wrapper').append($topBar);
           }
 
           // date formatter
