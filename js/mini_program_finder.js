@@ -4,6 +4,7 @@
 
           var $miniFilterCheckboxes = $('#mini-program-finder select.isotopify-filter-checkboxes');
           var $miniFilterDateRange = $('.isotopify-filter-daterange');
+          //var $miniFilterDateRange = $('.form-type-textfield');
           //Handle checkboxes
           if ($miniFilterCheckboxes.length) {
             // Remove unused filter options. This needs to ru
@@ -62,8 +63,9 @@
           if ($miniFilterDateRange.length) {
 
             // Add the button to the page.
-            title = "Select a date range";
+            title = "Date Range";
             var $miniFilterDateRangeButton = $('<button class="mini-filter-daterange-button">' + title + '</button>');
+
             if ($(".mini-filter-daterange-button").length == 0) {
               $miniFilterDateRange.append($miniFilterDateRangeButton);
             }
@@ -84,21 +86,34 @@
               hoveringTooltip: false,
               singleMonth: false,
               stickyMonths: true,
+              customTopBar:  "Select a Start Date",
               setValue: function (s) {
               }
+            }).bind('datepicker-first-date-selected', function(event, obj) {
+              /* This event will be triggered when first date is selected */
+
+              $("div.custom-top").show();
+              $("div.custom-top").text("Select an End Date");
+
             }).bind('datepicker-change', function (event, obj) {
+              /* This event will be triggered when second date is selected */
+
               if (obj.value == '1969-12-31 to 1969-12-31' || obj.date1 == 'Invalid Date' || obj.date2 == 'Invalid Date') {
                 $("#edit-date-range-to").val('');
                 $("#edit-date-range-from").val('');
               }
               else {
-                /* This event will be triggered when user clicks on the apply button */
+                /* This event will be triggered when user done selecting dates */
                 var date1 = new Date(obj.date1);
                 var beginDateRange = Drupal.minifinder.convertDateObj(date1);
                 var date2 = new Date(obj.date2);
                 var endDateRange = Drupal.minifinder.convertDateObj(date2);
                 $("#edit-date-range-to").val(endDateRange);
                 $("#edit-date-range-from").val(beginDateRange);
+                var formattedStartDate = Drupal.minifinder.convertDateObjFormat(date1);
+                var formattedEndDate = Drupal.minifinder.convertDateObjFormat(date2)
+                $miniFilterDateRangeButton.text( formattedStartDate + ' - ' + formattedEndDate );
+                $("div.custom-top").hide();
               }
 
             }).click(function (e) { // Close picker if the button is clicked when it's opened
@@ -107,8 +122,11 @@
                 $(this).data('dateRangePicker').close();
               }
 
+
             }).bind('datepicker-opened', function () { // Add classes when the picker is opened
               $(this).removeClass('closed');
+              $("div.custom-top").text("Select a Start Date");
+              $("div.custom-top").show();
               $(this).addClass('open');
             }).bind('datepicker-closed', function () { // Add classes when the picker is closed
               $(this).removeClass('open');
@@ -117,12 +135,7 @@
 
             // Move the close button.
             $('.date-picker-wrapper .drp_top-bar').not(':last').remove();
-            $('.date-picker-wrapper .drp_top-bar').hide();
-            //$('.date-picker-wrapper .drp_top-bar').remove();
-            // var $topBar = $('.date-picker-wrapper .drp_top-bar').detach();
-            // $topBar.find('.apply-btn').val(Drupal.t('Done'));
-            //$topBar.find('.default-top').hide();
-            // $('.date-picker-wrapper').append($topBar);
+            $('.apply-btn').remove();
           }
 
           // date formatter
@@ -143,6 +156,22 @@
             }
             return dateYearStr + dateMonthStr + dateDayStr;
           }
-    }
-  }
+          Drupal.minifinder.convertDateObjFormat = function (date) {
+            var dateYear = date.getFullYear();
+            var dateYearStr = dateYear.toString();
+            var dateMonth = date.getMonth() + 1;
+            var dateMonthStr = dateMonth.toString();
+            if (dateMonthStr.length == 1) {
+              dateMonthStr = '0' + dateMonthStr;
+            }
+            var dateDay = date.getDate();
+            var dateDayStr = dateDay.toString();
+            if (dateDayStr.length == 1) {
+              dateDayStr = '0' + dateDayStr;
+            }
+
+            return  dateMonthStr + '/' +  dateDayStr + '/' + dateYearStr ;
+          }
+        }
+      }
   })(jQuery);
