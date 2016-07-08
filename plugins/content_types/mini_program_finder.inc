@@ -67,7 +67,7 @@ function gsb_public_custom_blocks_mini_program_finder_content_type_render($subty
   $img = array('finder_img' => $conf['finder_image']);
   $output = theme('gsb_public_custom_blocks_mini_program_finder', $img);
     $output .= '<div class="mini-program-finder-title-filters"><div class="inner">
-  <h1>' . t('Find Your Program') . '</h1><div class="mini-finder-filters">' . mini_finder_render($topics) . '</div></div></div>';
+  <h1>' . t('Find An Executive Education Program') . '</h1><div class="mini-finder-filters">' . mini_finder_render($topics) . '</div></div></div>';
 
 
   return (object) array(
