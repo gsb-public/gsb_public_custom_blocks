@@ -1,4 +1,4 @@
-<a href="/visit" class="designed-box cta-get-directions">
+<a href="/visit" class="map-link">
   <p class="cta-body">
     <?php print $text; ?>
   </p>
