@@ -60,6 +60,10 @@
           /**
            * Handle daterange
            */
+          // Add touchstart event for iphone
+          $('.content').on('touchstart click', function(e){
+          });
+
           if ($miniFilterDateRange.length) {
 
             // Add the button to the page.
