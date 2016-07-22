@@ -152,10 +152,6 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Banner title'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
-    'gpcb_breadcrumbs' => array(
-      'info' => t('Breadcrumbs'),
-      'cache' => DRUPAL_CACHE_GLOBAL,
-    ),
     'gpcb_last_updated' => array(
       'info' => t('MBA: Last Updated'),
       'cache' => DRUPAL_CACHE_GLOBAL,
@@ -265,13 +261,6 @@ function gsb_public_custom_blocks_block_view($delta = '') {
           ),
         ),
         '#children' => $title,
-      );
-      break;
-
-    case 'gpcb_breadcrumbs':
-      $block['content'] = array(
-        '#theme' => 'breadcrumb',
-        '#breadcrumb' => drupal_get_breadcrumb(),
       );
       break;
     case 'gpcb_last_updated':
