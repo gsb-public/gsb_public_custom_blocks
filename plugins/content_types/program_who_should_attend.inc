@@ -1,11 +1,15 @@
 <?php
 
+/*
+ * This is no longer in use. We have decided to just render this thru the field_ view modes.
+ *
 $plugin = array(
   'title' => t('Who should attend'),
   'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
+*/
 
 /**
  * Implements hook_PLUGIN_content_type_render().
