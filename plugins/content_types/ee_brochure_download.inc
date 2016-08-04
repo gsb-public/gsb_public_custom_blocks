@@ -65,9 +65,69 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
     }
   }
 
+  $program_info = array();
+  $program_nodes = node_load_multiple($program_ids);
+  $program_instances = _gsb_public_custom_blocks_ee_brochure_download_get_program_instances($program_ids);
+  foreach ($program_nodes as $node) {
+    $progam_instance = _gsb_public_custom_blocks_ee_brochure_download_find_program_instance($node->nid, $program_instances);
+    $pi_node = node_load($progam_instance->nid);
+    $apowerid = $pi_node->field_apower_id['und'][0]['value'];
+    $program_info[] = array('title' => $node->title, 'apowerid' => $apowerid);
+  }
+
+  drupal_add_js(drupal_get_path('module', 'gsb_public_custom_blocks') . '/js/ee_brochure_download.js');
+  $settings = array (
+    'program_info' => $program_info,
+  );
+  drupal_add_js(array("ee_brochure_download_settings" => $settings), 'setting');
+
   $output .= theme('item_list', array('items' => $items)) . $zipped_file;
   return (object) array(
     'title' => t(''),
     'content' => $output,
   );
+}
+
+/**
+ * Get the most current program instances related to each of these programs
+ */
+function _gsb_public_custom_blocks_ee_brochure_download_get_program_instances($program_nids) {
+
+  $today = date('Y-m-d H:i:s', mktime(0,0,0));
+
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid', 'status', 'type'));
+  $query->join('field_data_field_program', 'fp', "n.nid = fp.entity_id AND fp.entity_type = 'node' AND fp.deleted = '0'");
+  $query->fields('fp', array('entity_id', 'entity_type', 'deleted', 'field_program_target_id'));
+  $query->join('node', 'nodefp', 'fp.field_program_target_id = nodefp.nid');
+  $query->fields('nodefp', array('nid'));
+  $query->join('field_data_field_instance_date', 'fid', "n.nid = fid.entity_id AND fid.entity_type = 'node' AND fid.deleted = '0'");
+  $query->fields('fid', array('field_instance_date_value'));
+  $query->join('field_data_field_display_on_finder', 'dof', "n.nid = dof.entity_id AND dof.entity_type = 'node' AND dof.deleted = '0'");
+  $query->condition('nodefp.nid', $program_nids, 'IN');
+  $query->condition('n.status', '1');
+  $query->condition('n.type', 'program_instance');
+  $query->condition('fid.field_instance_date_value', $today, '>=');
+  $query->condition('dof.field_display_on_finder_value', '1');
+  $query->orderBy('fid.field_instance_date_value', 'ASC');
+  $results = $query->execute();
+
+  $program_instances = array();
+  foreach($results as $instance) {
+    $program_instances[] = $instance;
+  }
+
+  return $program_instances;
+}
+
+/**
+ * Find a program instance related to the program
+ */
+function _gsb_public_custom_blocks_ee_brochure_download_find_program_instance($program_nid, $program_instances) {
+  foreach ($program_instances as $pi) {
+    if ($pi->field_program_target_id == $program_nid) {
+      return $pi;
+    }
+  }
+  return null;
 }
