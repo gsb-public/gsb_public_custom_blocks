@@ -5,7 +5,11 @@
     <?php foreach ($degree_programs as $it => $itd): ?>
       <div class="degree-program">
         <div class="title">
-          <?php print l(t($itd['title']), drupal_lookup_path('alias', "node/". $it)); ?>
+          <?php if (!empty($itd['link_url'])): ?>
+            <?php print l(t($itd['title']), $itd['link_url']); ?>
+          <?php else: ?>
+            <?php print l(t($itd['title']), drupal_lookup_path('alias', "node/". $it)); ?>
+          <?php endif; ?>
           <?php //print $itd['title']; ?>
         </div>
         <div class="intro">

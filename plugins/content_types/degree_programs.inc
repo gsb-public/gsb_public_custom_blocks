@@ -54,6 +54,7 @@ function gsb_public_custom_blocks_degree_programs_content_type_render($subtype, 
   while ($result = $query->fetchObject()) {
     $nid = $result->nid;
     $degree_programs[$nid]['title'] = $result->title;
+    $degree_programs[$nid]['link_url'] = $result->link_url;
     $degree_programs[$nid]['program_teaser'] = $result->program_teaser;
     $title_fragments = explode(' ', $result->title);
     $degree_programs[$nid]['order'] = ($title_fragments[0] == 'Stanford') ? $title_fragments[1] : $title_fragments[0];
