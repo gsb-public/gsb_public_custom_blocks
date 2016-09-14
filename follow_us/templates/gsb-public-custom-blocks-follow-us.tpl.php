@@ -1,4 +1,4 @@
-<h2><a class="social-title" href="/contact/social">Follow Stanford Business</a></h2>
+<h2><a class="social-title" href="/insights/follow">Follow Stanford Business</a></h2>
 <ul class="icon-wrapper">
   <li><a href="https://twitter.com/stanfordbiz" target="_blank" class="circle social-block-twitter"></a></li>
   <li><a href="http://www.youtube.com/stanfordbusiness" target="_blank" class="circle social-block-youtube"></a></li>
