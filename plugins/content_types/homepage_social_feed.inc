@@ -17,6 +17,14 @@ function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subt
         'library' => array(
           array('gsb_feature_social_feed', 'gsb_tweetfeed'),
         ),
+        'js' => array(
+          array(
+            'data' => drupal_get_path('module', 'gsb_public_custom_blocks') . '/js/homepage_social_feed.js',
+            'options' => array(
+              'scope' => 'footer',
+            )
+          )
+        )
       ),
       '#markup' => '
         <ul class="icon-wrapper">
@@ -30,13 +38,7 @@ function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subt
             <a href="http://twitter.com/@stanfordbiz" target="_blank"><strong>Stanford Business</strong><br />@StanfordBiz</a>
           </div>
           <div id="fpp-tweets-front"></div>
-        </div>
-        <script>gsb_tweetfeed.init({
-          search: \'@stanfordbiz\',
-          numTweets: 2,
-          appendTo: \'#fpp-tweets-front\',
-          format: \'l, M j | a\'
-        });</script>',
+        </div>',
     ),
   );
 }
