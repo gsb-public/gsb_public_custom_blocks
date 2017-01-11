@@ -61,7 +61,7 @@ function gsb_public_custom_blocks_program_links_content_type_render($subtype, $c
           ),
           'executive-education' => array(
             'title' => t('Executive Education'),
-            'href' => 'programs/executive-education',
+            'href' => '/exec-ed',
             'attributes' => array(
               'class' => array(
                 'item-3',
