@@ -1,5 +1,5 @@
 <div class="content">
-  <form action="http://www.gsb.stanford.edu/exec-ed/contact/subscribe" method="get" id="gsb-stay-informed-signup-form" accept-charset="UTF-8" class="footer-signup">
+  <form action="/exec-ed/contact/subscribe" method="get" id="gsb-stay-informed-signup-form" accept-charset="UTF-8" class="footer-signup">
     <label for="edit-email" class="signup-label">Stay Informed</label>
     <p class="signup-description">Sign up for our mailing list to receive the latest news on program offerings and faculty research.</p>
     <div class="signup-wrapper">
