@@ -12,7 +12,7 @@ $plugin = array(
  */
 function gsb_public_custom_blocks_library_contact_form_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
 
-	$form_markup = '<form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
+	$form_markup = '<form name="f1" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
 	<input name="orgid" value="@@orgid " type="hidden">
 	<input name="retURL" value="http://www.gsb.stanford.edu/library/contact/thank-you" type="hidden">
 	<!--  ----------------------------------------------------------------------  -->

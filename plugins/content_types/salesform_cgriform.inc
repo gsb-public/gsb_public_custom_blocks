@@ -22,7 +22,7 @@ $form_markup = <<<HTML
 <!-- Add the following FORM element to your page.-->
 <!-- ---------------------------------------------------------------------  -->
 
-  <form name="f1" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"  onSubmit="javascript: return required();">
+  <form name="f1" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"  onSubmit="javascript: return required();">
     <input type=hidden name="oid" value="00D500000007AMA">
     <input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
     <input type="hidden" id="00N500000032wXn" name="00N500000032wXn" type="checkbox" value="1" />
