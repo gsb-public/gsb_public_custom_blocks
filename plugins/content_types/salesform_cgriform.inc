@@ -27,6 +27,7 @@ $form_markup = <<<HTML
     <input type=hidden name="retURL" value="http://www.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
     <input type="hidden" id="00N500000032wXn" name="00N500000032wXn" type="checkbox" value="1" />
     <input type="hidden" id="lead_source" name="lead_source" value="CGRI" />
+    <input type="hidden" id="00N5000000336R1" name="00N5000000336R1" title="All Lead Sources" value="GIPR - Inquiry Form" />
     <input type="hidden" id="cgri_email_list__c" name="cgri_email_list__c" value=“True” />
     <input type="hidden" id="status" name="status" value="Open - Not Contacted" />
     <input type="hidden" id="owner" name="owner" value=“mgutman” />

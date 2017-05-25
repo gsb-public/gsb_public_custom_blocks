@@ -16,6 +16,7 @@ function gsb_public_custom_blocks_salesform_webform_content_type_render($subtype
 <input type="hidden" name="oid" value="@@orgid">
 <input type="hidden" name="retURL" value="http://www.gsb.stanford.edu/programs/thank-you-inquiry">
 <input type="hidden" name="lead_source" value="GIPR - Inquiry Form" id="lead_source">
+<input type="hidden" id="00N5000000336R1" name="00N5000000336R1" title="All Lead Sources" value="GIPR - Inquiry Form" />
 <input type="hidden" id="@@commitmentname" name="@@commitmentname" title="Commitment Name" value="GIPR Contact" />
 <input type="hidden" id="@@commitmentrole" name="@@commitmentrole" title="Commitment Role" value="GIPR - Inquiry" />
 <!--  ----------------------------------------------------------------------  -->
