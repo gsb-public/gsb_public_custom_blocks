@@ -28,18 +28,21 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 	<label for="affiliation">Affiliation<span>*</span></label>
 	<select id="Select1" name="@@select" title="Requestor affiliation" style="width:286px">
 	<option value="">--None--</option>
-	<option value="MBA1">MBA 1</option>
-	<option value="MBA2">MBA 2</option>
-	<option value="GSB PhD Student">GSB PhD Student</option>
-	<option value="GSB MSx Student">GSB MSx Student</option>
-	<option value="GSB Student - Other">GSB Student - Other</option>
-	<option value="GSB Faculty">GSB Faculty</option>
-	<option value="GSB Staff">GSB Staff</option>
 	<option value="GSB Alumni">GSB Alumni</option>
-	<option value="Stanford Faculty">Stanford Faculty</option>
-	<option value="Stanford Student">Stanford Student</option>
-	<option value="Stanford Staff">Stanford Staff</option>
+	<option value="GSB Faculty">GSB Faculty</option>
+	<option value="GSB Faculty Research Asst">GSB Faculty Research Asst</option>
+	<option value="GSB MBA Student">GSB MBA Student</option>
+	<option value="GSB MSx Student">GSB MSx Student</option>
+	<option value="GSB PhD Student">GSB PhD Student</option>
+	<option value="GSB Postdoc">GSB Postdoc</option>
+	<option value="GSB Staff">GSB Staff</option>
+	<option value="GSB Student - Other">GSB Student - Other</option>
 	<option value="Stanford Alumni">Stanford Alumni</option>
+	<option value="Stanford Faculty">Stanford Faculty</option>
+	<option value="Stanford Faculty Research Asst">Stanford Faculty Research Asst</option>
+	<option value="Stanford Staff">Stanford Staff</option>
+	<option value="Stanford Postdoc">Stanford Postdoc</option>
+	<option value="Stanford Student">Stanford Student</option>
 	<option value="Visiting Scholar">Visiting Scholar</option>
 	<option value="Visitor">Visitor</option>
 	</select><br/><br/>
@@ -47,8 +50,8 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 	<select id="@@requesttype" name="@@requesttype" title="Request Type" style="width:286px">
 	<option selected="selected" value="">--None--</option>
 	<option value="Ask Us">Research Assistance</option>
-	<option value="Suggestions">Feedback & Suggestions</option>
-	<option value="Suggest a Purchase">Suggest a Purchase</option>
+	<option value="Suggestion">Feedback & Suggestions</option>
+	<option value="Acquisition Request">Suggest a Purchase</option>
 	<option value="Ask Us">Other</option>
 	</select><br/><br/>
 	<label for="requesttype">Request<span>*</span></label>
