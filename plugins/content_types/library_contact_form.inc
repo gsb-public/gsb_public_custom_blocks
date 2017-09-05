@@ -12,8 +12,9 @@ $plugin = array(
  */
 function gsb_public_custom_blocks_library_contact_form_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
 
-	$form_markup = '<form name="f1" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
+	$form_markup = '<form name="f1" action="@@formactionurl?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
 	<input name="orgid" value="@@orgid " type="hidden">
+	<input id="recordType" name="recordType" type="hidden" value="@@recordtypevalue" />
 	<input name="retURL" value="http://www.gsb.stanford.edu/library/contact/thank-you" type="hidden">
 	<!--  ----------------------------------------------------------------------  -->
 	<!--  NOTE: These fields are optional debugging elements.  Please uncomment   -->
@@ -130,7 +131,9 @@ function gsb_public_custom_blocks_library_contact_form_content_type_render($subt
 
 	$library_contact_form_vars = variable_get('library_contact_form_vars','');
 
+	$form_markup = str_replace("@@formactionurl", $library_contact_form_vars['@@formactionurl'], $form_markup);
 	$form_markup = str_replace("@@orgid", $library_contact_form_vars['@@orgid'], $form_markup);
+	$form_markup = str_replace("@@recordtypevalue", $library_contact_form_vars['@@recordtypevalue'], $form_markup);
 	$form_markup = str_replace("@@name", $library_contact_form_vars['@@name'], $form_markup);
 	$form_markup = str_replace("@@select", $library_contact_form_vars['@@select'], $form_markup);
 	$form_markup = str_replace("@@requesttype", $library_contact_form_vars['@@requesttype'], $form_markup);
