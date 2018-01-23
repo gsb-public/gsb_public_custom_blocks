@@ -28,14 +28,14 @@ function gsb_public_custom_blocks_homepage_social_feed_content_type_render($subt
       ),
       '#markup' => '
         <ul class="icon-wrapper">
-          <li><a href="https://twitter.com/stanfordbiz" target="_blank" class="circle social-block-twitter"></a></li>
+          <li><a href="https://twitter.com/stanfordgsb" target="_blank" class="circle social-block-twitter"></a></li>
           <li><a href="http://www.youtube.com/stanfordbusiness" target="_blank" class="circle social-block-youtube"></a></li>
           <li><a href="http://www.linkedin.com/company/stanford-graduate-school-of-business" target="_blank" class="circle social-block-linkedin"></a></li>
           <li><a href="https://www.facebook.com/StanfordGSB" target="_blank" class="circle social-block-facebook"></a></li>
         </ul>
         <div class="twitter-feed">
           <div class="twitter-handle">
-            <a href="http://twitter.com/@stanfordbiz" target="_blank"><strong>Stanford Business</strong><br />@StanfordBiz</a>
+            <a href="http://twitter.com/@stanfordgsb" target="_blank"><strong>Stanford Business</strong><br />@StanfordGSB</a>
           </div>
           <div id="fpp-tweets-front"></div>
         </div>',
