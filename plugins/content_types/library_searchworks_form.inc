@@ -18,7 +18,7 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
       '<div id="tab_1_contents" class="tab_contents">
           <div class="search_text">Find books, journals, videos, and more in Stanford libraries. </div>
           <div class="search_form">
-            <form target="_blank" title="Search form" method="get" action="http://searchworks.stanford.edu/?qt=search&amp;per_page=20&amp;q=">
+            <form target="_blank" title="Search form" method="get" action="https://searchworks.stanford.edu/?qt=search&amp;per_page=20&amp;q=">
               <div id="edit-search-wrapper">
                 <input id="q" class="searchworks-search" name="q" size="50" type="text" placeholder="Search by title, author, or keyword" />
               </div>
