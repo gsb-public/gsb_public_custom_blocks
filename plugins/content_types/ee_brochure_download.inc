@@ -24,7 +24,7 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
 
     $program_ids = array();
 
-    if (!empty($output['brochure_list']) && !empty($output['brochure_list']['value'])) {
+    if (!empty($output['brochure_list']) && !empty($output['brochure_list']['#value'])) {
       $program_ids = $output['brochure_list']['#value'];
     }
 
