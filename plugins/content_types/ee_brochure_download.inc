@@ -22,7 +22,22 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
     $node = node_load($nid);
     $output = webform_submission_render($node, $web_submission, NULL, 'html');
 
-    $program_ids = $output['brochure_list']['#value'];
+    $program_ids = array();
+
+    if (!empty($output['brochure_list']) && !empty($output['brochure_list']['value'])) {
+      $program_ids = $output['brochure_list']['#value'];
+    }
+
+    if (!empty($output['apower_ids_hidden'])) {
+      $parsed_url = parse_url($output['apower_ids_hidden']['#markup']);
+      if (!empty($parsed_url['query']))
+      {
+        $query = $parsed_url['query'];
+        parse_str($query, $query_array);
+        $program_ids[0] = $query_array['pid'];
+      }
+    }
+
     $select = db_select('node', 'n');
     $select->fields('n', array('title', 'nid'));
     $select->leftJoin('field_data_field_brochure_pdf', 'pdf', 'n.nid = pdf.entity_id AND pdf.deleted = 0');
