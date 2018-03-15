@@ -22,7 +22,7 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
     $node = node_load($nid);
     $output = webform_submission_render($node, $web_submission, NULL, 'html');
 
-    $program_ids = array();
+    $program_ids = null;
 
     if (!empty($output['brochure_list']) && !empty($output['brochure_list']['#value'])) {
       $program_ids = $output['brochure_list']['#value'];
@@ -34,7 +34,8 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
       {
         $query = $parsed_url['query'];
         parse_str($query, $query_array);
-        $program_ids[0] = $query_array['pid'];
+        $pids = urldecode($query_array['pid']);
+        $program_ids = explode(",",$pids);
       }
     }
 
