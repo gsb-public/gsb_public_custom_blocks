@@ -73,6 +73,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'hero_region/templates/gsb-public-custom-blocks-hero_region',
       'file' => 'hero_region/hero_region.theme.inc',
     ),
+    'gsb_public_custom_blocks_stay_in_touch' => array(
+      'template' => 'stay_in_touch/templates/gsb-public-custom-blocks-stay-in-touch',
+      'file' => 'stay_in_touch/stay_in_touch.theme.inc',
+    ),
   );
 }
 
@@ -192,6 +196,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Need More Information'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_stay_in_touch' => array(
+      'info' => t('Stay in Touch'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
   );
 }
 
@@ -275,6 +283,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_need_more_information':
       $block['content'] = gsb_public_custom_blocks_need_more_information_content_type();
+      break;
+    case 'gpcb_stay_in_touch':
+      $block['content'] = theme('gsb_public_custom_blocks_stay_in_touch');
       break;
   }
 
@@ -413,6 +424,7 @@ function gsb_public_custom_blocks_gsb_fpp_customizations_icons_alter(&$icons) {
     'block:gsb_public_custom_blocks-gpcb_insights_search' => 'insights-search.jpg',
     'block:gsb_public_custom_blocks-gpcb_weather_widget' => 'weather-widget.jpg',
     'block:gsb_public_custom_blocks-gpcb_conducting_research' => 'library-conducting-research.png',
+    'block:gsb_public_custom_blocks-gpcb_stay_in_touch' => 'stay-in-touch.jpg',
   );
   foreach($icons_settings as $key => $value) {
     if (isset($icons[$key]['icon'])) {
