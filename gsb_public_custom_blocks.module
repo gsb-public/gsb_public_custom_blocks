@@ -77,6 +77,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'stay_in_touch/templates/gsb-public-custom-blocks-stay-in-touch',
       'file' => 'stay_in_touch/stay_in_touch.theme.inc',
     ),
+    'gsb_public_custom_blocks_home_tagline' => array(
+      'template' => 'tagline/templates/gsb-public-custom-blocks-home-tagline',
+      'file' => 'tagline/home_tagline.theme.inc',
+    ),
   );
 }
 
@@ -200,6 +204,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Stay in Touch'),
       'cache' => DRUPAL_CACHE_GLOBAL,
     ),
+    'gpcb_home_tagline' => array(
+      'info' => t('Tagline'),
+     'cache' => DRUPAL_CACHE_GLOBAL,
+   ),
   );
 }
 
@@ -286,6 +294,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_stay_in_touch':
       $block['content'] = theme('gsb_public_custom_blocks_stay_in_touch');
+      break;
+    case 'gpcb_home_tagline':
+      $block['content'] = theme('gsb_public_custom_blocks_home_tagline');
       break;
   }
 
