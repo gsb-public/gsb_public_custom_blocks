@@ -708,3 +708,13 @@ function gsb_public_custom_blocks_need_more_information_content_type() {
   $output = theme('gsb_public_custom_blocks_need_more_information', $cta);
   return $output;
 }
+
+//Hook for creating new category Homepage Elements and added custom blocks to this.
+function gsb_public_custom_blocks_ctools_block_info($module, $delta, &$info) {
+  if ($info['title'] == 'Tagline') {
+      $info['category'] = t('Homepage Elements');
+  }
+  if ($info['title'] == 'Stay in Touch') {
+      $info['category'] = t('Homepage Elements');
+  }
+}
