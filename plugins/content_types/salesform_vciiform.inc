@@ -29,7 +29,7 @@ $form_markup = <<<HTML
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
 <input type=hidden name="oid" value="00D500000007AMA">
-<input type=hidden name="retURL" value="/faculty-research/centers-initiatives/slei/subscribe/thank-you">
+<input type=hidden name="retURL" value="https://www.gsb.stanford.edu/faculty-research/centers-initiatives/vcii/contact/subscribe/thank-you">
 
 <!-- ---------------------------------------------------------------------- -->
 <!-- NOTE: These fields are optional debugging elements. Please uncomment -->
@@ -38,29 +38,40 @@ $form_markup = <<<HTML
 <!-- <input type="hidden" name="debugEmail" value="matper@stanford.edu"> -->
 <!-- ---------------------------------------------------------------------- -->
 
-<label for="first_name">First Name</label>
-<input id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+<div class="form-item webform-component webform-component-textfield">
+<label for="first_name">First Name</label><input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+</div>
 
-<label for="last_name">Last Name</label>
-<input id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+<div class="form-item webform-component webform-component-textfield">
+<label for="last_name">Last Name</label><input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+</div>
 
-<label for="email">Email</label>
-<input id="email" maxlength="80" name="email" size="20" type="text" /><br>
+<div class="form-item webform-component webform-component-email">
+<label for="email">Email</label><input class="email form-text form-email" id="email" maxlength="80" name="email" size="20" type="text" />
+</div>
 
+<div class="form-item webform-component webform-component-textfield">
 <label for="company">Company</label>
-<input id="company" maxlength="40" name="company" size="20" type="text" /><br>
+<input id="company" maxlength="40" name="company" size="20" type="text" />
+</div>
 
+<div class="form-item webform-component webform-component-textfield">
 <label for="title">Title</label>
-<input id="title" maxlength="40" name="title" size="20" type="text" /><br>
+<input id="title" maxlength="40" name="title" size="20" type="text" />
+</div>
 
-<label for="zip">ZIP Code</label>
-<input id="zip" maxlength="20" name="zip" size="20" type="text" /><br>
+<div class="form-item webform-component webform-component-textfield">
+<label for="zip">ZIP Code</label><input id="zip" maxlength="20" name="zip" size="20" type="text" />
+</div>
 
+<div class="form-item webform-component webform-component-textfield">
 <label for="country">Country</label>
-<input id="country" maxlength="40" name="country" size="20" type="text" /><br>
+<input id="country" maxlength="40" name="country" size="20" type="text" />
+</div>
 
-<input type="submit" name="submit">
-
+<div class="class="form-actions">
+<input class="webform-submit button-primary form-submit" type="submit" name="submit">
+</div>
 </form>
 
 <script type="text/javascript">
