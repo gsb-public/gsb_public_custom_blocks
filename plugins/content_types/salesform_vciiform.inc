@@ -30,7 +30,7 @@ $form_markup = <<<HTML
 
 <input type=hidden name="oid" value="00D500000007AMA">
 <input type=hidden name="retURL" value="https://www.gsb.stanford.edu/faculty-research/centers-initiatives/vcii/contact/subscribe/thank-you">
-
+  
 <!-- ---------------------------------------------------------------------- -->
 <!-- NOTE: These fields are optional debugging elements. Please uncomment -->
 <!-- these lines if you wish to test in debug mode. -->
@@ -39,15 +39,18 @@ $form_markup = <<<HTML
 <!-- ---------------------------------------------------------------------- -->
 
 <div class="form-item webform-component webform-component-textfield">
-<label for="first_name">First Name</label><input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+<label for="first_name">First Name</label>
+<input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
-<label for="last_name">Last Name</label><input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+<label for="last_name">Last Name</label>
+<input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-email">
-<label for="email">Email</label><input class="email form-text form-email" id="email" maxlength="80" name="email" size="20" type="text" />
+<label for="email">Email</label>
+<input class="email form-text form-email" id="email" maxlength="80" name="email" size="20" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
@@ -61,7 +64,8 @@ $form_markup = <<<HTML
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
-<label for="zip">ZIP Code</label><input id="zip" maxlength="20" name="zip" size="20" type="text" />
+<label for="zip">ZIP Code</label>
+<input id="zip" maxlength="20" name="zip" size="20" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
@@ -69,13 +73,12 @@ $form_markup = <<<HTML
 <input id="country" maxlength="40" name="country" size="20" type="text" />
 </div>
 
-<div class="class="form-actions">
+<div class="class="form-actions form-item">
 <input class="webform-submit button-primary form-submit" type="submit" name="submit">
 </div>
+
 </form>
 
-<script type="text/javascript">
-</script>
 HTML;
 
   return (object) array(
