@@ -40,37 +40,37 @@ $form_markup = <<<HTML
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="first_name">First Name</label>
-<input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+<input id="first_name" maxlength="40" name="first_name" size="50" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="last_name">Last Name</label>
-<input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+<input id="last_name" maxlength="80" name="last_name" size="50" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-email">
 <label for="email">Email</label>
-<input class="email form-text form-email" id="email" maxlength="80" name="email" size="20" type="text" />
+<input class="email form-text form-email" id="email" maxlength="80" name="email" size="50" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="company">Company</label>
-<input id="company" maxlength="40" name="company" size="20" type="text" />
+<input id="company" maxlength="40" name="company" size="50" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="title">Title</label>
-<input id="title" maxlength="40" name="title" size="20" type="text" />
+<input id="title" maxlength="40" name="title" size="50" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="zip">ZIP Code</label>
-<input id="zip" maxlength="20" name="zip" size="20" type="text" />
+<input id="zip" maxlength="20" name="zip" size="50" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="country">Country</label>
-<input id="country" maxlength="40" name="country" size="20" type="text" />
+<input id="country" maxlength="40" name="country" size="50" type="text" />
 </div>
 
 <div class="class="form-actions form-item">
