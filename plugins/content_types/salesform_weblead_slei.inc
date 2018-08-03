@@ -42,37 +42,37 @@ $form_markup = <<<HTML
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="first_name">First Name</label>
-<input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+<input id="first_name" maxlength="40" name="first_name" size="60" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="last_name">Last Name</label>
-<input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+<input id="last_name" maxlength="80" name="last_name" size="60" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-email">
 <label for="email">Email</label>
-<input id="email" maxlength="80" name="email" size="20" type="text" />
+<input id="email" maxlength="80" name="email" size="60" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="company">Company</label>
-<input id="company" maxlength="40" name="company" size="20" type="text" />
+<input id="company" maxlength="40" name="company" size="60" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="title">Title</label>
-<input id="title" maxlength="40" name="title" size="20" type="text" />
+<input id="title" maxlength="40" name="title" size="60" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="zip">ZIP Code</label>
-<input id="zip" maxlength="20" name="zip" size="20" type="text" />
+<input id="zip" maxlength="20" name="zip" size="60" type="text" />
 </div>
 
 <div class="form-item webform-component webform-component-textfield">
 <label for="country">Country</label>
-<input id="country" maxlength="40" name="country" size="20" type="text" />
+<input id="country" maxlength="40" name="country" size="60" type="text" />
 </div>
 
 <div class=”form-item webform-component webform-component-select “>
@@ -90,13 +90,13 @@ $form_markup = <<<HTML
 </div>
 
 <div class=”form-checkboxes”>
-<label for=”slei-participation”>SLEI-Ed Participation</label>
-<input id="00N38000003oRoO" title="SLEI Affiliation" name="00N38000003oRoO" type="checkbox" value="1" />
+<input id="00N38000003oRoO" title="SLEI Affiliation" name="00N38000003oRoO" type="checkbox" value="1" /> <label for=”slei-participation”>SLEI-Ed Participation</label>
 </div>
 
-<div class="class="form-actions">
+<div class="form-actions">
 <input class="webform-submit button-primary form-submit" type="submit" name="submit">
 </div>
+
 </form>
 
 HTML;
