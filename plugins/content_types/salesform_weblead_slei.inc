@@ -89,8 +89,9 @@ $form_markup = <<<HTML
 </select>
 </div>
 
-<div class=”form-checkboxes”>
-<input id="00N38000003oRoO" title="SLEI Affiliation" name="00N38000003oRoO" type="checkbox" value="1" /> <label for=”slei-participation”>SLEI-Ed Participation</label>
+<div class="form-checkboxes form-item">
+  <input id="00N38000003oRoO" title="SLEI Affiliation" name="00N38000003oRoO" type="checkbox" class="form-checkbox" value="1">
+  <label class="option form-item" style="font-weight:bold" for="00N38000003oRoO">SLEI-Ed Participation</label>
 </div>
 
 <div class="form-actions">
