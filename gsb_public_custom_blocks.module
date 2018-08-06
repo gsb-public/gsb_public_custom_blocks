@@ -81,6 +81,10 @@ function gsb_public_custom_blocks_theme($existing, $type , $theme, $path) {
       'template' => 'tagline/templates/gsb-public-custom-blocks-home-tagline',
       'file' => 'tagline/home_tagline.theme.inc',
     ),
+    'gsb_public_custom_blocks_footer_logo' => array(
+      'template' => 'footer_logo/templates/gsb-public-custom-blocks-footer-logo',
+      'file' => 'footer_logo/footer_logo.theme.inc',
+    ),
   );
 }
 
@@ -208,6 +212,10 @@ function gsb_public_custom_blocks_block_info() {
       'info' => t('Tagline'),
      'cache' => DRUPAL_CACHE_GLOBAL,
    ),
+   'gpcb_footer_logo' => array(
+      'info' => t('Footer Logo'),
+     'cache' => DRUPAL_CACHE_GLOBAL,
+   ),
   );
 }
 
@@ -297,6 +305,9 @@ function gsb_public_custom_blocks_block_view($delta = '') {
       break;
     case 'gpcb_home_tagline':
       $block['content'] = theme('gsb_public_custom_blocks_home_tagline');
+      break;
+    case 'gpcb_footer_logo':
+      $block['content'] = theme('gsb_public_custom_blocks_footer_logo');
       break;
   }
 
