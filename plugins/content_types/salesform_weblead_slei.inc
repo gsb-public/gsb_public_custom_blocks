@@ -29,7 +29,7 @@ $form_markup = <<<HTML
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
 <input type=hidden name="oid" value="00D500000007AMA">
-<input type=hidden name="retURL" value="/faculty-research/centers-initiatives/slei/subscribe/thank-you">
+<input type=hidden name="retURL" value="https://www.gsb.stanford.edu/faculty-research/centers-initiatives/slei/subscribe/thank-you">
 <input type=hidden name=”00N5000000336R1” value="SLEI">
 <input type=hidden name=”lead_source” value=”SLEI”>
 
