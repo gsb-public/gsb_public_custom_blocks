@@ -12,15 +12,18 @@ function gsb_public_custom_blocks_preprocess_gsb_public_custom_blocks_hero_regio
   // render image
   $variables['hero_region']['image'] = array();
   if (!empty($node->field_hero_region_options[$language][0]['value']) && $node->field_hero_region_options[$language][0]['value'] == 'image') {
-    $image = theme_image_style(array(
-      'style_name' => 'compress',
-      'path' => $node->field_image_single_public[$language][0]['uri'],
-      'width' => $node->field_image_single_public[$language][0]['width'],
-      'height' => $node->field_image_single_public[$language][0]['height'],
-      'alt' => $node->field_image_single_public[$language][0]['alt']
-    ));
-    $variables['hero_region']['image'] = $image;
+    if (!empty($node->field_image_single_public[$language])) {
+      $image = theme_image_style(array(
+        'style_name' => 'compress',
+        'path' => $node->field_image_single_public[$language][0]['uri'],
+        'width' => $node->field_image_single_public[$language][0]['width'],
+        'height' => $node->field_image_single_public[$language][0]['height'],
+        'alt' => $node->field_image_single_public[$language][0]['alt']
+      ));
+      $variables['hero_region']['image'] = $image;
+    }
   }
+
   // Don't add slideshow, if device/agent is mobile
   if (_gsb_public_custom_blocks_isMobile()) {
     return;
