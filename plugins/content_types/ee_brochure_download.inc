@@ -12,17 +12,16 @@ $plugin = array(
  */
 function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
   module_load_include('inc','webform','includes/webform.submissions');
-  $sid = $_GET['sid'];
-  $output = "";
-  $uploaded_files = array();
-  if (!empty($sid)) {
+  $program_ids = null;
+  if (!empty($_GET['sid'])) {
+    $sid = $_GET['sid'];
+    $output = "";
+    $uploaded_files = array();
     $submission = webform_get_submissions(array('sid' => $sid));
     $nid = $submission[$sid]->nid;
     $web_submission = webform_get_submission($nid, $sid);
     $node = node_load($nid);
     $output = webform_submission_render($node, $web_submission, NULL, 'html');
-
-    $program_ids = null;
 
     if (!empty($output['brochure_list']) && !empty($output['brochure_list']['#value'])) {
       $program_ids = $output['brochure_list']['#value'];
@@ -79,6 +78,10 @@ function gsb_public_custom_blocks_ee_brochure_download_content_type_render($subt
       }
         $zipped_file = l("Download All Brochures", file_create_url($archive_uri), $options = array('attributes' => array('class' => array('button'), 'name' => 'button',)));
     }
+  }
+
+  if ($program_ids == null) {
+    return;
   }
 
   $program_info = array();
