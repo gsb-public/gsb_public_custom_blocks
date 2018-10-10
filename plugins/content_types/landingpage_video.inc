@@ -18,6 +18,7 @@ function gsb_public_custom_blocks_landingpage_video_content_type_render($subtype
 <video class="splash__video__media" autoplay muted loop playsinline>
   <source src="<landing-page-video-file-path-goes-here>" type="video/mp4">
 </video>
+<a class="scrollLink">Scroll to Explore</a>
 EOF;
 
   $content = str_replace("<landing-page-video-file-path-goes-here>", $landingPageVideo, $content);
