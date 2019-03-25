@@ -24,7 +24,8 @@
     "ext-openssl": "*",
     "ext-pdo": "*",
     "ext-xml": "*",
-    "composer/installers": "^1.2"
+    "composer/installers": "^1.2",
+    "weather/weather": "master"
   },
   "extra": {
     "installer-paths": {
