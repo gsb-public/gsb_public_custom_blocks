@@ -17,7 +17,14 @@
     }
   ],  
   "require": {
-    "php": ">=5.3.0"
+    "php": ">=5.3.0",
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-xml": "*",
+    "composer/installers": "^1.2"
   },
   "extra": {
     "installer-paths": {
