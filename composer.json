@@ -8,7 +8,7 @@
       "package": {
         "name": "weather/weather",
         "version": "master",
-        "type": "drupal-library", 
+        "type": "drupal-gsb-library", 
         "dist": {
           "url": "https://github.com/gsbitse/weather/archive/master.zip",
           "type": "zip"
@@ -29,7 +29,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/profiles/gsb_public/libraries/{$name}/": ["type:drupal-library"]
+      "web/profiles/gsb_public/libraries/{$name}/": ["type:drupal-gsb-library"]
     }
   } 
 }
