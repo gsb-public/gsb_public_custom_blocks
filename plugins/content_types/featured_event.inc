@@ -56,6 +56,10 @@ function gsb_featured_event_date_formatter() {
         if ($time2 != $time) {
           $time .= ' - ' . $time2;
         }
+        else {
+          if($time == '12am')
+          $time = 'All Day';
+        }
         $output = '<div class="event-calendar-featured-date"><div class="day">' . $day . '</div><div class="date"><strong>' . $month_day . '</strong></div><div class="time">' . $time . '</div></div>';
       }
       else {
