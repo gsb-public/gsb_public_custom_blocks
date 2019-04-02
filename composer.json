@@ -25,11 +25,7 @@
     "ext-pdo": "*",
     "ext-xml": "*",
     "composer/installers": "^1.2",
+    "oomphinc/composer-installers-extender": "^1.1",
     "weather/weather": "master"
-  },
-  "extra": {
-    "installer-paths": {
-      "web/profiles/gsb_public/libraries/{$name}/": ["type:drupal-gsb-library"]
-    }
-  } 
+  }
 }
