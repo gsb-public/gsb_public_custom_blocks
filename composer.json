@@ -1,0 +1,35 @@
+{
+  "name": "drupal/gsb_public_custom_blocks",
+  "description": "GSB Public Custom Blocks",
+  "license": "Apache-2.0",
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "weather/weather",
+        "version": "master",
+        "type": "drupal-gsb-library", 
+        "dist": {
+          "url": "https://github.com/gsbitse/weather/archive/master.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ],  
+  "require": {
+    "php": ">=5.3.0",
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-xml": "*",
+    "composer/installers": "^1.2",
+    "weather/weather": "master"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/profiles/gsb_public/libraries/{$name}/": ["type:drupal-gsb-library"]
+    }
+  } 
+}
