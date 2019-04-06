@@ -14,7 +14,7 @@ function gsb_public_custom_blocks_rethink_form_email_content_type_render($subtyp
 
 $form = <<<HTML
 <div id="mc_embed_signup">
-<form action="http://stanford.us5.list-manage1.com/subscribe/post?u=ce785d9b9016cd35fb68e83b7&id=0b5214e34b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="https://stanford.us5.list-manage1.com/subscribe/post?u=ce785d9b9016cd35fb68e83b7&id=0b5214e34b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
