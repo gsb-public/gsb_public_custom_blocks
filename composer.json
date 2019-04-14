@@ -2,6 +2,7 @@
   "name": "gsb/gsb_public_custom_blocks",
   "description": "GSB Public Custom Blocks",
   "license": "Apache-2.0",
+  "type": "drupal-custom-module",
   "repositories": [
     {
       "type": "package",
