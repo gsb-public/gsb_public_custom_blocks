@@ -5,6 +5,7 @@
   "type": "drupal-custom-module",
   "repositories": [
     {
+      "packagist.org": false,
       "type": "package",
       "package": {
         "name": "weather/weather",
