@@ -83,7 +83,9 @@ function gsb_featured_event_date_formatter() {
       $administrative_areas = addressfield_get_administrative_areas($address['country']);
       $admin_area = $administrative_areas[$address['administrative_area']];
       $admin_area = ($admin_area != NULL) ? $admin_area : $address['administrative_area'];
-      $location = (($admin_area != NULL) AND ($location != '')) ? $location . ', ' . $admin_area : $admin_area;
+      if ($admin_area != '') {
+        $location = (($admin_area != NULL) AND ($location != '')) ? $location . ', ' . $admin_area : $admin_area;
+      }
       $location = ($address['country'] != NULL) ? $location . ', ' . $countries[$address['country']] : $location;
     }
 
