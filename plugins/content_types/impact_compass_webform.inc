@@ -1,8 +1,7 @@
 <?php
-
 $plugin = array(
   'title' => t('Impact Compass Interactive Tool'),
-  'category' => t('Non-customizable Content Lists'),
+  'category' => t('Custom blocks'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
@@ -32,7 +31,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	 <input class="select-or-other-select form-checkbox" type="checkbox" id="checkbox-two" name="checkbox-two" value="No negative social outcome">  <label class="option" for="">No negative social outcome</label>
 	</div>
 	<div class="item-check form-type-checkbox">
-	 <input class="select-or-other-select form-checkbox" type="checkbox" id="" name="No ethical behavior" value="No ethical behavior">  <label class="option" for="">No ethical behavior</label>
+	 <input class="select-or-other-select form-checkbox" type="checkbox" id="" name="No unethical behavior" value="No unethical behavior">  <label class="option" for="">No unethical behavior</label>
 	</div>
    </div>
  </div>
@@ -53,10 +52,10 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	 <label for="efficacy">Efficacy</label>
 	 <div class="tooltip select-width">
 	 <select id="efficacyScore" name="efficacyScore" title="Efficacy" required="required" >
-	    <option value=0></option>
-	    <option value=1>Unknown outcomes</option>
-	    <option value=2>Positive pilot</option>
-	    <option value=3>Proven results</option>
+	    <option value="0"></option>
+	    <option value="1">Unknown outcomes</option>
+	    <option value="2">Positive pilot</option>
+	    <option value="3">Proven results</option>
 	 </select>
 	 <span class="tooltiptext">How certain are we of the effects of the solution?</span></div>
 	 </div>
@@ -64,10 +63,10 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	 <label for="impact_magnitude">Impact Magnitude</label>
 	 <div class="tooltip select-width">
 	 <select id="impactMagnitudeScore" name="impactMagnitudeScore" title="Impact Magnitude" >
-	    <option value=0></option>
-	    <option value=1>Small dent in problem</option>
-	    <option value=2>Problem partially solved </option>
-	    <option value=3>Problem eliminated</option>
+	    <option value="0"></option>
+	    <option value="1">Small dent in problem</option>
+	    <option value="2">Problem partially solved </option>
+	    <option value="3">Problem eliminated</option>
 	 </select>
 	 <span class="tooltiptext impact-magi-tooltptxt">How meaningful is the magnitude of the intervention per person/unit?</span></div>
 	</div>
@@ -78,10 +77,10 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 		<label for="scalabilityScore">Scalability</label>
 		<div class="tooltip select-width">
 		<select id="scalabilityScore" name="scalabilityScore" title="Scalability" >
-		    <option value=0></option>
-		    <option value=1>Thousands</option>
-		    <option value=2>Millions</option>
-		    <option value=3>Billions</option>
+		    <option value="0"></option>
+		    <option value="1">Thousands</option>
+		    <option value="2">Millions</option>
+		    <option value="3">Billions</option>
 		</select>
 		<span class="tooltiptext">How much of the affected population can this model address?</span></div>
 	</div>
@@ -89,10 +88,10 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 		<label for="impact_magnitude">Mission Alignment</label>
 		<div class="tooltip select-width">
 		<select id="missionAlignmentScore" name="missionAlignmentScore" title="Mission Alignment" >
-		    <option value=0></option>
-		    <option value=1><2 indicators in place</option>
-		    <option value=2>2-3 indicators in place</option>
-		    <option value=3>All indicators in place</option>
+		    <option value="0"></option>
+		    <option value="1"><2 indicators in place</option>
+		    <option value="2">2-3 indicators in place</option>
+		    <option value="3">All indicators in place</option>
 		</select>
 		<span class="tooltiptext">To what extent is the organization driving toward outcomes? Indicators demonstrating mission alignment include:
 		<br/>- A well-articulated theory of change
@@ -104,10 +103,10 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	<label for="impact_magnitude">ESG</label>
 	<div class="tooltip select-width">
 	<select id="esgScore" name="esgScore" title="ESG" >
-	    <option value=0></option>
-	    <option value=1>No severe difficiency</option>
-	    <option value=2>1 exemplary dimension</option>
-	    <option value=3>2+ exemplary dimensions</option>
+	    <option value="0"></option>
+	    <option value="1">No severe difficiency</option>
+	    <option value="2">1 exemplary dimension</option>
+	    <option value="3">2+ exemplary dimensions</option>
 	</select>
 	<span class="tooltiptext esg-tooltptxt">How does the organization perform in the following three dimensions?
 	<br/>- How does it impact society, including its employees, suppliers, clients, and the communities it operates in?
@@ -115,75 +114,21 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	<br/>- Is it governed with transparency and with concern for corruption and the law?
 	</span></div>
 	</div>
-</div><div class="form-item"></div>
-<div class="form-item button-row">
+</div>
+<div class="form-item"></div>
+<div class="form-item button-row" id="button-block">
 <input name="visualize" id="submitButton" class="webform-submit button-primary form-submit" value="Visualize" type="submit">
 <input name="print" id="print_bt" class="buttonReset webform-submit button-primary form-submit"  value="Print" type="submit">
 </div>
 <div class="chart-container" >
   <canvas  id="myChart"></canvas>
-</div>
-<div class="form-item chart-score">
-<p id="impactText"></p><span id="impactScore"></span>
+  <div class="form-item chart-score">
+	<p id="impactText"></p><span id="impactScore"></span>
+  </div>
 </div>
 </form>
-</div>
-<script type="text/javascript">
-setTimeout(function() {
-     var ctx = document.getElementById("myChart").getContext("2d");
-     Chart.defaults.global.defaultFontSize = "20";
-     Chart.defaults.global.defaultFontFamily = "NewsGothicBT","Avant Garde","Futura","Helvetica Neue","Helvetica,Arial,sans-serif";
-      var myChart = new Chart(ctx, {
-          type: "radar",
-          data: {
-              labels: ["Value to Society", "Efficacy", "Impact Magnitude", "Scalability", "Mission Alignment", "ESG"],
-              datasets: [{
-                  backgroundColor: "rgba(93,132,159, 0.2)",
-                  borderColor: "rgb(93,132,159)",
-                  pointBackgroundColor: "rgba(0,0,0,0.5)",
-                  pointHoverBorderColor: "rgba(255,0,0,1)",
-                  pointHoverBackgroundColor: "rgba(255,0,0,0.5)",
-                  data: [0, 0, 0, 0, 0, 0],
-          }]
-      },
-
-    options: {
-    legend: {
-          display: false,
-        position: "bottom",
-        fontSize: 12
-          },
-          title: {
-              display: false,
-              text: "Impact Compass"
-          },
-          scale: {
-              pointLabels: {
-                  fontSize: 14,
-              },
-
-        ticks: {
-            min: 0, 
-            max: 3, 
-          fixedStepSize: 1,
-          beginAtZero: true, 
-          fontSize: 12,
-              }
-          }
-      }
-
-    });
-
-  }, 2000);
-</script>
-';
-
-  /*return (object) array(
-    'content' => array(
-      '#markup' => $form_markup,
-    ),
-  );*/
-  return (object) array(
+</div>';
+ return (object) array(
     'content' => array(
       '#attached' => array(
         'js' => array(
