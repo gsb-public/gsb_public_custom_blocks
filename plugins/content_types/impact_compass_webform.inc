@@ -46,7 +46,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 		<option value="2">Needed social progress</option>
 		<option value="3">Most needed progress</option>
 	 </select>
-	 <span class="tooltiptext">To what extent does the intended outcome deliver societal value?</span></div>
+	 <span class="tooltiptext" id="tooltip-1">To what extent does the intended outcome deliver societal value?</span></div>
 	 </div>
 	 <div class="item">
 	 <label for="efficacy">Efficacy</label>
@@ -57,7 +57,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	    <option value="2">Positive pilot</option>
 	    <option value="3">Proven results</option>
 	 </select>
-	 <span class="tooltiptext">How certain are we of the effects of the solution?</span></div>
+	 <span class="tooltiptext" id="tooltip-2">How certain are we of the effects of the solution?</span></div>
 	 </div>
 	<div class="item">
 	 <label for="impact_magnitude">Impact Magnitude</label>
@@ -68,7 +68,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	    <option value="2">Problem partially solved </option>
 	    <option value="3">Problem eliminated</option>
 	 </select>
-	 <span class="tooltiptext impact-magi-tooltptxt">How meaningful is the magnitude of the intervention per person/unit?</span></div>
+	 <span class="tooltiptext impact-magi-tooltptxt" id="tooltip-3">How meaningful is the magnitude of the intervention per person/unit?</span></div>
 	</div>
 </div>
 <div class="form-item"></div>
@@ -82,7 +82,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 		    <option value="2">Millions</option>
 		    <option value="3">Billions</option>
 		</select>
-		<span class="tooltiptext">How much of the affected population can this model address?</span></div>
+		<span class="tooltiptext" id="tooltip-4">How much of the affected population can this model address?</span></div>
 	</div>
 	<div class="item">
 		<label for="impact_magnitude">Mission Alignment</label>
@@ -93,7 +93,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 		    <option value="2">2-3 indicators in place</option>
 		    <option value="3">All indicators in place</option>
 		</select>
-		<span class="tooltiptext">To what extent is the organization driving toward outcomes? Indicators demonstrating mission alignment include:
+		<span class="tooltiptext" id="tooltip-5">To what extent is the organization driving toward outcomes? Indicators demonstrating mission alignment include:
 		<br/>- A well-articulated theory of change
 		<br/>- A commitment to impact measurement and reporting
 		<br/>- Structural and capital choices that protect the mission
@@ -108,7 +108,7 @@ function gsb_public_custom_blocks_impact_compass_webform_content_type_render($su
 	    <option value="2">1 exemplary dimension</option>
 	    <option value="3">2+ exemplary dimensions</option>
 	</select>
-	<span class="tooltiptext esg-tooltptxt">How does the organization perform in the following three dimensions?
+	<span class="tooltiptext esg-tooltptxt" id="tooltip-6">How does the organization perform in the following three dimensions?
 	<br/>- How does it impact society, including its employees, suppliers, clients, and the communities it operates in?
 	<br/>- How does it impact the natural environment, including the water, air, climate, wilderness habitat, ...?
 	<br/>- Is it governed with transparency and with concern for corruption and the law?

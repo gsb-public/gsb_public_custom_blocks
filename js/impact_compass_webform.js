@@ -3,6 +3,10 @@
 Drupal.behaviors.impact_compass_webform = {
   attach: function (context, settings) {
   $("#errorMessage").hide();
+  //hiding print button for mobile and tablet
+  if (Modernizr.mq('(max-width: 1024px)')) {
+    $("#print_bt").hide();
+  }
   setTimeout(function() {
    let company = $("#company").val();
    let society = $("#valueToSocietyScore").val();
@@ -112,7 +116,6 @@ Drupal.behaviors.impact_compass_webform = {
     $('#print_bt').click(function (e) {
        e.preventDefault();
        $("#button-block").hide();
-       //$("#print_bt").hide();
        $(".chart-container").css({"width": "95%", "height": "60%"});
        $(".chart-score").css({"text-align": "left","padding-left": "100px"});
        $("#imapct-compass-container").printThis({
