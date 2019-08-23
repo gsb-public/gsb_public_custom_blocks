@@ -159,6 +159,7 @@ Drupal.behaviors.impact_compass_webform = {
       let company = $('#company').val();
       if (!company) {
         $errors.append("Company or Opportunity is required.<br />");
+        $("#company" ).focus();
       }
 
       let society = $("select[name='valueToSocietyScore']").val();
