@@ -1,6 +1,6 @@
 <?php
 $plugin = array(
-  'title' => t('Impact Compass Interactive Tool'),
+  'title' => t('Interactive Impact Compass'),
   'category' => t('Custom blocks'),
   'single' => TRUE,
   'all contexts' => TRUE,
@@ -12,7 +12,7 @@ $plugin = array(
 function gsb_public_custom_blocks_impact_compass_webform_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
 
   $form_markup = '<div id="imapct-compass-container"><div class="imapct-compass-title">
-    <h2>Impact Compass Interactive Tool</h2>
+    <h2>Interactive Impact Compass</h2>
   </div>
   
   <form action="" method="post" id="gsb-impact-compass-form" accept-charset="UTF-8" class="webform-client-form">

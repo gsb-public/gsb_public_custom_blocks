@@ -111,12 +111,12 @@ Drupal.behaviors.impact_compass_webform = {
     });
 
     /**
-     * Print pdf functionality
+     * Print functionality click function with configuration
      */
     $('#print_bt').click(function (e) {
        e.preventDefault();
        $("#button-block").hide();
-       $(".chart-container").css({"width": "95%", "height": "60%"});
+       //$(".chart-container").css({"width": "95%", "height": "60%"});
        $(".chart-score").css({"text-align": "left","padding-left": "100px"});
        $("#imapct-compass-container").printThis({
             debug: false,               // show the iframe for debugging
