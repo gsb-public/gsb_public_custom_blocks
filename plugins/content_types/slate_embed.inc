@@ -14,7 +14,7 @@ function gsb_public_custom_blocks_slate_embed_content_type_render($subtype, $con
   return (object) array(
     'title' => '',
     'content' => array(
-      '#markup' => '<a href="#">' . t('PhD Inquiry') . '</a>',
+      '#markup' => '<div id="form_33a511e1-6411-4733-b550-125edba5f078">Loading...</div><script async="async" src="https://gsbslate.stanford.edu/register/?id=33a511e1-6411-4733-b550-125edba5f078&amp;output=embed&amp;div=form_33a511e1-6411-4733-b550-125edba5f078">/**/</script>',
     ),
   );
 }
