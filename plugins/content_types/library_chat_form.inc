@@ -15,7 +15,7 @@ function gsb_public_custom_blocks_library_chat_form_content_type_render($subtype
     'title' => 'Chat With Us',
     'content' => array(
     '#markup' => '<div class="aConBox">
-     <div jid="gsb-library@chat.libraryh3lp.com" class="libraryh3lp"><!--Type here to chat, M-F 9am-5pm FT. Press ENTER to send.--><iframe frameborder="0" style="width: 300px; height: 350px; border: 1px ;" src="https://us.libraryh3lp.com/chat/gsb-library@chat.libraryh3lp.com?skin=15904&identity=Librarian"></iframe>
+     <div jid="gsb-library@chat.libraryh3lp.com" class="libraryh3lp"><!--Type here to chat, M-F 9am-5pm FT. Press ENTER to send.--><iframe frameborder="0" title="Embedded Chat Box" style="width: 300px; height: 350px; border: 1px ;" src="https://us.libraryh3lp.com/chat/gsb-library@chat.libraryh3lp.com?skin=15904&identity=Librarian"></iframe>
     </div>
     <div class="helptext"><strong>Or Text Us</strong>: +1 (650) 204-8111</div>
     </div>
