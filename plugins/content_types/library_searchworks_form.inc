@@ -12,7 +12,7 @@ $plugin = array(
  */
 function gsb_public_custom_blocks_library_searchworks_form_content_type_render($subtype, $conf, $panel_args, $context, $incoming) {
     return (object) array(
-    'title' => "SearchWorks",
+    'title' => "SearchWorks Library Catalog",
     'content' => array(
     '#markup' =>
       '<div id="tab_1_contents" class="tab_contents">
@@ -27,6 +27,7 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
               <input class="submit" align="absmiddle" value="Search" width="22" height="17" type="submit" />
             </form>
           </div>
+		  <a href="https://searchworks.stanford.edu/advanced">Advanced Search</a>
       </div>',
     ),
   );
