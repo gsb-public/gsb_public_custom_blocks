@@ -28,7 +28,7 @@ function gsb_public_custom_blocks_library_searchworks_form_content_type_render($
             </form>
           </div>
 		  <div class="advanced_search">
-			<a href="https://searchworks.stanford.edu/advanced">Advanced Search</a>
+			<a target="_blank" href="https://searchworks.stanford.edu/advanced">Advanced Search</a>
 		  </div>
       </div>',
     ),
