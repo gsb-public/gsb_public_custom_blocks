@@ -135,7 +135,7 @@ return false;}
 if (typeof isValid === 'undefined' || isValid === '') {
 alert("Correct captcha is required");
 return false;
-}
+}}
 </script>
 </div>
 HTML;
