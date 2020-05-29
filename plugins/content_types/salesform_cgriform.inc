@@ -114,20 +114,28 @@ $form_markup = <<<HTML
     <input id="00N50000001aC79" maxlength="40" name="00N50000001aC79" size="20" type="text">
   </div>
   <div class="form-item">
-    <div class="g-recaptcha" data-sitekey="6Lf3zv0UAAAAAK-aHnnwevBvhwcGPruDMG9F4V3-"></div>
+    <div class="g-recaptcha" data-sitekey="6Lf3zv0UAAAAAK-aHnnwevBvhwcGPruDMG9F4V3-" data-callback="reCaptchaResponse"></div>
   </div>
   <div class="form-actions form-wrapper" id="edit-actions">
     <input type="submit" name="submit" class="form-submit">
   </div>
 </form>
 <script type="text/javascript">
+var isValid;
+var reCaptchaResponse = function(response) {
+isValid = response.replace(/\s+/g, '');
+};
 function required() {
 var reqfName = document.f1.elements["first_name"].value;
 var reqlName = document.f1.elements["last_name"].value;
 var reqEmail = document.f1.elements["email"].value;
 if (reqfName == "" || reqlName == "" || reqEmail == "") {
 alert("Please fill in all of the mandatory fields (denoted by *)");
-return false;}}
+return false;}
+if (typeof isValid === 'undefined' || isValid === '') {
+alert("Correct captcha is required");
+Return false;
+}
 </script>
 </div>
 HTML;
