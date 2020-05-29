@@ -134,7 +134,7 @@ alert("Please fill in all of the mandatory fields (denoted by *)");
 return false;}
 if (typeof isValid === 'undefined' || isValid === '') {
 alert("Correct captcha is required");
-Return false;
+return false;
 }
 </script>
 </div>
