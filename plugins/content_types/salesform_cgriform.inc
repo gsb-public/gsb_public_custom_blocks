@@ -26,10 +26,10 @@ $form_markup = <<<HTML
  function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
 </script>
 
-  <form name="f1" action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
-    <input type=hidden name='captcha_settings' value='{"keyname":"GSB_Public_Site","fallback":"true","orgId":"00D3J0000008aOs","ts":""}'>
-    <input type="hidden" name="oid" value="00D3J0000008aOs">
-    <input type="hidden" name="retURL" value="http://public2-stage.gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
+  <form name="f1" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="javascript: return required();">
+    <input type=hidden name='captcha_settings' value='{"keyname":"GSB_Public_Site","fallback":"true","orgId":"00D500000007AMA","ts":""}'>
+    <input type="hidden" name="oid" value="00D500000007AMA">
+    <input type="hidden" name="retURL" value="http://gsb.stanford.edu/faculty-research/centers-initiatives/cgri/research/closer-look/subscribe/thank-you">
     <input type="hidden" id="00N500000032wXn" name="00N500000032wXn" value="1">
     <input type="hidden" id="lead_source" name="lead_source" value="CGRI">
     <input type="hidden" id="00N5000000336R1" name="00N5000000336R1" title="All Lead Sources" value="GIPR - Inquiry Form">
@@ -114,7 +114,7 @@ $form_markup = <<<HTML
     <input id="00N50000001aC79" maxlength="40" name="00N50000001aC79" size="20" type="text">
   </div>
   <div class="form-item">
-    <div class="g-recaptcha" data-sitekey="6Lf3zv0UAAAAAK-aHnnwevBvhwcGPruDMG9F4V3-" data-callback="reCaptchaResponse"></div>
+    <div class="g-recaptcha" data-sitekey="6LcyFRMUAAAAAEo6zs1Me7boZEFlSqxqfRq3uqT9" data-callback="reCaptchaResponse"></div>
   </div>
   <div class="form-actions form-wrapper" id="edit-actions">
     <input type="submit" name="submit" class="form-submit">
@@ -134,8 +134,8 @@ alert("Please fill in all of the mandatory fields (denoted by *)");
 return false;}
 if (typeof isValid === 'undefined' || isValid === '') {
 alert("Correct captcha is required");
-return false;
-}}
+return false;}
+}
 </script>
 </div>
 HTML;
