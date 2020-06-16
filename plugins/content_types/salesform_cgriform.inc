@@ -46,14 +46,14 @@ $form_markup = <<<HTML
 
   <div class="form-item">
     <label for="salutation">Salutation</label>
-    <select id="salutation" name="salutation" class="hasCustomSelect" style="-webkit-appearance: menulist-button; width: 111px; position: absolute; opacity: 0; height: 38px; font-size: 14px;">
+    <select id="salutation" name="salutation">
       <option value="">--None--</option>
       <option value="Dr.">Dr.</option>
       <option value="Mr.">Mr.</option>
       <option value="Mrs.">Mrs.</option>
       <option value="Ms.">Ms.</option>
       <option value="Professor">Professor</option>
-    </select><span class="customSelect" style="display: inline-block;"><span class="customSelectInner" style="width: 82px; display: inline-block;">--None--</span></span>
+    </select>
   </div>
   <div class="form-item">
     <label for="first_name">First Name<span class="form-required" title="This field is required.">*</span></label>
@@ -69,14 +69,14 @@ $form_markup = <<<HTML
   </div>
   <div class="form-item">
     <label for="cgri_affiliation">Affiliation<span class="form-required" title="This field is required.">*</span></label>
-    <select id="00N500000033Evx" name="00N500000033Evx" title="CGRI Affiliation" class="hasCustomSelect" style="-webkit-appearance: menulist-button; width: 117px; position: absolute; opacity: 0; height: 38px; font-size: 14px;">
+    <select id="00N500000033Evx" name="00N500000033Evx" title="CGRI Affiliation">
       <option value="">--None--</option>
       <option value="Academia">Academia</option>
       <option value="Business">Business</option>
       <option value="Law">Law</option>
       <option value="Media">Media</option>
       <option value="Other">Other</option>
-    </select><span class="customSelect" style="display: inline-block;"><span class="customSelectInner" style="width: 88px; display: inline-block;">--None--</span></span>
+    </select>
   </div>
   <div class="form-item">
     <input id="00N38000003f042" name="00N38000003f042" type="checkbox" value="1">&nbsp;I am a Stanford alumnus/a.
